@@ -1,0 +1,3 @@
+<template>
+    lolo mo
+</template>
