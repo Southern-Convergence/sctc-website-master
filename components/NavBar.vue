@@ -1,3 +1,5 @@
+import { NuxtLink } from '#build/components';
+
 <template>
   <v-app-bar
     :elevation="2"
@@ -9,10 +11,19 @@
   >
     <template v-slot:prepend>
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
+      
+      <a href="/about" class="hidden-md-and-up">
+        <img
+          src="/assets/images/logo.png"
+          :width="40"
+          class="cursor-pointer"
+        />
+      </a>
     </template>
 
     <v-app-bar-title>
-      <a href="/">
+      <!-- Hidden in mobile phones -->
+      <a href="/" class="hidden-md-and-down">
         <img
           src="/assets/images/logo with txt.png"
           :width="400"
@@ -21,70 +32,71 @@
       </a>
     </v-app-bar-title>
 
+    
     <template v-slot:append>
-      <a class="cursor-pointer p-3" href="/about">ABOUT US</a>
-      <a class="cursor-pointer p-3 text-hover"
-        >SERVICES
-        <v-overlay
-          activator="parent"
-          absolute:boolean="true"
-          transition="false"
-          width="100%"
-          style="margin-top: 48px"
+      <!-- Hidden in mobile phones -->
+      <div class="">
+        <NuxtLink to="/" class="cursor-pointer p-3 text-hover"
+          >ABOUT US</NuxtLink
         >
-          <template v-slot:default="{ isActive }">
-            <v-card title="Services" style="border-radius: 0px">
-              <v-list lines="one">
-                <v-list-item
-                  v-for="n in 3"
-                  :key="n"
-                  :title="'Item ' + n"
-                  subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-                  class="text-hover"
-                ></v-list-item>
-              </v-list>
-            </v-card>
-          </template>
-        </v-overlay>
-      </a>
 
-      <!-- <v-dialog max-width="500">
-        <template v-slot:activator="{ props: activatorProps }">
-          <a class="cursor-pointer p-3" v-bind="activatorProps">SERVICES</a>
-        </template>
+        <a class="cursor-pointer p-3 text-hover"
+          >SERVICES
+          <v-overlay
+            activator="parent"
+            absolute:boolean="true"
+            transition="false"
+            width="100%"
+            style="margin-top: 48px"
+          >
+            <template v-slot:default="{ isActive }">
+              <v-card title="Services" style="border-radius: 0px">
+                <v-list lines="one">
+                  <v-list-item
+                    v-for="n in 3"
+                    :key="n"
+                    :title="'Item ' + n"
+                    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit mimiimimi"
+                    class="text-hover"
+                  ></v-list-item>
+                </v-list>
+              </v-card>
+            </template>
+          </v-overlay>
+        </a>
 
-        <template v-slot:default="{ isActive }">
-          <v-card title="Dialog">
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </template>
-      </v-dialog> -->
+        <a class="cursor-pointer p-3 text-hover"
+          >PARTNERS
+          <v-overlay
+            activator="parent"
+            absolute:boolean="true"
+            transition="false"
+            width="100%"
+            style="margin-top: 48px"
+          >
+            <template v-slot:default="{ isActive }">
+              <v-card title="Partners" style="border-radius: 0px">
+                <v-list lines="one">
+                  <v-list-item
+                    v-for="n in 3"
+                    :key="n"
+                    :title="'Item ' + n"
+                    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit"
+                    class="text-hover"
+                  ></v-list-item>
+                </v-list>
+              </v-card>
+            </template>
+          </v-overlay>
+        </a>
+        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
+          >CONTACT</NuxtLink
+        >
+      </div>
 
-      <!-- <a class="cursor-pointer p-3"
-        >SERVICES
-        <v-overlay
-          activator="parent"
-          location-strategy="connected"
-          scroll-strategy="block"
-        > target="'#overlay-target'"
-          <v-card> sss! </v-card>
-        </v-overlay>
-      </a> -->
-      <a class="cursor-pointer p-3">PARTNERS</a>
-      <a class="cursor-pointer p-3">CONTACT</a>
+
     </template>
   </v-app-bar>
-
-  <!-- <nav class="max-screen-lg bg-black px-6 text-white grid grid-cols-3">
-            <img src="/assets/images/logo with txt.png" class="content-start py-3 col-span-2" width="500px">
-            <div class="grid grid-cols-4 justify-items-center font-Overpass">
-                <a class="py-3 px-0">ABOUT US</a>
-                
-            </div>
-        </nav> -->
 </template>
 
 <style>

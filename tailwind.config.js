@@ -12,7 +12,8 @@ export default {
     extend: {
       fontFamily: {
         'Poppins': ['poppins', 'sans-serif'],
-        'Overpass': ['overpass', 'san-serif']
+        'Overpass': ['overpass', 'sans-serif'],
+        'Roboto': ['roboto', 'sans-serif']
       },
     },
   },
