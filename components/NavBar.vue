@@ -14,7 +14,13 @@ import { NuxtLink } from '#build/components';
       <div class="hidden-sm-and-up">
         <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
-        <v-menu height="48px" width="100%" transition="slide-x-transition" class="font-Poppins">
+        <v-menu
+          width="100%"
+          transition="slide-x-transition"
+          class="font-Poppins"
+          start
+          dark
+        >
           <template v-slot:activator="{ isActive, props }">
             <v-btn icon v-bind="props" v-on="isActive">
               <v-icon>mdi-dots-vertical</v-icon>
@@ -22,62 +28,44 @@ import { NuxtLink } from '#build/components';
           </template>
 
           <v-list>
-            <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-              >ABOUT US</NuxtLink
-            >
-
-            <a class="cursor-pointer p-3 text-hover"
-              >SERVICES
-              <v-overlay
-                activator="parent"
-                absolute:boolean="true"
-                transition="false"
-                width="100%"
-                style="margin-top: 48px"
+            <v-list-item>
+              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
+                >ABOUT US</NuxtLink
               >
-                <template v-slot:default="{ isActive }">
-                  <v-card title="Services" style="border-radius: 0px">
-                    <v-list lines="one">
-                      <v-list-item
-                        v-for="n in 3"
-                        :key="n"
-                        :title="'Item ' + n"
-                        subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit mimiimimi"
-                        class="text-hover"
-                      ></v-list-item>
-                    </v-list>
-                  </v-card>
-                </template>
-              </v-overlay>
-            </a>
-
-            <a class="cursor-pointer p-3 text-hover"
-              >PARTNERS
-              <v-overlay
-                activator="parent"
-                absolute:boolean="true"
-                transition="false"
-                width="100%"
-                style="margin-top: 48px"
+            </v-list-item>
+            <v-list-item>
+              <a class="cursor-pointer p-3 text-hover"
+                >SERVICES
+                <v-overlay
+                  activator="parent"
+                  absolute:boolean="true"
+                  transition="false"
+                  width="100%"
+                  style="margin-top: 48px"
+                >
+                  <ServicesDropdown />
+                </v-overlay>
+              </a>
+            </v-list-item>
+            <v-list-item>
+              <a class="cursor-pointer p-3 text-hover"
+                >PARTNERS
+                <v-overlay
+                  activator="parent"
+                  absolute:boolean="true"
+                  transition="false"
+                  width="100%"
+                  style="margin-top: 48px"
+                >
+                  <PartnersDropdown />
+                </v-overlay>
+              </a>
+            </v-list-item>
+            <v-list-item>
+              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
+                >CONTACT</NuxtLink
               >
-                <template v-slot:default="{ isActive }">
-                  <v-card title="Partners" style="border-radius: 0px">
-                    <v-list lines="one">
-                      <v-list-item
-                        v-for="n in 3"
-                        :key="n"
-                        :title="'Item ' + n"
-                        subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-                        class="text-hover"
-                      ></v-list-item>
-                    </v-list>
-                  </v-card>
-                </template>
-              </v-overlay>
-            </a>
-            <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-              >CONTACT</NuxtLink
-            >
+            </v-list-item>
           </v-list>
         </v-menu>
         <v-btn href="/">
@@ -118,19 +106,7 @@ import { NuxtLink } from '#build/components';
             width="100%"
             style="margin-top: 48px"
           >
-            <template v-slot:default="{ isActive }">
-              <v-card title="Services" style="border-radius: 0px">
-                <v-list lines="one">
-                  <v-list-item
-                    v-for="n in 3"
-                    :key="n"
-                    :title="'Item ' + n"
-                    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit mimiimimi"
-                    class="text-hover"
-                  ></v-list-item>
-                </v-list>
-              </v-card>
-            </template>
+            <ServicesDropdown />
           </v-overlay>
         </a>
 
@@ -143,19 +119,7 @@ import { NuxtLink } from '#build/components';
             width="100%"
             style="margin-top: 48px"
           >
-            <template v-slot:default="{ isActive }">
-              <v-card title="Partners" style="border-radius: 0px">
-                <v-list lines="one">
-                  <v-list-item
-                    v-for="n in 3"
-                    :key="n"
-                    :title="'Item ' + n"
-                    subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-                    class="text-hover"
-                  ></v-list-item>
-                </v-list>
-              </v-card>
-            </template>
+            <PartnersDropdown />
           </v-overlay>
         </a>
         <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
