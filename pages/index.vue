@@ -1,14 +1,14 @@
 <template>
   <div class="body-div">
-    <div class="container">
-      <div class="title-container font-Roboto text-6xl">
+    <div class="container text-base">
+      <div class="title-container font-Roboto md:text-6xl xs:text-5xl">
         <p>Crafting Your Digital Advantage</p>
         <p>with Innovative Solutions</p>
       </div>
 
       <br />
 
-      <p class="font-Overpass text-xl sm:text-sm">
+      <p class="font-Overpass md:text-xl sm:text-sm">
         Maximize Your Business Potential with Tailor-Made <br>Software Development
       </p>
 

@@ -27,7 +27,7 @@ import { NuxtLink } from '#build/components';
             </v-btn>
           </template>
 
-          <v-list style="background-color: #1B1B1B; color: white">
+          <v-list style="background-color: #1B1B1B; color: white; margin: 0px !important" width="100%">
             <v-list-item>
               <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
                 >ABOUT US</NuxtLink
