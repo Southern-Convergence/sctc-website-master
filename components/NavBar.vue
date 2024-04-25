@@ -19,7 +19,7 @@ import { NuxtLink } from '#build/components';
           transition="slide-x-transition"
           class="font-Poppins"
           location="center"
-          style="margin: 0px !important"
+          style="margin: 0px !important; padding: 0px !important;"
         >
           <template v-slot:activator="{ isActive, props }">
             <v-btn icon v-bind="props" v-on="isActive">
