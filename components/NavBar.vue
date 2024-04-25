@@ -19,6 +19,7 @@ import { NuxtLink } from '#build/components';
           transition="slide-x-transition"
           class="font-Poppins"
           location="center"
+          style="margin: 0px !important"
         >
           <template v-slot:activator="{ isActive, props }">
             <v-btn icon v-bind="props" v-on="isActive">
@@ -26,7 +27,7 @@ import { NuxtLink } from '#build/components';
             </v-btn>
           </template>
 
-          <v-list style="background-color: black; color: white">
+          <v-list style="background-color: #1B1B1B; color: white">
             <v-list-item>
               <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
                 >ABOUT US</NuxtLink

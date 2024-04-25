@@ -8,7 +8,7 @@
 
       <br />
 
-      <p class="font-Overpass text-xl">
+      <p class="font-Overpass text-xl sm:text-sm">
         Maximize Your Business Potential with Tailor-Made <br>Software Development
       </p>
 
