@@ -42,12 +42,12 @@
     >
       <v-carousel touch.boolean="true" height="100%">
         <v-carousel-item v-for="item in carousel">
-          <div class="flex m-2 md:m-36" style="width: 70%; margin-left: auto !important; margin-right: auto !important">
+          <div class="flex md:m-24" style="width: 75%; margin-left: auto !important; margin-right: auto !important">
             <div class="text-center p-8 m-auto">
-              <p class="font-Poppins text-lg md:text-5xl m-6">
+              <p class="font-Poppins text-xl md:text-4xl m-6">
                 {{ item.title }}
               </p>
-              <p class="font-Overpass text-gray-500 text-sm md:text-2xl">
+              <p class="font-Overpass text-gray-500 text-sm md:text-xl">
                 {{ item.text }}
               </p>
             </div>
