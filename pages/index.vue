@@ -44,10 +44,10 @@
         <v-carousel-item v-for="item in carousel">
           <div class="flex m-2 md:m-36" style="width: 70%; margin-left: auto !important; margin-right: auto !important">
             <div class="text-center p-8 m-auto">
-              <p class="font-Poppins text-2xl md:text-5xl m-6">
+              <p class="font-Poppins text-lg md:text-5xl m-6">
                 {{ item.title }}
               </p>
-              <p class="font-Overpass text-gray-500 text-md md:text-2xl">
+              <p class="font-Overpass text-gray-500 text-sm md:text-2xl">
                 {{ item.text }}
               </p>
             </div>
@@ -79,7 +79,7 @@ const carousel = ref([
     },
     {
       title: "Software Re-engineering and Support",
-      text: "Our team of experienced software engineers will work with you to identify areas where your software system can be improved, whether it's through updating the underlying technology or redesigning the user interface. We can also help you integrate new features or functionality to help you stay competitive in your industry. With our software reengineering and support services, you can be confident that your software system is up-to-date, easy to maintain, and able to support your business goals. ",
+      text: "Our seasoned software engineers enhance your system by updating technology, redesigning the UI, and integrating new features. Our reengineering and support services ensure your software stays modern, easy to maintain, and aligned with your business goals.",
       image: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
     },
     {
