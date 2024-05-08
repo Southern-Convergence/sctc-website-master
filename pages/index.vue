@@ -1,7 +1,11 @@
 <template>
   <div class="body-div">
-    <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled}]">
-      <div class="title-container font-Roboto text-3xl md:text-6xl">
+    <div
+      :class="[
+        { baseContainer: true, inBetween: disabled, newContainer: disabled },
+      ]"
+    >
+      <div class="title-container font-Roboto text-2xl md:text-6xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -31,31 +35,59 @@
       </v-hover>
     </div>
 
-    <div :class="{ baseCarouselContainer: disabled }">
-      <v-carousel touch.boolean='true' height="100%">
-        <v-carousel-item>mimimimmimmimim</v-carousel-item>
-      
-        <v-carousel-item
-          src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-          cover
-        ></v-carousel-item>
-      
-        <v-carousel-item
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          cover
-        ></v-carousel-item>
-      </v-carousel>
+    <div
+      id="CarouselContainer"
+      :class="{ baseCarouselContainer: disabled }"
+      style="display: none"
+    >
+      <v-carousel touch.boolean="true" height="100%">
+        <v-carousel-item v-for="item in carousel">
+          <div class="flex m-2 md:m-36" style="width: 70%; margin-left: auto !important; margin-right: auto !important">
+            <div class="text-center p-8 m-auto">
+              <p class="font-Poppins text-2xl md:text-5xl m-6">
+                {{ item.title }}
+              </p>
+              <p class="font-Overpass text-gray-500 text-md md:text-2xl">
+                {{ item.text }}
+              </p>
+            </div>
 
+            <v-avatar class="ma-3 sm:d-none md:d-block hidden-sm-and-down" rounded="0" size="350">
+              <v-img :src=item.image></v-img>
+            </v-avatar>
+          </div>
+        </v-carousel-item>
+      </v-carousel>
+      
     </div>
   </div>
 </template>
 
 <script setup>
-const disabled = ref(false)
+const disabled = ref(false);
 
 function findMore() {
-  disabled.value = true
-} 
+  disabled.value = true;
+  document.getElementById("CarouselContainer").style.display = "block";
+}
+
+const carousel = ref([
+    {
+      title: "Custom Software Development",
+      text: "We build and optimize software solutions tailored to your unique business and organizational objectives and processes. Working closely with you throughout the development process, we ensure constant alignment with your business and operational objectives. We are committed to producing exceptional software for you.",
+      image: "https://cdn.vuetifyjs.com/images/cards/foster.jpg",
+    },
+    {
+      title: "Software Re-engineering and Support",
+      text: "Our team of experienced software engineers will work with you to identify areas where your software system can be improved, whether it's through updating the underlying technology or redesigning the user interface. We can also help you integrate new features or functionality to help you stay competitive in your industry. With our software reengineering and support services, you can be confident that your software system is up-to-date, easy to maintain, and able to support your business goals. ",
+      image: "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
+    },
+    {
+      title: "Cloud Computing Support",
+      text: "Our cloud computing support services helps your organization migrate its IT infrastructure to the Cloud, ensuring that you can take advantage of the many benefits of Cloud Computing, including scalability, flexibility, and cost-effectiveness.  We’ll help you design, implement, and optimize Cloud services and the infrastructure to support your computing requirements.",
+      image: "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+    },
+  ]);
 </script>
 
 <style>
@@ -82,7 +114,7 @@ function findMore() {
 
 .newContainer {
   position: absolute;
-  top: 10%; 
+  top: 10%;
   width: 80%;
   height: 50px;
   margin-left: 7%;
@@ -108,29 +140,34 @@ function findMore() {
 }
 
 .baseCarouselContainer {
-  display: block;
+  background: radial-gradient(
+      80% 30% at 50% -5%,
+      #ffcd9388 40%,
+      rgba(255, 255, 255, 0.127) 100%
+    ),
+    url("/assets/images/networkbg.png") no-repeat;
+  background-color: white;
   position: absolute;
   bottom: 0%;
   width: 100%;
   height: 70%;
   color: black;
-  background-color: white;
   animation: carouselOpen 1s;
 }
 
 .inBetween {
-  animation: onclicktitlecontainer 1s
+  animation: onclicktitlecontainer 1s;
 }
 
 @keyframes onclicktitlecontainer {
-  from { 
+  from {
     top: 73%;
-    margin-left: 5%
+    margin-left: 5%;
   }
-  
-  to { 
+
+  to {
     top: 10%;
-    margin-left: 7%
+    margin-left: 7%;
   }
 }
 
