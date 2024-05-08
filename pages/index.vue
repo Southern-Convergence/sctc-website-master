@@ -1,7 +1,7 @@
 <template>
   <div class="body-div">
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled}]">
-      <div class="title-container font-Roboto text-4xl md:text-6xl">
+      <div class="title-container font-Roboto text-3xl md:text-6xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -29,6 +29,23 @@
           >FIND OUT MORE
         </v-btn>
       </v-hover>
+    </div>
+
+    <div :class="{ baseCarouselContainer: disabled }">
+      <v-carousel touch.boolean='true' height="100%">
+        <v-carousel-item>mimimimmimmimim</v-carousel-item>
+      
+        <v-carousel-item
+          src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
+          cover
+        ></v-carousel-item>
+      
+        <v-carousel-item
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          cover
+        ></v-carousel-item>
+      </v-carousel>
+
     </div>
   </div>
 </template>
@@ -61,7 +78,6 @@ function findMore() {
   bottom: 10%;
   width: 80%;
   margin-left: 5%;
-  background-color: aqua;
 }
 
 .newContainer {
@@ -70,7 +86,6 @@ function findMore() {
   width: 80%;
   height: 50px;
   margin-left: 7%;
-  background-color: red;
 }
 
 .newContainer #title-line2 {
@@ -90,6 +105,17 @@ function findMore() {
 
 #sec-line {
   padding-left: 3em;
+}
+
+.baseCarouselContainer {
+  display: block;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 70%;
+  color: black;
+  background-color: white;
+  animation: carouselOpen 1s;
 }
 
 .inBetween {
@@ -117,6 +143,16 @@ function findMore() {
   to {
     margin-left: 5%;
     margin-top: 1%;
+  }
+}
+
+@keyframes carouselOpen {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 70%;
   }
 }
 </style>
