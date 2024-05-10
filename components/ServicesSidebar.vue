@@ -4,11 +4,13 @@
 
             <div class="SBContents">
                 
-                <p class="text-h4 font-weight-bold cursor-default"
-                    style="margin-top: 38px;
+                <p class="text-h5 cursor-default"
+                    style="
+                        margin-top: 38px;
+                        font-weight: 600;
                     "
 
-                >Services</p>
+                >SERVICES</p>
 
                 <v-divider 
                     :thickness="3" 
@@ -21,7 +23,7 @@
 
                 <br />
 
-                <p class="text-h6 font-weight-bold"> 
+                <p class="text-h7 font-weight-bold"> 
                     <NuxtLink 
                     to="/ServiceCSD" 
                     class="cursor-pointer p-3 text-hover"
@@ -32,7 +34,7 @@
 
                 <br />
 
-                <p class="text-h6 font-weight-bold"> 
+                <p class="text-h7 font-weight-bold"> 
                     <NuxtLink 
                     to="/item2" 
                     class="cursor-pointer p-3 text-hover"
@@ -49,24 +51,32 @@
 
 </template>
 
-<style>
+
+<style scoped>
 
     .Sidebar {
-
         background-color: rgb(255, 255, 255);
-        height: 100%;
-        width: 20%;
+        height: 100vh; 
+        width:17%;
         padding: 2% 2% 0 2%;
-        position: fixed;
-
+        position: relative;
+        float: left;
+        box-sizing: border-box;
+        overflow-y: hidden;
     }
 
     .SBContents {
-
         color: black;
         -webkit-user-select: none; 
         -ms-user-select: none; 
         user-select: none; 
+    }
+
+    @media (max-width: 768px) {
+
+        .Sidebar {
+            display: none;
+        }
 
     }
 
