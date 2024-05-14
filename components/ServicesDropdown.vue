@@ -1,26 +1,45 @@
+import { NuxtLink } from '#build/components';
+
 <template v-slot:default="{ isActive }">
-    <v-card title="Services" style="border-radius: 0px">
-      <v-list lines="one">
-        <NuxtLink to="/ServiceCSD" class="cursor-pointer p-3 text-hover">
-          <v-list-item
-            :title="'Custom Software Development'"
-            class="text-hover text-justify"
-          ></v-list-item>
-        </NuxtLink>
-        <NuxtLink to="/item1" class="cursor-pointer p-3 text-hover">
-          <v-list-item
-            :title="'Item 2'"
-            subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit mimiimimi"
-            class="text-hover"
-          ></v-list-item>
-        </NuxtLink>
-        <NuxtLink to="/item1" class="cursor-pointer p-3 text-hover">
-          <v-list-item
-            :title="'Item 3'"
-            subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit mimiimimi"
-            class="text-hover"
-          ></v-list-item>
-        </NuxtLink>
-      </v-list>
-    </v-card>
-  </template>
+  <v-card
+    title="Services"
+    style="border-radius: 0px"
+    class="max-h-72 pb-4 pl-5 font-Poppins"
+  >
+    <!-- can only fit up to 4 items, trying to fix it could take time -->
+    <v-list lines="one">
+      <NuxtLink v-for="service in services" :to=service.link>
+        <v-list-item
+        :title="service.title"
+        :subtitle="service.subtitle"
+        class="text-hover"
+      ></v-list-item>
+      </NuxtLink>
+    </v-list>
+  </v-card>
+</template>
+
+<script setup>
+const services = ref([
+  {
+    title: "Service 1",
+    subtitle: "Service 1 Subtitle",
+    link: "/ServiceCSD"
+  },
+  {
+    title: "Service 2",
+    subtitle: "Service 2 Subtitle",
+    link: "/about"
+  },
+  {
+    title: "Service 2",
+    subtitle: "Service 2 Subtitle",
+    link: "/item1"
+  },
+  {
+    title: "Service 2",
+    subtitle: "Service 2 Subtitle",
+    link: "/item1"
+  },
+]);
+</script>
