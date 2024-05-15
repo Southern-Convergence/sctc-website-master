@@ -4,7 +4,7 @@
 
             <div class="SBContents">
                 
-                <p class="text-h5 cursor-default"
+                <p class="text-h6 cursor-default"
                     style="
                         margin-top: 38px;
                         font-weight: 600;
@@ -36,9 +36,9 @@
 
                 <p class="text-h7 font-weight-bold"> 
                     <NuxtLink 
-                    to="/item2" 
+                    to="/ServiceCS" 
                     class="cursor-pointer p-3 text-hover"
-                    >Item 2</NuxtLink
+                    >Consulting Services</NuxtLink
                     > 
                 
                 </p>
@@ -55,7 +55,7 @@
 <style scoped>
 
     .Sidebar {
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
         height: 100vh; 
         width:17%;
         padding: 2% 2% 0 2%;
@@ -66,7 +66,7 @@
     }
 
     .SBContents {
-        color: black;
+        color: white;
         -webkit-user-select: none; 
         -ms-user-select: none; 
         user-select: none; 

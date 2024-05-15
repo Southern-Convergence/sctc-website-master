@@ -1,13 +1,19 @@
 <template v-slot:default="{ isActive }">
   <v-card title="Partners" style="border-radius: 0px">
     <v-list lines="one">
-      <v-list-item
-        v-for="n in 3"
-        :key="n"
-        :title="'Item ' + n"
-        subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit"
-        class="text-hover"
-      ></v-list-item>
+
+      <NuxtLink to="/DataStax" class="cursor-pointer p-3 text-hover">
+          <v-list-item class="text-hover text-justify">
+              DataStax
+          </v-list-item>
+      </NuxtLink>
+
+      <NuxtLink to="" class="cursor-pointer p-3 text-hover">
+          <v-list-item class="text-hover text-justify">
+              Fastly
+          </v-list-item>
+      </NuxtLink>
+
     </v-list>
   </v-card>
 </template>

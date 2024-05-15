@@ -3,10 +3,6 @@
 
     <v-container>
 
-        <p class="projects">
-                PROJECTS
-            </p>
-
 
         <v-carousel 
             :show-arrows="false" 
@@ -97,18 +93,6 @@
                         src: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg'
                     },
                 ],
-                texts: [
-                    
-                    'placeholder 1',
-                    'placeholder 2',
-                    'placeholder 3',
-                    
-                ],
-                cards : [
-                    'Card 1',
-                    'Card 2',
-                    'Card 3'
-                ],
             }
         }
     }
@@ -128,7 +112,7 @@
     }
 
     .SvImage {
-        height: 300px;
+        height: 450px;
         width: 330px;
     }
 
