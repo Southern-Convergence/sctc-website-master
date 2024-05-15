@@ -1,5 +1,3 @@
-import { NuxtLink } from '#build/components';
-
 <template>
   <v-toolbar
     :elevation="2"
@@ -7,11 +5,11 @@ import { NuxtLink } from '#build/components';
     color="black"
     style="position: relative"
     id="overlay-target"
-    class="font-Poppins"
+    class="font-Poppins p-3"
   >
     <!-- NAV BAR IN MOBILE SCREENS -->
     <template>
-      <div class="hidden-sm-and-up">
+      <div class="hidden-md-and-up">
         <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
         <v-menu
