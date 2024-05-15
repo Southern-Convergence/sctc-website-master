@@ -31,33 +31,6 @@
                     cover
 
                 ></v-img>
-
-               
-
-                <v-card-title> {{ cards[i] }} </v-card-title>
-
-                <v-card-text class="text-medium-emphasis"> 
-
-                    {{ texts[i] }}
-                    
-                </v-card-text>
-
-
-                    <v-card-actions>
-
-                        <v-btn
-
-                            color="white"
-                            text="Click me"
-                            rounded
-                            style="
-                                background: linear-gradient(100deg, #FF5C01, #FFD700);
-                                margin-top: auto;
-                            "
-
-                        ></v-btn>
-
-                    </v-card-actions>
                     
                 </v-card>
 

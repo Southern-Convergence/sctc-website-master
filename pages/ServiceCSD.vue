@@ -49,20 +49,20 @@
 
                 <div class="Service-Description text-justify">
 
-                    <p>
+                    <p style="opacity: 0; animation: slideFromLeft 1s ease-in-out forwards; animation-delay: 3.4s;">
                         At our core, we are dedicated to crafting software solutions that are not only tailored to your unique 
                         business needs but also optimized to drive your organization towards its objectives. Our approach begins 
                         with a deep understanding of your business and operational processes, allowing us to design solutions that 
                         seamlessly integrate with your existing workflows and infrastructure.
                     </p>
 
-                    <p>
+                    <p style="opacity: 0; animation: slideFromLeft 1s ease-in-out forwards; animation-delay: 3.5s;">
                         Throughout the development process, we prioritize collaboration and communication, working closely with you 
                         to ensure that every aspect of the software aligns with your goals and objectives. This continuous dialogue 
                         enables us to adapt and refine the solution in real-time, ensuring that it evolves in line with your evolving needs.
                     </p>
 
-                    <p>
+                    <p style="opacity: 0; animation: slideFromLeft 1s ease-in-out forwards; animation-delay: 3.6s;">
                         With our team of experienced professionals by your side, your software needs are in capable hands. Our passion 
                         lies in leveraging technology to drive business success, and we are excited about the opportunity to collaborate 
                         with businesses on their journey towards growth and innovation.
@@ -72,6 +72,16 @@
 
                     <div class="Service-Card">
 
+                        <ServiceCarousel  
+
+                            style="
+                                animation: slideFromBottom 1s ease-in-out forwards;
+                                animation-delay: 4s;
+                                opacity: 0;
+                            "
+                        
+                        />
+
                     </div>
 
                     <div class="Past-Projects">
@@ -79,8 +89,7 @@
                         <v-carousel :show-arrows="false" hide-delimiters cycle>
                             <v-carousel-item v-for="(slide, i) in slides" :key="i">
                                 <div class="text-h2">{{ slide }}</div>
-                                <p> {{ Cards[i] }} </p>
-                                <p> {{ texts[i] }} </p>
+                                    <p style="color: white; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
                             </v-carousel-item>
                         </v-carousel>
 
@@ -118,22 +127,14 @@
                 'First', 
                 'Second', 
                 'Third', 
-                'Fourth', 
-                'Fifth'
             ],
         texts: 
             [
         
-                'placeholder 1',
+                'Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah ',
                 'placeholder 2',
                 'placeholder 3',
                 
-            ],
-        cards : 
-            [
-                'Card 1',
-                'Card 2',
-                'Card 3'
             ],
         }
     }
@@ -241,10 +242,12 @@
         0% 
             {
                 transform: translateY(100%);
+                opacity: 0;
             }
         100% 
             {
                 transform: translateY(0%);
+                opacity: 1;
             }
     }
 
@@ -272,9 +275,9 @@
 
     .BlackRibbon p {
 
+        animation: fadein 2s ease-in-out forwards;
+        animation-delay: 4s;
         opacity: 0;
-        animation: fadein 1s ease-in-out forwards;
-        animation-delay: 3s;
 
     }
 
@@ -323,11 +326,6 @@
         font-size: 13px;
         color: white;
         width: 40%;
-
-        animation: slideFromLeft 1s ease-in-out forwards, fadein 2s ease-in-out forwards;
-        animation-delay: 4s;
-
-        opacity: 0;
         
 
     }
@@ -343,6 +341,14 @@
         height: 100%;
         width: 27%;
         margin: 1% 0% 2% 2%; 
+
+    }
+
+    .Past-Projects {
+
+        margin: 2%;
+        color: #FF5C01;
+        width: 50%;
 
     }
    
