@@ -22,24 +22,17 @@ import { NuxtLink } from '#build/components';
 <script setup>
 const services = ref([
   {
-    title: "Service 1",
-    subtitle: "Service 1 Subtitle",
+    title: "Custom Software Development",
+    subtitle: "optimizing software solutions tailored to unique business and organizational objectives and processes",
     link: "/ServiceCSD"
   },
   {
-    title: "Service 2",
-    subtitle: "Service 2 Subtitle",
-    link: "/about"
+    title: "Consulting Service",
+    subtitle: "advanced software development solutions powered by Fastly and DataStax",
+    link: "/ServiceCS"
   },
-  {
-    title: "Service 2",
-    subtitle: "Service 2 Subtitle",
-    link: "/item1"
-  },
-  {
-    title: "Service 2",
-    subtitle: "Service 2 Subtitle",
-    link: "/item1"
-  },
+
+  // more links to pages could be added here
+
 ]);
 </script>

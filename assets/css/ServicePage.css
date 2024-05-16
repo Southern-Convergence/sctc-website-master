@@ -123,9 +123,6 @@
         width: 100%;
         margin-top: 1.7%;
         z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         color: #FF5C01;
         font-size: 20px;
         font-weight: 500;
@@ -143,6 +140,8 @@
         animation: fadein 2s ease-in-out forwards;
         animation-delay: 4s;
         opacity: 0;
+
+        margin-left: 35%;
 
     }
 
@@ -296,8 +295,8 @@
         margin: 2% 0% 2% 2%;
         border-radius: 15px 0px 0px 15px;
 
-        animation: slideFromRight 1s ease-in-out forwards;
-        animation-delay: 4s;
+        animation: slideFromRight 2s ease-in-out forwards;
+        animation-delay: 3s;
         opacity: 0;
 
         overflow-x: hidden;
