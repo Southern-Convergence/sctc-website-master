@@ -1,12 +1,23 @@
 <template>
-  <div class="p-16">
+  <div class="p-2 md:p-8 lg:p-16">
     <v-sheet>
-      <v-card-title class="text-h3">About us</v-card-title>
+      <div class="flex items-center m-2">
+        <v-icon
+          @click="goToPrev"
+          class="hover-yellow"
+          size="36"
+        >
+          mdi-arrow-left
+        </v-icon>
+        <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5">
+          About us
+        </p>
+      </div>
       <v-divider class="border-opacity-100"></v-divider>
-      <br>
+      <br class="hidden-sm-and-down" />
       <v-row>
         <v-col cols="12" md="8">
-          <v-card-text class="text-body-1">
+          <p class="text-xs sm:text-base md:text-md m-2">
             We are a dynamic software company based in the Philippines,
             specializing in the design, development, and delivery of intelligent
             custom software solutions for Government, SMEs, and Enterprise
@@ -29,9 +40,8 @@
             believe in the transformative power of technology to drive business
             success, and we are deeply passionate about empowering our clients
             to realize their full potential.
-          </v-card-text>
+          </p>
         </v-col>
-
         <v-col cols="12" md="4" class="hidden-sm-and-down">
           <v-sheet class="bg-black rounded-xl p-10 d-flex">
             <v-img
@@ -46,3 +56,19 @@
     </v-sheet>
   </div>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goToPrev = () => {
+  router.go(-1);
+};
+</script>
+
+<style>
+.hover-yellow:hover {
+  color: #FF7B02 !important; /* Vuetify yellow color */
+}
+</style>

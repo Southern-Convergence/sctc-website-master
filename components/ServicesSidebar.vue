@@ -36,7 +36,7 @@
 
                 <p class="text-h7 font-weight-bold"> 
                     <NuxtLink 
-                    to="/item2" 
+                    to="/" 
                     class="cursor-pointer p-3 text-hover"
                     >Item 2</NuxtLink
                     > 
