@@ -66,7 +66,7 @@
 <script setup>
 const disabled = ref(false);
 
-function findMore() {
+const findMore = () => {
   disabled.value = true;
   document.getElementById('CarouselContainer').style.display = 'block';
 }
@@ -129,10 +129,6 @@ const carousel = ref([
 .title-container {
   font-weight: 900;
   letter-spacing: 3px;
-}
-
-#sec-line {
-  padding-left: 3em;
 }
 
 .baseCarouselContainer {

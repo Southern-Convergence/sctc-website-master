@@ -5,7 +5,7 @@
     color="black"
     style="position: relative"
     id="overlay-target"
-    class="font-Poppins p-3"
+    class="font-Poppins p-1"
   >
     <!-- NAV BAR IN MOBILE SCREENS -->
     <template>
@@ -79,16 +79,15 @@
     <template v-slot:append>
       <!-- Hidden in mobile phones -->
       <div class="hidden-sm-and-down">
-        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
+        <NuxtLink to="/about" :class="routeCheck('/about')" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
 
         <a class="cursor-pointer p-3 text-hover"
           >SERVICES
           <v-overlay
             activator="parent"
-            absolute:boolean="true"
             transition="false"
             width="100%"
-            style="margin-top: 72px"
+            style="margin-top: 57px"
             close-on-content-click="true"
           >
             <ServicesDropdown />
@@ -99,20 +98,31 @@
           >PARTNERS
           <v-overlay
             activator="parent"
-            absolute:boolean="true"
             transition="false"
             width="100%"
-            style="margin-top: 72px"
+            style="margin-top: 57px"
             close-on-content-click="true"
           >
             <PartnersDropdown />
           </v-overlay>
         </a>
-        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
+        <NuxtLink to="/contact" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
       </div>
     </template>
   </v-toolbar>
 </template>
+
+<script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const routeCheck = (path) =>{
+  console.log(route.path);
+  return route.path === path ? 'text-color-500' : '';
+}
+
+</script>
 
 <style>
 .text-hover:hover {
