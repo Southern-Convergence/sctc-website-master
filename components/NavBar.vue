@@ -1,5 +1,3 @@
-import { NuxtLink } from '#build/components';
-
 <template>
   <v-toolbar
     :elevation="2"
@@ -7,11 +5,11 @@ import { NuxtLink } from '#build/components';
     color="black"
     style="position: relative"
     id="overlay-target"
-    class="font-Poppins"
+    class="font-Poppins p-3"
   >
     <!-- NAV BAR IN MOBILE SCREENS -->
     <template>
-      <div class="hidden-sm-and-up">
+      <div class="hidden-md-and-up">
         <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
         <v-menu
@@ -19,7 +17,7 @@ import { NuxtLink } from '#build/components';
           transition="slide-x-transition"
           class="font-Poppins"
           location="center"
-          style="margin: 0px !important; padding: 0px !important;"
+          style="margin: 0px !important; padding: 0px !important"
         >
           <template v-slot:activator="{ isActive, props }">
             <v-btn icon v-bind="props" v-on="isActive">
@@ -27,11 +25,9 @@ import { NuxtLink } from '#build/components';
             </v-btn>
           </template>
 
-          <v-list style="background-color: #1B1B1B; color: white; margin: 0px !important" width="100%">
+          <v-list style="background-color: #1b1b1b; color: white; margin: 0px !important" width="100%">
             <v-list-item>
-              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-                >ABOUT US</NuxtLink
-              >
+              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
             </v-list-item>
             <v-list-item>
               <a class="cursor-pointer p-3 text-hover"
@@ -62,18 +58,12 @@ import { NuxtLink } from '#build/components';
               </a>
             </v-list-item>
             <v-list-item>
-              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-                >CONTACT</NuxtLink
-              >
+              <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
             </v-list-item>
           </v-list>
         </v-menu>
         <v-btn href="/">
-          <img
-            src="/assets/images/logo.png"
-            :width="40"
-            class="cursor-pointer"
-          />
+          <img src="/assets/images/logo.png" :width="40" class="cursor-pointer" />
         </v-btn>
       </div>
     </template>
@@ -82,20 +72,14 @@ import { NuxtLink } from '#build/components';
     <v-toolbar-title>
       <!-- Hidden in mobile phones -->
       <a href="/" class="hidden-sm-and-down">
-        <img
-          src="/assets/images/logo with txt.png"
-          :width="400"
-          class="cursor-pointer"
-        />
+        <img src="/assets/images/logo with txt.png" :width="400" class="cursor-pointer" />
       </a>
     </v-toolbar-title>
 
     <template v-slot:append>
       <!-- Hidden in mobile phones -->
       <div class="hidden-sm-and-down">
-        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-          >ABOUT US</NuxtLink
-        >
+        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
 
         <a class="cursor-pointer p-3 text-hover"
           >SERVICES
@@ -122,9 +106,7 @@ import { NuxtLink } from '#build/components';
             <PartnersDropdown />
           </v-overlay>
         </a>
-        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover"
-          >CONTACT</NuxtLink
-        >
+        <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
       </div>
     </template>
   </v-toolbar>
