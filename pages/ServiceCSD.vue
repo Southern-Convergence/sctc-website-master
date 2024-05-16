@@ -70,6 +70,12 @@
 
                 </div>
 
+                <div class="BlackRibbon-Mobile">
+
+                    <p> PROJECTS </p>
+
+                </div>
+             
                     <div class="Service-Card">
 
                         <ServiceCarousel class="Service-Carousel"/>
@@ -78,15 +84,39 @@
 
                     <div class="Past-Projects">
 
-                        <v-carousel :show-arrows="false" hide-delimiters cycle @change="updateCurrentIndex">
+                        <v-carousel :show-arrows="false" hide-delimiters cycle>
                             <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                                <div class="text-h2">{{ slide }}</div>
+                                
+                                    <p class="ProjectTitles">{{ slide }}</p>
+                                
                                     <p style="color: white; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
+                                    
                             </v-carousel-item>
 
                         </v-carousel>
 
                     </div>
+
+                <!-- Mobile Version of the carousel -->    
+
+                <div class="MobileWrap">
+            
+                    <div class="MService-Card">
+                        <ServiceCarousel class="MService-Carousel"/>
+                    </div>
+                
+                    <div class="MPast-Projects">
+                        <v-carousel :show-arrows="false" hide-delimiters cycle>
+                            <v-carousel-item v-for="(slide, i) in slides" :key="i">
+                                <div class="ProjectTitles">{{ slide }}</div>
+                                    <p style="color: white; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
+                            </v-carousel-item>
+                        </v-carousel>
+                    </div>
+                </div>
+
+              
+        
                     
                 </div>
 
@@ -118,8 +148,8 @@
             [
         
                 'Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah ',
-                'placeholder 2',
-                'placeholder 3',
+                'Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah ',
+                'Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah ',
                 
             ],
         }

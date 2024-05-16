@@ -25,15 +25,49 @@
     }
 
     .ServiceHeader {
-
-        background-color: #F5D7BB;
+        background-image: url(/assets/images/CustomServices.jpg);
+        background-size: cover;
         height: 35%;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative; /* Added to position the overlay */
+    }
+    
+    .ServiceHeaderCS {
+        background-image: url(/assets/images/consultation.jpg);
+        background-size: cover;
+        height: 35%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative; /* Added to position the overlay */
+    }
 
+    .ServiceHeader::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(75, 74, 74, 0.5); /* Grey overlay with 50% opacity */
+        z-index: 1; /* Ensure it covers the background image but not the text */
+    }
+
+    .ServiceHeaderCS::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(75, 74, 74, 0.5); /* Grey overlay with 50% opacity */
+        z-index: 1; /* Ensure it covers the background image but not the text */
     }
 
     .Service-Title {
@@ -43,6 +77,7 @@
         font-size: 45px;
         font-weight: 500;
         margin: 1%;
+        z-index: 2;
 
     }
 
@@ -54,12 +89,13 @@
         text-align: center;
         font-weight: 500;
 
-        background-color: white;
+        background-color: #f5d7bbde;
         margin: 2%;
         padding: 1%;
         border-radius: 15px;
         width: 70%;
         align-items: center;
+        z-index: 2;
 
     }
 
@@ -135,6 +171,25 @@
 
     }
 
+    .BlackRibbonCS {
+
+        background-color: #222222;
+        height: 8%;
+        width: 100%;
+        margin-top: 1.7%;
+        z-index: 1;
+        color: #FF5C01;
+        font-size: 20px;
+        font-weight: 500;
+        top: calc(50% - 10%);
+        right: 0;
+
+        animation: slideFromLeft 2s ease-in-out forwards;
+        animation-delay: 1s;
+        opacity: 0;
+
+    }
+
     .BlackRibbon p {
 
         animation: fadein 2s ease-in-out forwards;
@@ -143,6 +198,30 @@
 
         margin-left: 35%;
 
+    }
+
+    .BlackRibbon-Mobile {
+        background-color: #222222;
+        height: 12%;
+        width: 100%;
+        margin-top: 1.7%;
+        z-index: 1;
+        color: #FF5C01;
+        font-size: 20px;
+        font-weight: 500;
+        top: calc(50% - 10%);
+        right: 0;
+        display: none;
+
+        animation: slideFromLeft 2s ease-in-out forwards;
+        animation-delay: 1s;
+        opacity: 0;
+    }
+    .BlackRibbon-Mobile p {
+        animation: fadein 2s ease-in-out forwards;
+        animation-delay: 4s;
+        opacity: 0;
+        margin-left: 35%;
     }
 
     .PN01 {
@@ -259,13 +338,19 @@
 
     .Past-Projects {
 
-        margin: 2%;
-        color: #FF5C01;
+        margin: 1% 2% 2% 2%;
         width: 50%;
 
         animation: fadein 1s ease-in-out forwards;
         animation-delay: 4.4s;
         opacity: 0;
+
+    }
+
+    .ProjectTitles {
+
+        font-size: 60px;
+        color: #FF5C01;
 
     }
 
@@ -288,7 +373,7 @@
 
     .CSimage {
 
-        background-image: url(/assets/images/CustomServices.jpg);
+        background-image: url(https://cdn.vuetifyjs.com/images/parallax/material.jpg);
         background-size: cover;
         height: 80%;
         width: 60%;
@@ -301,6 +386,15 @@
 
         overflow-x: hidden;
 
+    }
+
+    .MobileWrap {
+
+       display: none;
+
+    }
+    .MService-Card {
+        display: none;
     }
 
     @keyframes slideFromRight {
@@ -317,6 +411,100 @@
                 transform: translateX(0%);
                 opacity: 1;
             }
+
+    }
+
+    @media (max-width: 768px) {
+        .Service-Title {
+            font-size: 30px;
+        }
+        .Service-Intro {
+            font-size: 10px;
+            padding: 1%;
+            width: 80%;
+            margin: 2%;
+        }
+        .Parag-Number {
+            width: 10%;
+            font-size: 25px;
+        }
+        .PN01 {
+            padding-top: 55%;
+            padding-bottom: 100%;
+        }
+        .PN02 {
+            padding-bottom: 60%;
+        }
+        .BlackRibbon {
+            margin-top: 3%;
+        }
+        .BlackRibbon p {
+            animation: unset;
+        }
+        .Wrapped-contents {
+            flex-direction: column;
+        }
+        .Service-Description {
+            font-size: 10px;
+            width: 100%;
+        }
+        .Service-Description p {
+            margin-right: 2%;
+        }
+        .BlackRibbonCS {
+            height: 20px;
+            margin-top: 3%;
+        }
+        .BlackRibbon-Mobile {
+            display: block;
+        }
+        .Service-Card {
+            display: none;
+        }
+        .MService-Card {
+            display: block;
+            width: 100%;
+        }
+        .Past-Projects {
+            display: none;
+        }
+        .MobileWrap {
+            display: flex;
+            flex-direction: row;
+        }
+        .MService-Carousel {
+            
+            width: 100%;
+            animation: slideFromLeft 1s ease-in-out forwards;
+            animation-delay: 3.7s;
+            opacity: 0;
+            margin: 0%;
+        }
+        .MPast-Projects{
+            font-size: 8px;
+            margin: 2%;
+            animation: fadein 1s ease-in-out forwards;
+            animation-delay: 4.4s;
+            opacity: 0;
+        }
+        .ProjectTitles {
+            color: #FF5C01;
+            font-size: 24px;
+            margin-top: 7%;
+        }
+        .CSimage {
+            height: auto;
+            width: 100%;
+            margin: 2% 0% 2% 0%;
+            border-radius: 15px;
+            animation: slideFromRight 2s ease-in-out forwards;
+            animation-delay: 3s;
+            opacity: 1;
+        }
+      
+        
+
+
 
     }
    

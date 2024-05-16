@@ -7,7 +7,7 @@
         <div class="Service-body-maincontent" >
 
 
-                    <div class="ServiceHeader">
+                    <div class="ServiceHeaderCS">
 
 
                         <div class="Service-Title">
@@ -33,7 +33,7 @@
             <div class="Service-body-content text-justify">
 
                 <div class="Parag-Number">
-                    <p class="PN01" style="margin-top: 40%;">01</p> <br />
+                    <p class="PN01" style="margin-top: 10%;">01</p> <br />
                     <p class="PN02" >02</p> <br />
                     <p class="PN03" style="opacity: 0;">03</p> <br />
                 </div>
@@ -41,7 +41,7 @@
                 <div class="Description-Wrapped">
 
 
-                <div class="BlackRibbon"></div>
+                <div class="BlackRibbonCS"></div>
 
 
                 <div class="Wrapped-contents">
