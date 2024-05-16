@@ -110,7 +110,7 @@ const carousel = ref([
 
 .newContainer {
   position: absolute;
-  top: 10%;
+  top: 12%;
   width: 80%;
   height: 50px;
   margin-left: 7%;
@@ -159,7 +159,7 @@ const carousel = ref([
   }
 
   to {
-    top: 10%;
+    top: 12%;
     margin-left: 7%;
   }
 }

@@ -88,7 +88,8 @@
             absolute:boolean="true"
             transition="false"
             width="100%"
-            style="margin-top: 48px"
+            style="margin-top: 72px"
+            close-on-content-click="true"
           >
             <ServicesDropdown />
           </v-overlay>
@@ -101,7 +102,8 @@
             absolute:boolean="true"
             transition="false"
             width="100%"
-            style="margin-top: 48px"
+            style="margin-top: 72px"
+            close-on-content-click="true"
           >
             <PartnersDropdown />
           </v-overlay>
