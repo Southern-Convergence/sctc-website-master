@@ -6,12 +6,10 @@
       <p class="text-center ServiceTitle">Custom Software Development</p>
 
       <p class="text-justify-center text-center ServiceSubtext">
-        We specialize in building and optimizing software solutions tailored to
-        unique business and organizational objectives and processes. Through
-        close collaboration throughout the development process, we ensure
-        continuous alignment with business and operational goals. Our dedication
-        is focused on delivering exceptional software solutions for every
-        client.
+        We specialize in building and optimizing software solutions tailored to unique business and organizational
+        objectives and processes. Through close collaboration throughout the development process, we ensure continuous
+        alignment with business and operational goals. Our dedication is focused on delivering exceptional software
+        solutions for every client.
       </p>
 
       <div class="body-content text-justify">
@@ -20,13 +18,10 @@
             <p style="color: #ff5c01; font-size: 25px; font-weight: 600">01</p>
 
             <p>
-              At our core, we are dedicated to crafting software solutions that
-              are not only tailored to your unique business needs but also
-              optimized to drive your organization towards its objectives. Our
-              approach begins with a deep understanding of your business and
-              operational processes, allowing us to design solutions that
-              seamlessly integrate with your existing workflows and
-              infrastructure.
+              At our core, we are dedicated to crafting software solutions that are not only tailored to your unique
+              business needs but also optimized to drive your organization towards its objectives. Our approach begins
+              with a deep understanding of your business and operational processes, allowing us to design solutions that
+              seamlessly integrate with your existing workflows and infrastructure.
             </p>
           </div>
 
@@ -34,12 +29,10 @@
             <p style="color: #ff5c01; font-size: 25px; font-weight: 600">02</p>
 
             <p>
-              Throughout the development process, we prioritize collaboration
-              and communication, working closely with you to ensure that every
-              aspect of the software aligns with your goals and objectives. This
-              continuous dialogue enables us to adapt and refine the solution in
-              real-time, ensuring that it evolves in line with your evolving
-              needs.
+              Throughout the development process, we prioritize collaboration and communication, working closely with
+              you to ensure that every aspect of the software aligns with your goals and objectives. This continuous
+              dialogue enables us to adapt and refine the solution in real-time, ensuring that it evolves in line with
+              your evolving needs.
             </p>
           </div>
 
@@ -47,11 +40,9 @@
             <p style="color: #ff5c01; font-size: 25px; font-weight: 600">03</p>
 
             <p>
-              With our team of experienced professionals by your side, your
-              software needs are in capable hands. Our passion lies in
-              leveraging technology to drive business success, and we are
-              excited about the opportunity to collaborate with businesses on
-              their journey towards growth and innovation.
+              With our team of experienced professionals by your side, your software needs are in capable hands. Our
+              passion lies in leveraging technology to drive business success, and we are excited about the opportunity
+              to collaborate with businesses on their journey towards growth and innovation.
             </p>
           </div>
         </div>
@@ -110,7 +101,8 @@
 
   background-color: #37373788;
   border-radius: 10px 10px 0px 0px;
-  box-shadow: rgba(44, 25, 6, 0.4) 0px 0px 0px 2px,
+  box-shadow:
+    rgba(44, 25, 6, 0.4) 0px 0px 0px 2px,
     rgba(44, 30, 6, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }

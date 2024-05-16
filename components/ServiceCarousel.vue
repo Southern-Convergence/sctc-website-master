@@ -18,10 +18,7 @@
               color="white"
               text="Click me"
               rounded
-              style="
-                background: linear-gradient(100deg, #ff5c01, #ffd700);
-                margin-top: auto;
-              "
+              style="background: linear-gradient(100deg, #ff5c01, #ffd700); margin-top: auto"
             ></v-btn>
           </v-card-actions>
         </v-card>
@@ -56,8 +53,10 @@ export default {
 .SvCard {
   max-width: 330px;
   height: 450px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .SvImage {
