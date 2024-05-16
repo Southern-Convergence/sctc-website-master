@@ -8,8 +8,8 @@
       <v-divider class="border-opacity-100"></v-divider>
       <br class="hidden-sm-and-down" />
       <v-row>
-        <v-col cols="12" md="8">
-          <p class="text-xs sm:text-base md:text-md m-2">
+        <v-col cols="12" md="9" lg="8">
+          <p class="text-xs sm:text-base md:text-md xl:text-xl 2xl:text-3xl m-2">
             We are a dynamic software company based in the Philippines, specializing in the design, development, and
             delivery of intelligent custom software solutions for Government, SMEs, and Enterprise clients. Leveraging
             strategic partnerships with industry leaders such as Fastly and Datastax, we seamlessly integrate their
@@ -27,7 +27,7 @@
             empowering our clients to realize their full potential.
           </p>
         </v-col>
-        <v-col cols="12" md="4" class="hidden-sm-and-down">
+        <v-col cols="12" md="3" lg="4" class="hidden-sm-and-down">
           <v-sheet class="bg-black rounded-xl p-10 d-flex">
             <v-img :width="300" aspect-ratio="16/9" cover src="../assets/images/SC-vector-1.png"></v-img>
           </v-sheet>
