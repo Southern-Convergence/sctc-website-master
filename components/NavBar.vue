@@ -118,7 +118,6 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 
 const routeCheck = (path) => {
-  console.log(route.path);
   return route.path === path ? 'text-selected' : '';
 };
 </script>

@@ -32,33 +32,35 @@
     </div>
 
     <div id="CarouselContainer" :class="{ baseCarouselContainer: disabled }" style="display: none">
-      <v-carousel touch.boolean="true" height="100%">
-        <v-carousel-item>
-          <p class="font-Poppins text-xl md:text-4xl m-6">Services</p>
-          <div class="columns-3 p-4 mt-10 mx-36">
-            <v-card class="" v-for="n in 3" :key="n" :title="n">
-              <v-card-text>mimimiimimi</v-card-text>
-            </v-card>
-          </div>
-        </v-carousel-item>
-
-        <v-carousel-item v-for="item in carousel">
-          <div class="flex md:m-24" style="width: 75%; margin-left: auto !important; margin-right: auto !important">
-            <div class="text-center p-8 m-auto">
-              <p class="font-Poppins text-xl md:text-4xl m-6">
-                {{ item.title }}
-              </p>
-              <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">
-                {{ item.text }}
-              </p>
+      <div class="networkBG w-full h-full">
+        <v-carousel touch.boolean="true" height="100%">
+          <v-carousel-item>
+            <p class="font-Poppins text-xl md:text-4xl m-6">Services</p>
+            <div class="columns-3 p-4 mt-10 mx-36">
+              <v-card class="" v-for="n in 3" :key="n" :title="n">
+                <v-card-text>mimimiimimi</v-card-text>
+              </v-card>
             </div>
+          </v-carousel-item>
 
-            <v-avatar class="ma-3 sm:d-none md:d-block hidden-sm-and-down" rounded="0" size="350">
-              <v-img :src="item.image"></v-img>
-            </v-avatar>
-          </div>
-        </v-carousel-item>
-      </v-carousel>
+          <v-carousel-item v-for="item in carousel">
+            <div class="flex md:m-24" style="width: 75%; margin-left: auto !important; margin-right: auto !important">
+              <div class="text-center p-8 m-auto">
+                <p class="font-Poppins text-xl md:text-4xl m-6">
+                  {{ item.title }}
+                </p>
+                <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">
+                  {{ item.text }}
+                </p>
+              </div>
+
+              <v-avatar class="ma-3 sm:d-none md:d-block hidden-sm-and-down" rounded="0" size="350">
+                <v-img :src="item.image"></v-img>
+              </v-avatar>
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </div>
     </div>
   </div>
 </template>
@@ -69,7 +71,7 @@ const disabled = ref(false);
 const findMore = () => {
   disabled.value = true;
   document.getElementById('CarouselContainer').style.display = 'block';
-}
+};
 
 const carousel = ref([
   {
@@ -131,8 +133,7 @@ const carousel = ref([
 }
 
 .baseCarouselContainer {
-  background:
-    radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
+  background: radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
   background-color: white;
   position: absolute;
   bottom: 0%;
@@ -140,6 +141,11 @@ const carousel = ref([
   height: 70%;
   color: black;
   animation: carouselOpen 1s;
+}
+
+.networkBG {
+  background-image: url(/assets/images/networkbg-transparent.png);
+  background-size: cover;
 }
 
 .inBetween {
