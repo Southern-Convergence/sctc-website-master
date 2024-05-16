@@ -32,8 +32,8 @@
             <div class="Service-body-content text-justify">
 
                 <div class="Parag-Number">
-                    <p class="PN01" style="margin-bottom: 80%;">01</p> <br />
-                    <p class="PN02" style="margin-bottom: 60%;">02</p> <br />
+                    <p class="PN01" style="margin-top: 10%; margin-bottom: 25%;">01</p> <br />
+                    <p class="PN02" style="margin-bottom: 15%;">02</p> <br />
                     <p class="PN03" style="opacity: 0;">03</p> <br />
                 </div>
 
