@@ -106,7 +106,7 @@
             <PartnersDropdown />
           </v-overlay>
         </a>
-        <NuxtLink to="/contact" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
+        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover">CONTACT US</NuxtLink>
       </div>
     </template>
   </v-toolbar>
@@ -117,15 +117,19 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const routeCheck = (path) =>{
+const routeCheck = (path) => {
   console.log(route.path);
-  return route.path === path ? 'text-color-500' : '';
-}
-
+  return route.path === path ? 'text-selected' : '';
+};
 </script>
 
 <style>
 .text-hover:hover {
   color: #ff7801;
+}
+
+.text-selected {
+  color: #ff7801;
+  font-weight: 600;
 }
 </style>

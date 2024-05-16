@@ -18,12 +18,12 @@ const partners = ref([
   {
     title: 'DataStax',
     subtitle: 'DataStax Subtitle',
-    link: '/DataStax'
+    link: '/datastax'
   },
   {
     title: 'Fastly',
     subtitle: 'Fastly Subtitle',
-    link: '/Fastly'
+    link: '/fastly'
   },
 ]);
 </script>

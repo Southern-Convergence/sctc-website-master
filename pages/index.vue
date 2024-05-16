@@ -1,7 +1,7 @@
 <template>
   <div class="body-div">
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled }]">
-      <div class="title-container font-Roboto text-2xl md:text-5xl">
+      <div class="title-container font-black font-Roboto text-2xl md:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -127,14 +127,12 @@ const carousel = ref([
 }
 
 .title-container {
-  font-weight: 900;
   letter-spacing: 3px;
 }
 
 .baseCarouselContainer {
   background:
-    radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%),
-    url(/assets/images/networkbg.png) no-repeat fixed;
+    radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
   background-color: white;
   position: absolute;
   bottom: 0%;
