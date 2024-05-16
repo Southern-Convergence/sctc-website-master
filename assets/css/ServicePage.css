@@ -27,7 +27,7 @@
     .ServiceHeader {
 
         background-color: #F5D7BB;
-        height: 45%;
+        height: 35%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -238,14 +238,14 @@
 
         font-size: 13px;
         color: white;
-        width: 40%;
+        width: 50%;
         
 
     }
 
     .Service-Description p {
 
-        margin: 2% 0% 8% 2%;
+        margin: 2% 0% 6% 2%;
 
     }
 
