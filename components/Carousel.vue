@@ -30,7 +30,6 @@
                     <v-img
                       :src="`/static/images/${image}`"
                       class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover cursor-pointer"
-                      loading="lazy"
                       @click="redirectToLink(item.links[index])"
                     ></v-img>
                   </template>
