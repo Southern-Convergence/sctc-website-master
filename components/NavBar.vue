@@ -24,7 +24,7 @@
               <v-icon>mdi-menu</v-icon>
             </v-btn>
           </template>
-          <br><br><br>
+          <br /><br /><br />
           <v-list style="background-color: #1b1b1b; color: white; margin: 0px !important" width="100%">
             <v-list-item>
               <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
@@ -88,7 +88,7 @@
             transition="false"
             width="100%"
             style="margin-top: 57px"
-            close-on-content-click="true"
+            :close-on-content-click=true
           >
             <ServicesDropdown />
           </v-overlay>
@@ -101,12 +101,14 @@
             transition="false"
             width="100%"
             style="margin-top: 57px"
-            close-on-content-click="true"
+            :close-on-content-click=true
           >
             <PartnersDropdown />
           </v-overlay>
         </a>
-        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover">CONTACT US</NuxtLink>
+        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover"
+          >CONTACT US</NuxtLink
+        >
       </div>
     </template>
   </v-toolbar>
