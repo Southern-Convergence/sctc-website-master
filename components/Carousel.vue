@@ -21,7 +21,7 @@
               style="width: 75%; margin-left: auto !important; margin-right: auto !important; height: 100%"
             >
               <div class="text-center p-12 m-auto">
-                <p class="font-Poppins text-xl md:text-4xl m-6">
+                <p class="font-Poppins text-xl md:text-4xl m-6 font-bold text-[#ff7b02]">
                   {{ item.title }}
                 </p>
                 <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">{{ item.text }}</p>
@@ -45,7 +45,7 @@
               <v-row align="center" justify="center">
                 <v-col cols="12" md="8">
                   <div class="text-left p-12 m-auto">
-                    <p class="font-Poppins text-xl md:text-4xl my-6">
+                    <p class="font-Poppins text-xl md:text-4xl my-6 font-bold text-[#ff7b02]">
                       {{ item.title }}
                     </p>
                     <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">
