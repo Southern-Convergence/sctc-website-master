@@ -3,13 +3,13 @@
     <v-sheet>
       <div class="flex items-center m-2">
         <v-icon @click="goToPrev" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
-        <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5">About us</p>
+        <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">About us</p>
       </div>
       <v-divider class="border-opacity-100"></v-divider>
       <br class="hidden-sm-and-down" />
       <v-row>
         <v-col cols="12" md="9" lg="8">
-          <p class="text-xs sm:text-base md:text-md xl:text-xl 2xl:text-3xl m-2">
+          <p class="text-xs sm:text-base md:text-md xl:text-xl 2xl:text-2xl mx-16 font-Poppins">
             We are a dynamic software company based in the Philippines, specializing in the design, development, and
             delivery of intelligent custom software solutions for Government, SMEs, and Enterprise clients. Leveraging
             strategic partnerships with industry leaders such as Fastly and Datastax, we seamlessly integrate their

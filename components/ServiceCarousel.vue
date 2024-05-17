@@ -1,26 +1,16 @@
 <template>
   <v-container>
-    <p class="projects">PROJECTS</p>
 
     <v-carousel :show-arrows="false" hide-delimiters cycle>
       <v-carousel-item v-for="(item, i) in items" :key="i">
         <v-card class="SvCard">
           <v-img class="SvImage" :src="item.src" cover></v-img>
 
-          <v-card-title> {{ cards[i] }} </v-card-title>
+    
 
-          <v-card-text class="text-medium-emphasis">
-            {{ texts[i] }}
-          </v-card-text>
+          
 
-          <v-card-actions>
-            <v-btn
-              color="white"
-              text="Click me"
-              rounded
-              style="background: linear-gradient(100deg, #ff5c01, #ffd700); margin-top: auto"
-            ></v-btn>
-          </v-card-actions>
+        
         </v-card>
       </v-carousel-item>
     </v-carousel>
@@ -42,8 +32,6 @@ export default {
           src: 'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
         },
       ],
-      texts: ['placeholder 1', 'placeholder 2', 'placeholder 3'],
-      cards: ['Card 1', 'Card 2', 'Card 3'],
     };
   },
 };
@@ -60,7 +48,7 @@ export default {
 }
 
 .SvImage {
-  height: 300px;
+  height: 450px;
   width: 330px;
 }
 
