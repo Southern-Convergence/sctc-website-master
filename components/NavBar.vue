@@ -21,10 +21,10 @@
         >
           <template v-slot:activator="{ isActive, props }">
             <v-btn icon v-bind="props" v-on="isActive">
-              <v-icon>mdi-dots-vertical</v-icon>
+              <v-icon>mdi-menu</v-icon>
             </v-btn>
           </template>
-
+          <br><br><br>
           <v-list style="background-color: #1b1b1b; color: white; margin: 0px !important" width="100%">
             <v-list-item>
               <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
