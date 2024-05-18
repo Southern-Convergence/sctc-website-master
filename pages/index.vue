@@ -1,13 +1,15 @@
 <template>
   <div class="body-div">
-    <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled }]">
-      <div class="title-container font-black font-Roboto text-2xl md:text-5xl">
+    <video autoplay loop muted class="video-background">
+      <source src="../assets/images/sctc-bg-animation.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
+      <div class="title-container font-black font-Roboto text-2xl md:text-4xl lg:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
-
       <br />
-
       <p class="disable font-Overpass text-sm md:text-xl">
         Maximize Your Business Potential with Tailor-Made
         <br />
@@ -24,83 +26,91 @@
             backgroundColor: isHovering ? 'white !important' : '',
             color: isHovering ? '#FF5C01 !important' : 'white',
           }"
-          @click="findMore"
+          @click="toggleCarousel"
           class="disable"
           >FIND OUT MORE
         </v-btn>
       </v-hover>
     </div>
 
-    <div id="CarouselContainer" :class="{ baseCarouselContainer: disabled }" style="display: none">
-      <div class="networkBG w-full h-full">
-        <v-carousel touch.boolean="true" height="100%">
-          <v-carousel-item>
-            <p class="font-Poppins text-xl md:text-4xl m-6">Services</p>
-            <div class="columns-3 p-4 mt-10 mx-36">
-              <v-card class="" v-for="n in 3" :key="n" :title="n">
-                <v-card-text>mimimiimimi</v-card-text>
-              </v-card>
-            </div>
-          </v-carousel-item>
-
-          <v-carousel-item v-for="item in carousel">
-            <div class="flex md:m-24" style="width: 75%; margin-left: auto !important; margin-right: auto !important">
-              <div class="text-center p-8 m-auto">
-                <p class="font-Poppins text-xl md:text-4xl m-6">
-                  {{ item.title }}
-                </p>
-                <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">
-                  {{ item.text }}
-                </p>
-              </div>
-
-              <v-avatar class="ma-3 sm:d-none md:d-block hidden-sm-and-down" rounded="0" size="350">
-                <v-img :src="item.image"></v-img>
-              </v-avatar>
-            </div>
-          </v-carousel-item>
-        </v-carousel>
-      </div>
+    <div :class="{ hidden: !disabled }">
+      <v-btn @click="toggleCarousel" variant="flat" icon="mdi-arrow-up" class="return-btn"> </v-btn>
     </div>
+
+    <Carousel :disabled="disabled" :carousel="carousel" />
   </div>
 </template>
 
 <script setup>
 const disabled = ref(false);
 
-const findMore = () => {
-  disabled.value = true;
-  document.getElementById('CarouselContainer').style.display = 'block';
+const toggleCarousel = () => {
+  disabled.value = !disabled.value;
 };
 
 const carousel = ref([
   {
     title: 'Custom Software Development',
-    text: 'We build and optimize software solutions tailored to your unique business and organizational objectives and processes. Working closely with you throughout the development process, we ensure constant alignment with your business and operational objectives. We are committed to producing exceptional software for you.',
-    image: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
+    text: 'We specialize in building and optimizing software solutions tailored to unique business and organizational objectives and processes. Through close collaboration throughout the development process, we ensure continuous alignment with business and operational goals. Our dedication is focused on delivering exceptional software solutions for every client.',
+    image: 'custom-sd.jpg',
+    link: '/ServiceCSD',
+    tag: 'Services',
   },
   {
-    title: 'Software Re-engineering and Support',
-    text: 'Our seasoned software engineers enhance your system by updating technology, redesigning the UI, and integrating new features. Our reengineering and support services ensure your software stays modern, easy to maintain, and aligned with your business goals.',
-    image: 'https://cdn.vuetifyjs.com/images/cards/hotel.jpg',
+    title: 'Consulting Services',
+    text: 'Our consulting service offers advanced software development solutions powered by Fastly and DataStax. With our expertise in custom software development, performance optimization, and security, we help businesses build scalable, reliable, and secure applications that drive growth and innovation. Partner with us to unlock the full potential of your software development projects.',
+    image: 'consulting-services.jpg',
+    link: '/ServiceCS',
+    tag: 'Services',
   },
   {
-    title: 'Cloud Computing Support',
-    text: 'Our cloud computing support services helps your organization migrate its IT infrastructure to the Cloud, ensuring that you can take advantage of the many benefits of Cloud Computing, including scalability, flexibility, and cost-effectiveness.  We’ll help you design, implement, and optimize Cloud services and the infrastructure to support your computing requirements.',
-    image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
+    title: 'Our Partners',
+    text: 'Staying ahead in the technology landscape requires collaboration and innovation. That is why Southern Convergence Technologies has partnered with established technology and software providers to expand our product offerings and provide you with cutting-edge solutions.',
+    images: ['sctc-partners-fastly.png', 'sctc-partners-ds.png'],
+    links: ['/fastly', '/datastax'],
+    tag: 'Partners',
   },
 ]);
 </script>
 
 <style>
 .body-div {
-  background-image: linear-gradient(139deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
-    url(/assets/images/gradient.gif);
-  background-size: cover;
-  margin: 0px;
-  height: 100%;
+  position: relative;
   width: 100%;
+  height: 100%;
   color: white;
+  overflow: hidden; /* Ensure the video doesn't overflow the container */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Position the video behind other content */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(139deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.return-btn {
+  position: absolute;
+  bottom: 67.75%;
+  left: 50px;
+  width: 50px;
+  background-color: white;
+  text-align: center;
+  z-index: 2;
+  color: #ff7b02;
+  animation: toggleCarouselBtn 0.5s ease;
 }
 
 .baseContainer {
@@ -112,7 +122,7 @@ const carousel = ref([
 
 .newContainer {
   position: absolute;
-  top: 12%;
+  top: 10%;
   width: 80%;
   height: 50px;
   margin-left: 7%;
@@ -121,7 +131,7 @@ const carousel = ref([
 .newContainer #title-line2 {
   margin-left: 5%;
   margin-top: 1%;
-  animation: newTitle 1s;
+  animation: newTitle 0.5s ease;
 }
 
 .newContainer .disable {
@@ -129,27 +139,34 @@ const carousel = ref([
 }
 
 .title-container {
+  font-weight: 900;
   letter-spacing: 3px;
 }
 
-.baseCarouselContainer {
-  background: radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
-  background-color: white;
-  position: absolute;
-  bottom: 0%;
-  width: 100%;
-  height: 70%;
-  color: black;
-  animation: carouselOpen 1s;
+#sec-line {
+  padding-left: 3em;
 }
 
-.networkBG {
-  background-image: url(/assets/images/networkbg-transparent.png);
-  background-size: cover;
+.returnBaseCarousel {
+  animation: carouselReturn 0.5s ease;
+}
+
+.returnBaseCarousel #title-line2 {
+  animation: returnLine 0.5s ease;
 }
 
 .inBetween {
-  animation: onclicktitlecontainer 1s;
+  animation: onclicktitlecontainer 0.5s ease;
+}
+
+@keyframes toggleCarouselBtn {
+  from {
+    bottom: 0%;
+  }
+
+  to {
+    bottom: 67.75%;
+  }
 }
 
 @keyframes onclicktitlecontainer {
@@ -159,7 +176,7 @@ const carousel = ref([
   }
 
   to {
-    top: 12%;
+    top: 10%;
     margin-left: 7%;
   }
 }
@@ -176,13 +193,25 @@ const carousel = ref([
   }
 }
 
-@keyframes carouselOpen {
+@keyframes carouselReturn {
   from {
-    height: 0%;
+    height: 70%;
   }
 
   to {
-    height: 70%;
+    height: 27%;
+  }
+}
+
+@keyframes returnLine {
+  from {
+    margin-left: 5%;
+    margin-top: 1%;
+  }
+
+  to {
+    margin-left: 0%;
+    margin-top: 0%;
   }
 }
 </style>

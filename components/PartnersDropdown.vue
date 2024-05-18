@@ -3,11 +3,7 @@
     <!-- can only fit up to 4 items, trying to fix it could take time -->
     <v-list lines="one">
       <NuxtLink v-for="partner in partners" :to="partner.link">
-        <v-list-item
-          :title="partner.title"
-          :subtitle="partner.subtitle"
-          class="text-hover"
-        ></v-list-item>
+        <v-list-item :title="partner.title" :subtitle="partner.subtitle" class="text-hover"></v-list-item>
       </NuxtLink>
     </v-list>
   </v-card>
@@ -18,12 +14,12 @@ const partners = ref([
   {
     title: 'DataStax',
     subtitle: 'DataStax Subtitle',
-    link: '/datastax'
+    link: '/datastax',
   },
   {
     title: 'Fastly',
     subtitle: 'Fastly Subtitle',
-    link: '/fastly'
+    link: '/fastly',
   },
 ]);
 </script>
