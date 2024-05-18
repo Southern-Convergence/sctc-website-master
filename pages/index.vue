@@ -199,7 +199,7 @@ const carousel = ref([
   }
 
   to {
-    height: 27%;
+    height: 25%;
   }
 }
 
