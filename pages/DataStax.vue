@@ -117,6 +117,10 @@
 <script setup>
 import { ref } from 'vue';
 
+useHead({
+  title: 'DataStax'
+})
+
 let tab = ref('description');
 
 const products = ref([
