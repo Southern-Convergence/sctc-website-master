@@ -83,7 +83,7 @@
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                   <v-img :src="`/static/images/${product.image}`"></v-img>
-                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
+                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
@@ -99,7 +99,7 @@
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
                       <v-img :src="`/static/images/${product.image}`"></v-img>
-                      <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
+                      <v-card-text class="text-xs md:text-sm lg:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
                         {{ product.text }}
                       </v-card-text>
                     </v-card>
