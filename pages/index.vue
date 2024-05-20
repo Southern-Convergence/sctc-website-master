@@ -34,7 +34,7 @@
     </div>
 
     <div :class="{ hidden: !disabled }">
-      <v-btn @click="toggleCarousel" variant="flat" icon="mdi-arrow-up" class="return-btn"> </v-btn>
+      <v-btn @click="toggleCarousel" variant="flat" icon="mdi-arrow-down" class="return-btn"> </v-btn>
     </div>
 
     <Carousel :disabled="disabled" :carousel="carousel" />
@@ -103,13 +103,13 @@ const carousel = ref([
 
 .return-btn {
   position: absolute;
-  bottom: 73%;
+  bottom: 71%;
   left: 50px;
   width: 50px;
-  background-color: white;
+  background-color: #ff6b02;
   text-align: center;
   z-index: 2;
-  color: #ff7b02;
+  color: white;
   animation: toggleCarouselBtn 0.8s ease;
 }
 
@@ -165,7 +165,7 @@ const carousel = ref([
   }
 
   to {
-    bottom: 73%;
+    bottom: 71%;
   }
 }
 
