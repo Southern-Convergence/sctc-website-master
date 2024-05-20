@@ -14,14 +14,14 @@
         transition="slide-x-transition"
         class="font-Poppins"
         location="center"
-        style="margin: 0px !important; padding: 0px !important;"
+        style="margin: 0px !important; padding: 0px !important"
       >
         <template v-slot:activator="{ props }">
           <v-btn icon v-bind="props">
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list style="background-color: #1b1b1b; color: white; margin: 56px 0px !important;" width="100%">
+        <v-list style="background-color: #1b1b1b; color: white; margin: 56px 0px !important" width="100%">
           <v-list-item>
             <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
           </v-list-item>

@@ -76,7 +76,10 @@
               </v-divider>
 
               <!-- PRODUCTS WEB VIEW -->
-              <div class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-down" style="overflow: auto !important">
+              <div
+                class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-down"
+                style="overflow: auto !important"
+              >
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                   <v-img height="130" :src="`/static/images/${product.image}`" cover></v-img>
@@ -87,11 +90,14 @@
               </div>
 
               <!-- PRODUCTS MOBILE VIEW -->
-              <div class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-up" style="overflow: auto !important">
+              <div
+                class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-up"
+                style="overflow: auto !important"
+              >
                 <!-- copying what's in the current website -->
                 <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="purple-darken-3">
                   <v-carousel-item v-for="product in products">
-                    <v-card flat class="mx-4 xl:mx-3" >
+                    <v-card flat class="mx-4 xl:mx-3">
                       <v-img height="200" :src="`/static/images/${product.image}`" cover></v-img>
                       <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
                         {{ product.text }}

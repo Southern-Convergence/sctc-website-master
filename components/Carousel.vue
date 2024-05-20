@@ -102,8 +102,7 @@ const redirectToLink = (link) => {
 }
 .baseCarouselContainer {
   display: block;
-  background:
-    radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
+  background: radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
   background-color: white;
   position: absolute;
   bottom: 0%;
