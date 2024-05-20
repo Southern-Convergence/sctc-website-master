@@ -108,9 +108,9 @@ const redirectToLink = (link) => {
   position: absolute;
   bottom: 0%;
   width: 100%;
-  height: 70%;
+  height: 75%;
   color: black;
-  animation: carouselOpen 0.5s ease;
+  animation: carouselOpen 0.8s ease;
 }
 
 .carouselBtn {
@@ -138,7 +138,7 @@ const redirectToLink = (link) => {
   }
 
   to {
-    height: 70%;
+    height: 75%;
   }
 }
 </style>
