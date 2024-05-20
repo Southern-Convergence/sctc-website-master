@@ -21,7 +21,7 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list style="background-color: #1b1b1b; color: white; margin: 56px 0px !important" width="100%">
+        <v-list style="background-color: #1b1b1b; color: white; margin: 43px 0px !important" width="100%">
           <v-list-item>
             <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
           </v-list-item>
