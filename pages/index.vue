@@ -42,6 +42,10 @@
 </template>
 
 <script setup>
+useHead({
+  title: 'Southern Convergence Technologies'
+})
+
 const disabled = ref(false);
 
 const toggleCarousel = () => {
@@ -71,6 +75,8 @@ const carousel = ref([
     tag: 'Partners',
   },
 ]);
+
+
 </script>
 
 <style>

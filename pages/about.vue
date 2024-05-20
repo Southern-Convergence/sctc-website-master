@@ -40,6 +40,10 @@
 <script setup>
 import { useRouter } from 'vue-router';
 
+useHead({
+  title: 'About'
+})
+
 const router = useRouter();
 
 const goToPrev = () => {
