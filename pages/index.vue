@@ -5,7 +5,7 @@
     </video>
     <div class="overlay"></div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
-      <div class="title-container font-black font-Roboto text-xl md:text-4xl lg:text-5xl">
+      <div class="title-container font-black font-Roboto text-2xl sm:text:-2xl md:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -103,35 +103,35 @@ const carousel = ref([
 
 .return-btn {
   position: absolute;
-  bottom: 67.75%;
+  bottom: 73%;
   left: 50px;
   width: 50px;
   background-color: white;
   text-align: center;
   z-index: 2;
   color: #ff7b02;
-  animation: toggleCarouselBtn 0.5s ease;
+  animation: toggleCarouselBtn 0.8s ease;
 }
 
 .baseContainer {
   position: absolute;
   bottom: 10%;
-  width: 80%;
+  height: 30%;
+  width: 90%;
   margin-left: 5%;
 }
 
 .newContainer {
   position: absolute;
-  top: 10%;
+  top: 5%;
   width: 80%;
-  height: 50px;
   margin-left: 7%;
 }
 
 .newContainer #title-line2 {
-  margin-left: 5%;
+  margin-left: 20px;
   margin-top: 1%;
-  animation: newTitle 0.5s ease;
+  animation: newTitle 0.8s ease;
 }
 
 .newContainer .disable {
@@ -148,15 +148,15 @@ const carousel = ref([
 }
 
 .returnBaseCarousel {
-  animation: carouselReturn 0.5s ease;
+  animation: carouselReturn 0.8s ease;
 }
 
 .returnBaseCarousel #title-line2 {
-  animation: returnLine 0.5s ease;
+  animation: returnLine 0.8s ease;
 }
 
 .inBetween {
-  animation: onclicktitlecontainer 0.5s ease;
+  animation: onclicktitlecontainer 0.8s ease;
 }
 
 @keyframes toggleCarouselBtn {
@@ -165,19 +165,29 @@ const carousel = ref([
   }
 
   to {
-    bottom: 67.75%;
+    bottom: 73%;
   }
 }
 
 @keyframes onclicktitlecontainer {
   from {
-    top: 73%;
+    top: 69%;
     margin-left: 5%;
   }
 
   to {
-    top: 10%;
+    top: 5%;
     margin-left: 7%;
+  }
+}
+
+@keyframes carouselReturn {
+  from {
+    top: 5%;
+  }
+
+  to {
+    top: 60%;
   }
 }
 
@@ -188,24 +198,14 @@ const carousel = ref([
   }
 
   to {
-    margin-left: 5%;
+    margin-left: 20px;
     margin-top: 1%;
-  }
-}
-
-@keyframes carouselReturn {
-  from {
-    height: 70%;
-  }
-
-  to {
-    height: 25%;
   }
 }
 
 @keyframes returnLine {
   from {
-    margin-left: 5%;
+    margin-left: 20px;
     margin-top: 1%;
   }
 
