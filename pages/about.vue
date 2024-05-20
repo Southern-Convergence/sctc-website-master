@@ -9,7 +9,7 @@
       <br class="hidden-sm-and-down" />
       <v-row>
         <v-col cols="12" md="9" lg="8">
-          <p class="text-xs sm:text-base md:text-md xl:text-lg 2xl:text-xl mx-16 font-Poppins">
+          <p class="text-xs sm:text-base md:text-md xl:text-lg 2xl:text-xl mx-12 mt-8 font-Poppins">
             We are a dynamic software company based in the Philippines, specializing in the design, development, and
             delivery of intelligent custom software solutions for Government, SMEs, and Enterprise clients. Leveraging
             strategic partnerships with industry leaders such as Fastly and Datastax, we seamlessly integrate their

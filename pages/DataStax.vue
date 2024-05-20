@@ -35,8 +35,8 @@
         <v-window v-model="tab" direction="horizontal">
           <v-window-item value="description">
             <div
-              class="text-center text-sm md:text-base xl:text-lg 2xl:text-2xl text-gray-800 p-5 md:p-10 font-Poppins"
-              style="margin: 0px auto"
+              class="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-800 p-5 md:p-10 font-Poppins"
+              style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5);"
             >
               <!-- if possible, can we have a description shorter than this? this long will need a scrolling on mobile -->
               Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid
@@ -82,8 +82,8 @@
               >
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
-                  <v-img height="130" :src="`/static/images/${product.image}`" cover></v-img>
-                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
+                  <v-img :src="`/static/images/${product.image}`"></v-img>
+                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
@@ -91,15 +91,15 @@
 
               <!-- PRODUCTS MOBILE VIEW -->
               <div
-                class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-up"
+                class="grid grid-cols-1 scroll-auto hidden-md-and-up"
                 style="overflow: auto !important"
               >
                 <!-- copying what's in the current website -->
-                <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="purple-darken-3">
+                <v-carousel cycle hide-delimiters touch :show-arrows="false" progress="purple-darken-3">
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
-                      <v-img height="200" :src="`/static/images/${product.image}`" cover></v-img>
-                      <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
+                      <v-img :src="`/static/images/${product.image}`"></v-img>
+                      <v-card-text class="text-xs md:text-sm lg:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
                         {{ product.text }}
                       </v-card-text>
                     </v-card>
@@ -121,23 +121,23 @@ let tab = ref('description');
 
 const products = ref([
   {
-    image: 'consulting-services.jpg',
+    image: 'astra-db.png',
     text: 'The groundbreaking, globally distributed, serverless, multi-model database service meticulously crafted by DataStax to cater to users across their preferred cloud platform.',
   },
   {
-    image: 'consulting-services.jpg',
+    image: 'vector-search.png',
     text: "As businesses navigate the complexities of modern data management, the demand for advanced search capabilities continues to grow. DataStax's Vector Search offers a revolutionary approach, enabling organizations to harness the power of vector-based search algorithms for unparalleled accuracy and efficiency.",
   },
   {
-    image: 'consulting-services.jpg',
+    image: 'astra-streaming.png',
     text: "Your high-speed data pipeline solution. In today's fast-paced digital world, information flows from various sources like websites, sensors, and apps. Astra Streaming enables you to harness this constant stream of data in real-time, acting as your powerful conveyor belt for collecting and processing information swiftly.",
   },
   {
-    image: 'consulting-services.jpg',
+    image: 'ragstack.png',
     text: 'A comprehensive solution for optimizing your computer systems. RAGStack incorporates the best open-source technologies for implementing RAG, providing developers with a comprehensive GenAI Stack. Leveraging LangChain, LLamaIndex, and more, RAGStack ensures seamless integration and efficiency in your systems.',
   },
   {
-    image: 'consulting-services.jpg',
+    image: 'datastax-enterprise.png',
     text: 'An innovative platform engineered to facilitate the seamless delivery of real-time applications. Built on Apache Cassandra®, the leading cloud-native NoSQL database, and validated by Fortune 100 enterprises, DataStax Enterprise sets the standard for scalability and reliability.',
   },
 ]);
@@ -162,7 +162,7 @@ const products = ref([
 
 .networkBG {
   background-image: url(/assets/images/networkbg-transparent2.png);
-  background-size: contain;
+  background-size: auto 100%;
 }
 
 .content-animation {
