@@ -11,7 +11,7 @@
           hide-slider
           mandatory="force"
           color="purple darken-3"
-          class="text-6xl font-Roboto"
+          class="font-Roboto"
           style="height: 50px"
         >
           <v-tab
@@ -19,14 +19,14 @@
             value="description"
             class="rounded-t-xl w-1/2"
             :class="tab === 'description' ? 'bg-white' : 'inactive'"
-            style="height: 50px; font-size: 18px"
+            style="height: 50px; font-size: 14px"
           ></v-tab>
           <v-tab
             text="Products"
             value="products"
             class="rounded-t-xl w-1/2"
             :class="tab === 'products' ? 'bg-white' : 'inactive'"
-            style="height: 50px; font-size: 18px"
+            style="height: 50px; font-size: 14px"
           ></v-tab>
         </v-tabs>
       </div>
@@ -74,15 +74,31 @@
                 style="margin: 15px auto 30px auto"
               >
               </v-divider>
-              <div class="grid grid-cols-1 md:grid-cols-5 scroll-auto" style="overflow: auto !important">
+
+              <!-- PRODUCTS WEB VIEW -->
+              <div class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-down" style="overflow: auto !important">
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
-                  <v-img height="130" :src="`/static/images/${product.image}`" cover class="hidden-md-and-down">
-                  </v-img>
-                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins">
+                  <v-img height="130" :src="`/static/images/${product.image}`" cover></v-img>
+                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
+              </div>
+
+              <!-- PRODUCTS MOBILE VIEW -->
+              <div class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-up" style="overflow: auto !important">
+                <!-- copying what's in the current website -->
+                <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="purple-darken-3">
+                  <v-carousel-item v-for="product in products">
+                    <v-card flat class="mx-4 xl:mx-3" >
+                      <v-img height="200" :src="`/static/images/${product.image}`" cover></v-img>
+                      <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
+                        {{ product.text }}
+                      </v-card-text>
+                    </v-card>
+                  </v-carousel-item>
+                </v-carousel>
               </div>
             </div>
           </v-window-item>
