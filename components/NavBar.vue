@@ -21,20 +21,13 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-<<<<<<< Updated upstream
-        <v-list style="background-color: #1b1b1b; color: white; margin: 0px !important" width="100%">
-=======
         <v-list style="background-color: #1b1b1b; color: white; margin: 56px 0px !important" width="100%">
->>>>>>> Stashed changes
           <v-list-item>
             <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
           </v-list-item>
           <v-list-item>
             <div class="cursor-pointer p-3 text-hover">
               SERVICES
-<<<<<<< Updated upstream
-              <v-overlay activator="parent" absolute transition="false" width="100%" style="margin-top: 48px">
-=======
               <v-overlay
                 activator="parent"
                 transition="false"
@@ -42,7 +35,6 @@
                 style="margin-top: 56px"
                 :close-on-content-click="true"
               >
->>>>>>> Stashed changes
                 <ServicesDropdown />
               </v-overlay>
             </div>
@@ -50,9 +42,6 @@
           <v-list-item>
             <div class="cursor-pointer p-3 text-hover">
               PARTNERS
-<<<<<<< Updated upstream
-              <v-overlay activator="parent" absolute transition="false" width="100%" style="margin-top: 48px">
-=======
               <v-overlay
                 activator="parent"
                 transition="false"
@@ -60,7 +49,6 @@
                 style="margin-top: 56px"
                 :close-on-content-click="true"
               >
->>>>>>> Stashed changes
                 <PartnersDropdown />
               </v-overlay>
             </div>
