@@ -7,7 +7,7 @@ body {
   overflow: hidden !important;
 }
 
-.content-animation {
+.slide-animation {
   animation: slideInFromBottom 0.8s ease forwards;
 }
 
