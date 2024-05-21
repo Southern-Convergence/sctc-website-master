@@ -5,7 +5,7 @@
         <v-icon @click="goToPrev" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
         <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">About us</p>
       </div>
-      <v-divider class="border-opacity-100"></v-divider>
+      <v-divider class="border-opacity-100 hidden-sm-and-down"></v-divider>
       <br class="hidden-sm-and-down" />
       <v-row>
         <v-col cols="12" md="9" lg="8">
