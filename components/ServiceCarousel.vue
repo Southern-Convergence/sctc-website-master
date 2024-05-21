@@ -1,16 +1,9 @@
 <template>
   <v-container>
-
     <v-carousel :show-arrows="false" hide-delimiters cycle>
       <v-carousel-item v-for="(item, i) in items" :key="i">
         <v-card class="SvCard">
           <v-img class="SvImage" :src="item.src" cover></v-img>
-
-    
-
-          
-
-        
         </v-card>
       </v-carousel-item>
     </v-carousel>
