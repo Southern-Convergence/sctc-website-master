@@ -61,16 +61,18 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn href="/">
-        <img src="/assets/images/logo.png" :width="40" class="cursor-pointer" />
+      <v-btn>
+        <nuxt-link to="/">
+          <img src="/assets/images/logo.png" :width="40" class="cursor-pointer" />
+        </nuxt-link>
       </v-btn>
     </div>
 
     <!-- NAV BAR IN DESKTOP SCREENS -->
     <v-toolbar-title>
-      <a href="/" class="hidden-sm-and-down">
+      <nuxt-link to="/" class="hidden-sm-and-down">
         <img src="/assets/images/logo with txt.png" :width="400" class="cursor-pointer" />
-      </a>
+      </nuxt-link>
     </v-toolbar-title>
 
     <template v-slot:append>
@@ -102,9 +104,7 @@
             <PartnersDropdown />
           </v-overlay>
         </div>
-        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover"
-          >CONTACT</NuxtLink
-        >
+        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
         <NuxtLink to="/Roadshow" :class="routeCheck('/Roadshow')" class="cursor-pointer p-3 text-hover"
           >ROADSHOW DATASTAX & SCTC</NuxtLink
         >
