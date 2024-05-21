@@ -1,5 +1,6 @@
 <template>
   <div id="CarouselContainer" :class="{ baseCarouselContainer: disabled, closeCarousel: !disabled }">
+    <v-btn @click="emits('toggleDisabled')" variant="flat" icon="mdi-arrow-down" class="return-btn"> </v-btn>
     <div class="networkBG w-full h-full">
       <v-carousel
         hide-delimiter-background
@@ -73,6 +74,7 @@
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
+const emits = defineEmits(['toggleDisabled']);
 const props = defineProps({
   disabled: {
     type: Boolean,
@@ -129,6 +131,18 @@ const redirectToLink = (link) => {
 .zoom-on-hover:hover {
   transform: scale(1.1); /* Adjust the scale factor as needed */
   transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.return-btn {
+  position: absolute;
+  top: -25px;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-color: #ff6b02 !important;
+  color: white !important;
+  z-index: 2;
 }
 
 @keyframes carouselOpen {

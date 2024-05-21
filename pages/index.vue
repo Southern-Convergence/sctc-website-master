@@ -5,7 +5,7 @@
     </video>
     <div class="overlay"></div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
-      <div class="title-container font-black font-Roboto text-2xl sm:text:-2xl md:text-5xl">
+      <div class="title-container font-black font-Roboto text-2xl sm:text:-2xl md:text-4xl lg:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -32,12 +32,7 @@
         </v-btn>
       </v-hover>
     </div>
-
-    <div :class="{ hidden: !disabled }">
-      <v-btn @click="toggleCarousel" variant="flat" icon="mdi-arrow-down" class="return-btn"> </v-btn>
-    </div>
-
-    <Carousel :disabled="disabled" :carousel="carousel" />
+    <Carousel :disabled="disabled" :carousel="carousel" @toggleDisabled="toggleCarousel" />
   </div>
 </template>
 
@@ -107,18 +102,6 @@ const carousel = ref([
   background-image: linear-gradient(139deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
-.return-btn {
-  position: absolute;
-  bottom: 71%;
-  left: 50px;
-  width: 50px;
-  background-color: #ff6b02;
-  text-align: center;
-  z-index: 2;
-  color: white;
-  animation: toggleCarouselBtn 0.8s ease;
-}
-
 .baseContainer {
   position: absolute;
   bottom: 10%;
@@ -163,16 +146,6 @@ const carousel = ref([
 
 .inBetween {
   animation: onclicktitlecontainer 0.8s ease;
-}
-
-@keyframes toggleCarouselBtn {
-  from {
-    bottom: 0%;
-  }
-
-  to {
-    bottom: 71%;
-  }
 }
 
 @keyframes onclicktitlecontainer {

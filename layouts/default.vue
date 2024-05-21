@@ -3,6 +3,7 @@
     <Popup />
     <NavBar />
     <slot />
+    <Footer />
   </v-app>
 </template>
 
