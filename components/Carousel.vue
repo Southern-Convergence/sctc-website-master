@@ -29,6 +29,7 @@
               <div class="d-flex flex-column flex-md-row justify-center mt-8">
                 <template v-for="(image, index) in item.images" :key="index">
                   <v-img
+                    eager
                     :src="`/static/images/${image}`"
                     class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover cursor-pointer"
                     @click="redirectToLink(item.links[index])"
@@ -59,7 +60,7 @@
                 </div>
               </v-col>
               <v-col cols="12" md="4" class="d-flex" align-self="stretch">
-                <v-img class="hidden-sm-and-down" :src="`/static/images/${item.image}`"></v-img>
+                <v-img class="hidden-sm-and-down" eager :src="`/static/images/${item.image}`"></v-img>
               </v-col>
             </v-row>
           </div>
