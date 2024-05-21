@@ -23,7 +23,7 @@
         </template>
         <v-list style="background-color: #1b1b1b; color: white; margin: 43px 0px !important" width="100%">
           <v-list-item>
-            <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
+            <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
           </v-list-item>
           <v-list-item>
             <div class="cursor-pointer p-3 text-hover">
@@ -75,7 +75,7 @@
 
     <template v-slot:append>
       <div class="flex hidden-sm-and-down">
-        <NuxtLink to="/about" :class="routeCheck('/about')" class="cursor-pointer p-3 text-hover">ABOUT US</NuxtLink>
+        <NuxtLink to="/about" :class="routeCheck('/about')" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
 
         <div class="cursor-pointer p-3 text-hover">
           SERVICES
@@ -103,7 +103,7 @@
           </v-overlay>
         </div>
         <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover"
-          >CONTACT US</NuxtLink
+          >CONTACT</NuxtLink
         >
         <NuxtLink to="/Roadshow" :class="routeCheck('/Roadshow')" class="cursor-pointer p-3 text-hover"
           >ROADSHOW DATASTAX & SCTC</NuxtLink

@@ -1,15 +1,15 @@
 <template>
   <div class="p-2 md:p-8 lg:p-16">
-    <v-sheet>
-      <div class="flex items-center m-2">
-        <v-icon @click="goToPrev" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
-        <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">About us</p>
-      </div>
-      <v-divider class="border-opacity-100 hidden-sm-and-down"></v-divider>
-      <br class="hidden-sm-and-down" />
+    <div class="flex items-center m-2 content-animation">
+      <v-icon @click="goToPrev" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
+      <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">About us</p>
+    </div>
+    <v-divider class="border-opacity-100 hidden-sm-and-down"></v-divider>
+    <br class="hidden-sm-and-down" />
+    <div class="content-animation">
       <v-row>
         <v-col cols="12" md="9" lg="8">
-          <p class="text-xs sm:text-base md:text-md xl:text-lg 2xl:text-xl mx-12 mt-8 font-Poppins">
+          <p class="text-xs sm:text-base md:text-md xl:text-lg 2xl:text-xl mx-12 mx-8 font-Poppins">
             We are a dynamic software company based in the Philippines, specializing in the design, development, and
             delivery of intelligent custom software solutions for Government, SMEs, and Enterprise clients. Leveraging
             strategic partnerships with industry leaders such as Fastly and Datastax, we seamlessly integrate their
@@ -33,16 +33,14 @@
           </v-sheet>
         </v-col>
       </v-row>
-    </v-sheet>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router';
 
-useHead({
-  title: 'About'
-})
+useHead({ title: 'About' });
 
 const router = useRouter();
 
