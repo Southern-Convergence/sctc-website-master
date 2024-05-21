@@ -3,6 +3,6 @@
 </template>
 <script setup>
 useHead({
-  title: 'Roadshow - DataStax x SCTC'
-})
+  title: 'Roadshow - DataStax x SCTC',
+});
 </script>

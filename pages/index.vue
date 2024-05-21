@@ -38,8 +38,8 @@
 
 <script setup>
 useHead({
-  title: 'Southern Convergence Technologies'
-})
+  title: 'Southern Convergence Technologies',
+});
 
 const disabled = ref(false);
 
@@ -70,8 +70,6 @@ const carousel = ref([
     tag: 'Partners',
   },
 ]);
-
-
 </script>
 
 <style>

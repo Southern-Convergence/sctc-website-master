@@ -23,7 +23,7 @@ const formData = ref({
 const emits = defineEmits(['toggleMore']);
 
 const submitForm = () => {
-  // TODO implement captcha system before sending email 
+  // TODO implement captcha system before sending email
   console.log(formData.value);
   // TODO will implement mailing service when captcha verification is set
 };

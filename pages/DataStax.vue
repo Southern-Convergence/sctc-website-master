@@ -36,7 +36,7 @@
           <v-window-item value="description">
             <div
               class="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-800 p-5 md:p-10 font-Poppins"
-              style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5);"
+              style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5)"
             >
               <!-- if possible, can we have a description shorter than this? this long will need a scrolling on mobile -->
               Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid
@@ -83,23 +83,26 @@
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                   <v-img :src="`/static/images/${product.image}`"></v-img>
-                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
+                  <v-card-text
+                    class="text-xs md:text-xs 2xl:text-base font-Poppins text-gray-800"
+                    style="padding: 20px 0px"
+                  >
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
               </div>
 
               <!-- PRODUCTS MOBILE VIEW -->
-              <div
-                class="grid grid-cols-1 scroll-auto hidden-md-and-up"
-                style="overflow: auto !important"
-              >
+              <div class="grid grid-cols-1 scroll-auto hidden-md-and-up" style="overflow: auto !important">
                 <!-- copying what's in the current website -->
                 <v-carousel cycle hide-delimiters touch :show-arrows="false" progress="purple-darken-3">
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
                       <v-img :src="`/static/images/${product.image}`"></v-img>
-                      <v-card-text class="text-xs md:text-sm lg:text-base font-Poppins text-gray-800" style="padding: 20px 0px">
+                      <v-card-text
+                        class="text-xs md:text-sm lg:text-base font-Poppins text-gray-800"
+                        style="padding: 20px 0px"
+                      >
                         {{ product.text }}
                       </v-card-text>
                     </v-card>
@@ -118,8 +121,8 @@
 import { ref } from 'vue';
 
 useHead({
-  title: 'DataStax'
-})
+  title: 'DataStax',
+});
 
 let tab = ref('description');
 

@@ -29,7 +29,7 @@
         </v-col>
         <v-col cols="12" md="3" lg="4" class="hidden-sm-and-down">
           <v-sheet class="bg-black rounded-xl p-10 d-flex">
-            <v-img :width="300" aspect-ratio="16/9" eager cover src="../assets/images/SC-vector-1.png"></v-img>
+            <v-img :width="300" aspect-ratio="16/9" cover src="../assets/images/SC-vector-1.png"></v-img>
           </v-sheet>
         </v-col>
       </v-row>
