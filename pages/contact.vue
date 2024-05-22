@@ -1,13 +1,13 @@
 <template>
   <div class="p-2 md:p-8 lg:p-16">
     <v-sheet>
-      <div class="flex items-center m-2 content-animation">
+      <div class="flex items-center m-2 slide-animation">
         <v-icon @click="goToPrev" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
         <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">Contact Us</p>
       </div>
       <v-divider class="border-opacity-100 hidden-sm-and-down"></v-divider>
       <br class="hidden-sm-and-down" />
-      <div class="content-animation">
+      <div class="slide-animation">
         <v-row>
           <v-col cols="12" md="7">
             <!-- On Mobile View -->

@@ -57,7 +57,7 @@
             <NuxtLink to="/contact" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
           </v-list-item>
           <v-list-item>
-            <NuxtLink to="//Roadshow" class="cursor-pointer p-3 text-hover">ROADSHOW DATASTAX & SCTC</NuxtLink>
+            <NuxtLink to="/Roadshow" class="cursor-pointer p-3 text-hover">ROADSHOW DATASTAX & SCTC</NuxtLink>
           </v-list-item>
         </v-list>
       </v-menu>
