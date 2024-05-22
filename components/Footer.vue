@@ -1,10 +1,10 @@
 <template>
   <v-footer class="absolute-footer bg-black hidden-sm-and-down">
     <v-row align="center" justify="center">
-      <v-col class="text-center" cols="12">
+      <v-col class="text-center pa-0 ma-0" cols="12">
         <div>
           <nuxt-link :to="item.link" v-for="item in icons" :key="item.icon">
-            <v-btn :icon="item.icon" class="footer-item-size" variant="text"></v-btn>
+            <v-btn :icon="item.icon" class="footer-item-size ma-0 pa-0" variant="text"></v-btn>
           </nuxt-link>
           <span class="footer-item-size"
             >{{ new Date().getFullYear() }} — <strong>Southern Convergence Technologies</strong></span
