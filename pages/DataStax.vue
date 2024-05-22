@@ -95,7 +95,7 @@
               <!-- PRODUCTS MOBILE VIEW -->
               <div class="grid grid-cols-1 scroll-auto hidden-md-and-up" style="overflow: auto !important">
                 <!-- copying what's in the current website -->
-                <v-carousel cycle hide-delimiters touch :show-arrows="false" progress="purple-darken-3">
+                <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="purple-darken-3">
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
                       <v-img :src="`/static/images/${product.image}`"></v-img>
