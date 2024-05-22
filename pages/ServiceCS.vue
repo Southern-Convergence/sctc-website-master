@@ -41,7 +41,7 @@
                 <div class="Description-Wrapped">
 
 
-                <div class="BlackRibbonCS"></div>
+                <div class="RibbonCS"></div>
 
 
                 <div class="Wrapped-contents">

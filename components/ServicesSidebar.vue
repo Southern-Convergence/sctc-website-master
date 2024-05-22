@@ -24,7 +24,7 @@
 
 <style scoped>
 .Sidebar {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   height: 100vh;
   width: 17%;
   padding: 2% 2% 0 2%;
@@ -35,7 +35,7 @@
 }
 
 .SBContents {
-  color: white;
+  color: rgb(0, 0, 0);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;

@@ -12,11 +12,12 @@
 
                         <div class="Service-Title">
 
-                            CUSTOM SOFTWARE DEVELOPMENT 
+                            CUSTOM SOFTWARE <br>
+                            DEVELOPMENT 
 
                         </div>
 
-                        <div class="Service-Intro">
+                        <div class="Service-Intro text-justify-center">
 
                             We specialize in building and optimizing software solutions tailored to unique business and organizational objectives and processes. 
                             Through close collaboration throughout the development process, we ensure continuous alignment with business and operational goals. 
@@ -39,7 +40,7 @@
 
                 <div class="Description-Wrapped">
 
-                <div class="BlackRibbon">
+                <div class="Ribbon">
 
                     <p> PROJECTS </p>
 
@@ -70,7 +71,7 @@
 
                 </div>
 
-                <div class="BlackRibbon-Mobile">
+                <div class="Ribbon-Mobile">
 
                     <p> PROJECTS </p>
 
@@ -89,7 +90,7 @@
                                 
                                     <p class="ProjectTitles">{{ slide }}</p>
                                 
-                                    <p style="color: white; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
+                                    <p style="color: black; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
                                     
                             </v-carousel-item>
 
@@ -109,7 +110,7 @@
                         <v-carousel :show-arrows="false" hide-delimiters cycle>
                             <v-carousel-item v-for="(slide, i) in slides" :key="i">
                                 <div class="ProjectTitles">{{ slide }}</div>
-                                    <p style="color: white; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
+                                    <p style="color: black; margin: 10% 0% 0% 10%;"> {{ texts[i] }} </p>
                             </v-carousel-item>
                         </v-carousel>
                     </div>
