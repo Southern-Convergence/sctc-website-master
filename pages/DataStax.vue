@@ -1,6 +1,10 @@
 <template>
   <div class="gradient h-full w-full text-white">
-    <img src="/assets/images/datastax.webp" class="header aspect-auto border-8 invert p-3" style="margin: 0px auto" />
+    <img
+      src="/assets/images/datastax.webp"
+      class="header aspect-auto border-8 invert p-3"
+      style="margin: 0px auto 15px auto"
+    />
 
     <div class="content-animation h-full">
       <!-- the content reaching the bottom of the page is intentional -->
@@ -10,7 +14,7 @@
           grow
           hide-slider
           mandatory="force"
-          color="purple darken-3"
+          color="purple-darken-3"
           class="font-Roboto"
           style="height: 50px"
         >
@@ -35,28 +39,47 @@
         <v-window v-model="tab" direction="horizontal">
           <v-window-item value="description">
             <div
-              class="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-gray-800 p-5 md:p-10 font-Poppins"
+              class="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl p-5 md:p-10 font-Poppins"
               style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5)"
             >
+              <h1
+                class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
+              >
+                DataStax
+              </h1>
+              <v-divider
+                thickness="5"
+                color="black"
+                length="80"
+                class="border-opacity-100 p-0"
+                style="margin: 15px auto 30px auto"
+              >
+              </v-divider>
+
               <!-- if possible, can we have a description shorter than this? this long will need a scrolling on mobile -->
-              Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid
-              cloud database management systems. DataStax offers tailored solutions designed specifically for
-              enterprises navigating this dynamic landscape.
-              <br /><br />
-              At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE
-              seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering
-              organizations with unparalleled real-time data distribution and analytics capabilities. Additionally,
-              DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on the foundation
-              of Apache Cassandra. Astra is engineered to effortlessly scale and manage data in the cloud, ensuring
-              smooth operations and optimal performance.
-              <br /><br />
-              As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support
-              services strategically crafted to empower organizations in maximizing the potential of their data
-              infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their resilience,
-              bolster agility, and drive innovation within the dynamic realm of digital transformation.
-              <br /><br />
-              Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data management
-              strategy and drive transformative outcomes for your business.
+              <p class="mb-8">
+                Welcome to the forefront of modern data management with DataStax, a leading provider of distributed
+                hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for
+                enterprises navigating this dynamic landscape.
+              </p>
+              <p class="mb-8">
+                At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE
+                seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering
+                organizations with unparalleled real-time data distribution and analytics capabilities. Additionally,
+                DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on the
+                foundation of Apache Cassandra. Astra is engineered to effortlessly scale and manage data in the cloud,
+                ensuring smooth operations and optimal performance.
+              </p>
+              <p class="mb-8">
+                As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support
+                services strategically crafted to empower organizations in maximizing the potential of their data
+                infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their
+                resilience, bolster agility, and drive innovation within the dynamic realm of digital transformation.
+              </p>
+              <p class="mb-8">
+                Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data
+                management strategy and drive transformative outcomes for your business.
+              </p>
             </div>
           </v-window-item>
           <v-window-item value="products">
@@ -83,10 +106,8 @@
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                   <v-img :src="`/static/images/${product.image}`"></v-img>
-                  <v-card-text
-                    class="text-xs md:text-xs 2xl:text-base font-Poppins text-gray-800"
-                    style="padding: 20px 0px"
-                  >
+                  <!--`assets/images/${product.image}` -->
+                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
@@ -99,10 +120,7 @@
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
                       <v-img :src="`/static/images/${product.image}`"></v-img>
-                      <v-card-text
-                        class="text-xs md:text-sm lg:text-base font-Poppins text-gray-800"
-                        style="padding: 20px 0px"
-                      >
+                      <v-card-text class="text-xs font-Poppins">
                         {{ product.text }}
                       </v-card-text>
                     </v-card>
@@ -124,7 +142,7 @@ useHead({
   title: 'DataStax',
 });
 
-let tab = ref('description');
+let tab = ref('');
 
 const products = ref([
   {
@@ -156,7 +174,7 @@ const products = ref([
 }
 
 .header {
-  animation: emphasis 0.5s ease;
+  animation: emphasis 0.8s ease;
 }
 
 .inactive {
@@ -173,7 +191,7 @@ const products = ref([
 }
 
 .content-animation {
-  animation: opacity-change 0.5s ease;
+  animation: opacity-change 0.8s ease;
 }
 
 @keyframes emphasis {
