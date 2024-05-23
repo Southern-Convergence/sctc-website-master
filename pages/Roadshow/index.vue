@@ -1,7 +1,7 @@
 <template>
   <div class="bg h-full w-full text-white">
     <v-img
-      :src="'/static/images/sctc-banner-roadshow.jpg'"
+      :src="'/static/images/sctc-website-banner-roadshow.jpg'"
       class="header aspect-auto w-75 p-20"
       style="margin: 0px auto"
     />
@@ -10,7 +10,6 @@
         Experience Seamless AI Integration at Our Exclusive Roadshow
       </p>
     </div>
-
     <div
       color="black"
       class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-75 mx-auto my-10"
@@ -101,6 +100,10 @@ const roadshow_details_btns = [
 <style>
 .bg {
   background-color: black;
+  background-image: url(/assets/images/sctc-website-bg-rhino-roadshow.png);
+  background-size: auto 40%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
 .roadshow-emphasis {
