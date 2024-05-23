@@ -53,6 +53,7 @@
 <script setup>
 import Swal from 'sweetalert2';
 import { ContactRules } from '../config/formValidations';
+import { sendMail } from '../service/mailer';
 
 const { nameRules, emailRules, subjectRules, messageRules } = ContactRules;
 
@@ -83,8 +84,27 @@ const submitDisabled = computed(() => {
 const emits = defineEmits(['toggleMore']);
 
 const submitForm = async (event) => {
+  // Honeypot challenge
   if (bot.value != null) {
     isBot.value = true;
+    return;
+  }
+
+  // 3 Mails per 15 minute limit
+  const emailTimestamps = JSON.parse(localStorage.getItem('emailTimestamps') || '[]');
+  const now = Date.now();
+  const fifteenMinutesAgo = now - 15 * 60 * 1000;
+
+  // Filter the list of email timestamps to keep only those within the last 15 minutes
+  const recentEmails = emailTimestamps.filter((timestamp) => timestamp > fifteenMinutesAgo);
+
+  if (recentEmails.length >= 5) {
+    Swal.fire({
+      title: 'Email limit reached! Try again later.',
+      showConfirmButton: false,
+      timer: 2000,
+      backdrop: `rgba(244,67,54,0.2)`,
+    });
     return;
   }
 
@@ -114,20 +134,28 @@ const submitForm = async (event) => {
     },
   });
 
-  // ! Perform Email Call
-  await sendEmail(formData.value)
-    .then((message) => {
+  await sendMail(
+    {
+      ...formData.value,
+    },
+    'contactUs',
+  )
+    .then(() => {
+      // Update the email timestamps
+      recentEmails.push(now);
+      localStorage.setItem('emailTimestamps', JSON.stringify(recentEmails));
+
       // Notify status
       Swal.fire({
-        title: message,
+        title: 'Successfully sent',
         showConfirmButton: false,
         timer: 1500,
         backdrop: `rgba(143,206,0,0.2)`,
       });
     })
-    .catch((error) => {
+    .catch(() => {
       Swal.fire({
-        title: error,
+        title: 'Unsuccessful. Please try again later.',
         showConfirmButton: false,
         timer: 2000,
         backdrop: `rgba(244,67,54,0.2)`,
@@ -136,21 +164,6 @@ const submitForm = async (event) => {
 
   // Empty Forms and time
   clearForm(event);
-};
-
-// TODO This is only a placeholder for the actual API call
-const sendEmail = (data) => {
-  return new Promise((resolve, reject) => {
-    // Simulating email sending
-    setTimeout(() => {
-      const success = Math.random() < 0.8; // 80% chance of success
-      if (success) {
-        resolve('Successfully sent');
-      } else {
-        reject('Unsuccessful, Please try again later.');
-      }
-    }, 1000);
-  });
 };
 
 const validateForm = () => {
