@@ -1,6 +1,10 @@
 <template>
   <div class="gradient h-full w-full text-white">
-    <img src="/assets/images/fastly.png" class="header aspect-auto border-8 invert p-3" style="margin: 0px auto 15px auto" />
+    <img
+      src="/assets/images/fastly.png"
+      class="header aspect-auto border-8 invert p-3"
+      style="margin: 0px auto 15px auto"
+    />
 
     <div class="content-animation h-full">
       <!-- the content reaching the bottom of the page is intentional -->
@@ -38,9 +42,7 @@
               class="text-center text-sm md:text-sm lg:text-base xl:text-lg 2xl:text-xl p-5 md:p-10 font-Poppins"
               style="background-color: rgba(255, 255, 255, 0.5)"
             >
-            <h1
-                class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-red-900"
-              >
+              <h1 class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-red-900">
                 Fastly
               </h1>
               <v-divider
@@ -53,21 +55,24 @@
               </v-divider>
 
               <!-- to fill up the description page -->
-              We have partnered with Fastly to give your website lightning-fast delivery and unparalleled reliability.
-              <br /><br />
-              Your website's technology is the backbone of your user experience, and it's a key driver of your success. 
-              With the right infrastructure, you can scale intelligently, enhance security, and optimize user engagement. 
-              And with Fastly handling the heavy lifting, you can focus on what truly matters for your business.
-              <br /><br />
-              Fastly’s powerful edge cloud platform empowers companies to run, secure, and deliver their website content 
-              and applications to create remarkable user experiences at global scale.
+              <p class="mb-8">
+                We have partnered with Fastly to give your website lightning-fast delivery and unparalleled reliability.
+              </p>
+              <p class="mb-8">
+                Your website's technology is the backbone of your user experience, and it's a key driver of your
+                success. With the right infrastructure, you can scale intelligently, enhance security, and optimize user
+                engagement. And with Fastly handling the heavy lifting, you can focus on what truly matters for your
+                business.
+              </p>
+              <p class="mb-8">
+                Fastly’s powerful edge cloud platform empowers companies to run, secure, and deliver their website
+                content and applications to create remarkable user experiences at global scale.
+              </p>
             </div>
           </v-window-item>
           <v-window-item value="products">
             <div class="p-5 md:p-10" style="margin: 0px auto">
-              <h1
-                class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-red-900"
-              >
+              <h1 class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-red-900">
                 Products
               </h1>
               <v-divider
@@ -87,10 +92,7 @@
                 <!-- copying what's in the current website -->
                 <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                   <v-img :src="`/static/images/${product.image}`"></v-img>
-                  <v-card-text
-                    class="text-xs md:text-xs 2xl:text-base font-Poppins"
-                    style="padding: 20px 0px"
-                  >
+                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
                     {{ product.text }}
                   </v-card-text>
                 </v-card>
@@ -103,10 +105,7 @@
                   <v-carousel-item v-for="product in products">
                     <v-card flat class="mx-4 xl:mx-3">
                       <v-img :src="`/static/images/${product.image}`"></v-img>
-                      <v-card-text
-                        class="text-xs md:text-sm lg:text-base font-Poppins"
-                        style="padding: 20px 0px"
-                      >
+                      <v-card-text class="text-xs md:text-sm lg:text-base font-Poppins" style="padding: 20px 0px">
                         {{ product.text }}
                       </v-card-text>
                     </v-card>
@@ -133,7 +132,7 @@ let tab = ref('');
 const products = ref([
   {
     image: 'vector-search.png',
-    text: "Say goodbye to expensive bandwidth and storage costs, and ease the burden on your servers or central cloud. With Fastly, you can effortlessly offload content and streamline your operations, so you can focus on what truly drives your business forward.",
+    text: 'Say goodbye to expensive bandwidth and storage costs, and ease the burden on your servers or central cloud. With Fastly, you can effortlessly offload content and streamline your operations, so you can focus on what truly drives your business forward.',
   },
   {
     image: 'vector-search.png',
@@ -141,7 +140,7 @@ const products = ref([
   },
   {
     image: 'astra-streaming.png',
-    text: "Streamline your workflow and empower your teams to achieve more, all while seamlessly syncing with the tools they need to succeed. With Fastly, you can accelerate your operations and enhance productivity, so you can focus on taking your business to the next level. ",
+    text: 'Streamline your workflow and empower your teams to achieve more, all while seamlessly syncing with the tools they need to succeed. With Fastly, you can accelerate your operations and enhance productivity, so you can focus on taking your business to the next level. ',
   },
 ]);
 </script>
