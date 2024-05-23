@@ -1,6 +1,5 @@
 <template>
   <div class="bg h-full w-full text-white mb-md-9">
-    <v-sheet color="black h-full w-full">
       <div class="flex items-center justify-center slide-animation mt-10 md:mt-20">
         <v-icon @click="goToPage('/roadshow')" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
         <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">Register</p>
@@ -22,7 +21,6 @@
       >
         <RegisterForm />
       </div>
-    </v-sheet>
   </div>
 
   <v-dialog activator="#activator-target" max-width="800">
