@@ -1,5 +1,13 @@
 <template>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="submitForm" v-if="!isBot">
+    <input
+      type="text"
+      name="field1"
+      style="opacity: 0 !important; pointer-events: none !important; cursor: none; color: black"
+      tabindex="-1"
+      v-model="bot"
+      autocomplete="thisisbot"
+    />
     <v-text-field
       @click.right.prevent
       @copy.prevent
@@ -70,6 +78,8 @@ const email = ref('');
 const company = ref('');
 const position = ref('');
 const startTime = ref(Date.now());
+const bot = ref(null);
+const isBot = ref(false);
 
 const formData = computed(() => ({
   name: name.value.trim(),
@@ -88,6 +98,11 @@ const submitDisabled = computed(() => {
 });
 
 const submitForm = async (event) => {
+  if (bot.value != null) {
+    isBot.value = true;
+    return;
+  }
+
   let endTime = Date.now();
   const timeTaken = endTime - startTime.value;
 
