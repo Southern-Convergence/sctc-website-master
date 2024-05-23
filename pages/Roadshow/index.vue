@@ -1,5 +1,5 @@
 <template>
-  <div class="bg h-full w-full text-white">
+  <div class="bg h-full w-full text-white mb-md-9">
     <v-img
       :src="'/static/images/sctc-website-banner-roadshow.jpg'"
       class="header aspect-auto w-75 p-20"
