@@ -17,6 +17,7 @@ export default {
       },
     },
   },
+  // allow for dynamic grid columns in InPartnerContent
   safelist: [
     'md:grid-cols-1',
     'md:grid-cols-2',

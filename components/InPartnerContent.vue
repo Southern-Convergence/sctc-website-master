@@ -77,11 +77,12 @@
             </v-divider>
 
             <!-- PRODUCTS WEB VIEW -->
-            <div class="grid hidden-sm-and-down" :class="`md:grid-cols-${props.products.length}`">
+            <div class="grid hidden-sm-and-down" :class="getColsCount()">
               <!-- copying what's in the current website -->
               <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                 <v-img :src="`/static/images/${product.image}`"></v-img>
-                <v-card-text class="font-Poppins" style="padding: 20px 0px">
+                <v-card-text class="font-Poppins" style="padding: 20px 0px; font-size: 0.8em">
+                  <!-- had to use basic css, tailwind text-xs wasn't working -->
                   <!-- md:text-xs 2xl:text-base -->
                   {{ product.text }}
                 </v-card-text>
@@ -155,6 +156,11 @@ const getTitleColor = (partner) => {
       break;
   }
   return titleColor;
+};
+
+const getColsCount = () => {
+  let classCols = 'md:grid-cols-'.concat(props.products.length);
+  return classCols;
 };
 </script>
 
