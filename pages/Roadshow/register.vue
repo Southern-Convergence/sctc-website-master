@@ -1,31 +1,26 @@
 <template>
-  <div class="bg h-full w-full text-white">
-    <div class="flex items-center justify-center slide-animation mt-10 md:mt-20">
-      <v-icon @click="goToPage('/roadshow')" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
-      <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">Register</p>
-    </div>
+  <div class="bg h-full w-full text-white mb-md-9">
+      <div class="flex items-center justify-center slide-animation mt-10 md:mt-20">
+        <v-icon @click="goToPage('/roadshow')" class="hover-yellow" size="36"> mdi-arrow-left </v-icon>
+        <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">Register</p>
+      </div>
 
-    <div
-      color="black"
-      class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-50 mx-auto my-10"
-    >
-      <v-btn
-        variant="outlined"
-        class="ma-0 md:ma-2 p-5 hover-roadshow-btn"
-        :rounded="false"
-        id="activator-target"
+      <div
+        color="black"
+        class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-50 mx-auto my-10"
       >
-        About the event
-      </v-btn>
-    </div>
+        <v-btn variant="outlined" class="ma-0 md:ma-2 p-5 hover-roadshow-btn" :rounded="false" id="activator-target">
+          About the event
+        </v-btn>
+      </div>
 
-    <div
-      color="black"
-      class="flex align-stretch flex-column justify-center slide-animation w-50 mx-auto"
-      max-width="800px"
-    >
-      <RegisterForm />
-    </div>
+      <div
+        color="black"
+        class="flex align-stretch flex-column justify-center slide-animation w-50 mx-auto"
+        max-width="800px"
+      >
+        <RegisterForm />
+      </div>
   </div>
 
   <v-dialog activator="#activator-target" max-width="800">
@@ -77,16 +72,4 @@ useHead({
 });
 </script>
 
-<style>
-.bg {
-  background-color: black;
-}
-
-.roadshow-emphasis {
-  color: #ff7b02 !important;
-}
-
-.hover-roadshow-btn:hover {
-  color: #ff7b02 !important;
-}
-</style>
+<style></style>
