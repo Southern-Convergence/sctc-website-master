@@ -7,10 +7,6 @@ const generateEmailContent = (payload: any, template: string) => {
   let subject: string;
 
   switch (template) {
-    case 'registration':
-      rawHtml = MAIL_TEMPLATES.REGISTRATION_FORM_TEMPLATE(payload);
-      subject = 'Registration';
-      break;
     case 'contactUs':
       rawHtml = MAIL_TEMPLATES.CONTACT_US_FORM_TEMPLATE(payload);
       subject = 'Customer Inquiry';
@@ -23,7 +19,7 @@ const generateEmailContent = (payload: any, template: string) => {
     fromName: 'Southern Convergence Technologies',
     fromAddress: 'no-reply@sctc.support',
     // admin email
-    to: "main@southernconvergence.com",
+    to: 'main@southernconvergence.com',
     subject,
     rawHtml,
   };
