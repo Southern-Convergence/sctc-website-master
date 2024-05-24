@@ -1,5 +1,5 @@
 <template>
-  <div class="content-animation h-full">
+  <div class="slide-animation h-full">
     <!-- the content reaching the bottom of the page is intentional -->
     <div class="w-11/12" style="margin: 0px auto">
       <v-tabs
@@ -78,7 +78,7 @@
             </v-divider>
 
             <!-- PRODUCTS WEB VIEW -->
-            <div class="grid hidden-sm-and-down" :class="getProductsCount()">
+            <div class="grid hidden-sm-and-down" :class="`md:grid-cols-${props.products.length}`">
               <!-- copying what's in the current website -->
               <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                 <v-img :src="`/static/images/${product.image}`"></v-img>
@@ -117,7 +117,7 @@ const route = useRoute();
 
 let tab = ref('');
 
-const props = defineProps({
+let props = defineProps({
   products: {
     type: Array,
     default: () => [],
@@ -153,14 +153,6 @@ const getTitleColor = (partner) => {
   }
   return titleColor;
 };
-
-const getProductsCount = () => {
-  console.log(props.products.length);
-  let columns = 'md:grid-cols-' + props.products.length + '';
-  return columns.toString();
-};
-
-console.log(getProductsCount());
 </script>
 
 <style scoped>

@@ -6,7 +6,7 @@
       style="margin: 0px auto 15px auto;"
     />
 
-    <InPartnerContent :products="products" :description="description" />
+    <InPartnerContent :products="productsFastly" :description="descriptionFastly" />
   </div>
 </template>
 
@@ -18,13 +18,13 @@ useHead({
   title: 'Fastly',
 });
 
-const description = ref([
+const descriptionFastly = ref([
   "We're thrilled to introduce our partnership with Fastly – the industry leader in content delivery, security, and edge computing. Together, we're committed to helping businesses like yours achieve unparalleled digital performance and security, all while delivering exceptional user experiences.",
   "Fastly's Content Delivery Network (CDN) is the backbone of modern internet delivery. With strategically positioned edge servers worldwide, Fastly ensures lightning-fast access to web content for users across the globe. Through our partnership, you gain access to this powerful CDN, enabling you to reach your audience faster and more reliably than ever before.",
   "Security is paramount in today's digital landscape, and Fastly's advanced security features provide peace of mind for businesses of all sizes. From DDoS protection to real-time threat intelligence, Fastly's comprehensive security suite safeguards your digital assets against evolving cyber threats, ensuring the integrity and availability of your online presence.",
 ]);
 
-const products = ref([
+const productsFastly = ref([
   {
     image: 'CDN.png',
     text: "Fastly's Content Delivery Network (CDN) revolutionizes the way businesses deliver online content to their audiences. With strategically positioned edge servers worldwide, Fastly's CDN ensures lightning-fast access to web content, optimizing user experiences regardless of location. Discover how Fastly's CDN empowers businesses to reach global audiences with unparalleled speed and reliability.",

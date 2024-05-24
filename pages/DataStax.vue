@@ -6,7 +6,7 @@
       style="margin: 0px auto 15px auto;"
     />
 
-    <InPartnerContent :products="products" :description="description" />
+    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" />
   </div>
 </template>
 
@@ -18,14 +18,14 @@ useHead({
   title: 'DataStax',
 });
 
-const description = ref([
+const descriptionDataStax = ref([
   'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
   "At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering organizations with unparalleled real-time data distribution and analytics capabilities. Additionally, DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on theensuring smooth operations and optimal performance.",
   'As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support services strategically crafted to empower organizations in maximizing the potential of their data infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their resilience, bolster agility, and drive innovation within the dynamic realm of digital transformation.',
   "Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data management strategy and drive transformative outcomes for your business.",
 ]);
 
-const products = ref([
+const productsDataStax = ref([
   {
     image: 'astra-db.png',
     text: 'The groundbreaking, globally distributed, serverless, multi-model database service meticulously crafted by DataStax to cater to users across their preferred cloud platform.',
