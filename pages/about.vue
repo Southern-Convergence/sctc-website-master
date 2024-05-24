@@ -5,7 +5,7 @@
       <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">About us</p>
     </div>
     <v-divider class="border-opacity-100 hidden-sm-and-down"></v-divider>
-    <br/>
+    <br />
     <div class="slide-animation">
       <v-row>
         <v-col cols="12" md="9" lg="8">
