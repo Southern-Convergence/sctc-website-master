@@ -6,7 +6,7 @@
       style="margin: 0px auto 15px auto;"
     />
 
-    <InPartnerContent :products="productsFastly" :description="descriptionFastly" />
+    <InPartnerContent :products="productsFastly" :description="descriptionFastly" :tagline="tagline" />
   </div>
 </template>
 
@@ -17,6 +17,8 @@ import { ref } from 'vue';
 useHead({
   title: 'Fastly',
 });
+
+const tagline = ref('Welcome to Our Fastly Partnership: Accelerate Your Digital Experience with Confidence');
 
 const descriptionFastly = ref([
   "We're thrilled to introduce our partnership with Fastly – the industry leader in content delivery, security, and edge computing. Together, we're committed to helping businesses like yours achieve unparalleled digital performance and security, all while delivering exceptional user experiences.",

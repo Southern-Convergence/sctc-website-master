@@ -34,14 +34,13 @@
         <v-window-item value="description">
           <div
             class="p-5 md:p-20"
-            style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 1.5rem"
+            style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 2em"
           >
             <h1
               class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
-              style="text-transform: capitalize"
               :class="getTitleColor(route.name)"
             >
-              {{ route.name }}
+              {{ tagline }}
             </h1>
             <v-divider
               thickness="5"
@@ -125,6 +124,10 @@ let props = defineProps({
   description: {
     type: Array,
     default: () => [],
+  },
+  tagline: {
+    type: String,
+    default: '',
   },
 });
 

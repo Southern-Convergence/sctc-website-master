@@ -6,7 +6,7 @@
       style="margin: 0px auto 15px auto;"
     />
 
-    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" />
+    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" :tagline="tagline" />
   </div>
 </template>
 
@@ -17,6 +17,8 @@ import { ref } from 'vue';
 useHead({
   title: 'DataStax',
 });
+
+const tagline = ref('Introducing DataStax: a trusted partner for enterprises seeking cutting-edge cloud database solutions');
 
 const descriptionDataStax = ref([
   'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
