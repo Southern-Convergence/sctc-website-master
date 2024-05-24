@@ -14,18 +14,31 @@
       color="black"
       class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-75 mx-auto my-10"
     >
-      <v-btn
-        v-for="(btn, index) in roadshow_details_btns"
-        :key="index"
-        variant="outlined"
-        class="ma-2 p-5 hover-roadshow-btn"
-        size="x-large"
-        :rounded="false"
-        :id="btn.type === 'dialog' ? 'activator-target' : ''"
-        @click="btn.link !== null && goToPage(btn.link)"
-      >
-        {{ btn.name }}
-      </v-btn>
+      <template v-for="(btn, index) in roadshow_details_btns" :key="index">
+        <v-btn
+          v-if="btn.type === 'external-link'"
+          variant="outlined"
+          class="ma-2 p-5 hover-roadshow-btn"
+          size="x-large"
+          :rounded="false"
+          target="_blank"
+          :href="btn.link"
+        >
+          {{ btn.name }}
+        </v-btn>
+
+        <v-btn
+          v-else
+          variant="outlined"
+          class="ma-2 p-5 hover-roadshow-btn"
+          size="x-large"
+          :rounded="false"
+          :id="btn.type === 'dialog' ? 'activator-target' : ''"
+          @click="btn.link !== null && goToPage(btn.link)"
+        >
+          {{ btn.name }}
+        </v-btn>
+      </template>
     </div>
   </div>
   <v-dialog activator="#activator-target" max-width="800">
@@ -65,7 +78,8 @@
                 append-icon="mdi-arrow-right"
                 class="mb-1 pa-0 roadshow-emphasis text-caption text-md-body-1 text-lg-h6"
                 variant="text"
-                to="roadshow/register"
+                target="_blank"
+                href="https://www.datastax.com/events/apac-genai-roadshow-manila"
               >
                 Register now
               </v-btn>
@@ -92,7 +106,7 @@ useHead({
 
 const roadshow_details_btns = [
   { name: 'About the event', link: null, type: 'dialog' },
-  { name: 'Register', link: 'roadshow/register', type: 'page' },
+  { name: 'Register', link: 'https://www.datastax.com/events/apac-genai-roadshow-manila', type: 'external-link' },
   { name: 'Get in touch', link: '/contact', type: 'page' },
 ];
 </script>
