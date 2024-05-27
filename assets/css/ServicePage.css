@@ -102,14 +102,14 @@
         text-align: center;
         font-weight: 600;
 
-        animation: slideFromBottom 1s ease-in-out forwards;
+        animation: slideFromBottom 0.8s ease-in-out forwards;
 
     }
 
     .Service-Carousel {
 
-        animation: slideFromBottom 1s ease-in-out forwards;
-        animation-delay: 4s;
+        animation: slideFromBottom 0.8s ease-in-out forwards;
+        animation-delay: 2s;
         opacity: 0;
 
     }
@@ -140,7 +140,7 @@
         top: calc(50% - 10%);
         right: 0;
 
-        animation: slideFromLeft 2s ease-in-out forwards;
+        animation: slideFromLeft 1s ease-in-out forwards;
         animation-delay: 1s;
         opacity: 0;
 
@@ -159,7 +159,7 @@
         top: calc(50% - 10%);
         right: 0;
 
-        animation: slideFromLeft 2s ease-in-out forwards;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
         animation-delay: 1s;
         opacity: 0;
 
@@ -167,8 +167,8 @@
 
     .Ribbon p {
 
-        animation: fadein 2s ease-in-out forwards;
-        animation-delay: 4s;
+        animation: fadein 1s ease-in-out forwards;
+        animation-delay: 2s;
         opacity: 0;
 
         margin-left: 35%;
@@ -188,61 +188,61 @@
         right: 0;
         display: none;
 
-        animation: slideFromLeft 2s ease-in-out forwards;
+        animation: slideFromLeft 1s ease-in-out forwards;
         animation-delay: 1s;
         opacity: 0;
     }
     .Ribbon-Mobile p {
-        animation: fadein 2s ease-in-out forwards;
-        animation-delay: 4s;
+        animation: fadein 0.8s ease-in-out forwards;
+        animation-delay: 2s;
         opacity: 0;
         margin-left: 35%;
     }
 
     .PN01 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.4s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.4s;
         opacity: 0;
 
     }
 
     .PN02 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.5s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.5s;
         opacity: 0;
 
     }
 
     .PN03 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.6s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.6s;
         opacity: 0;
 
     }
 
     .SD01 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.4s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.6s;
         opacity: 0;
 
     }
 
     .SD02 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.5s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.7s;
         opacity: 0;
 
     }
 
     .SD03 {
 
-        animation: slideFromLeft 1s ease-in-out forwards;
-        animation-delay: 3.6s;
+        animation: slideFromLeft 0.8s ease-in-out forwards;
+        animation-delay: 1.8s;
         opacity: 0;
 
     }
@@ -325,7 +325,7 @@
         width: 50%;
 
         animation: fadein 1s ease-in-out forwards;
-        animation-delay: 4.4s;
+        animation-delay: 2.5s;
         opacity: 0;
 
     }
@@ -363,8 +363,8 @@
         margin: 2% 0% 2% 2%;
         border-radius: 15px 0px 0px 15px;
 
-        animation: slideFromRight 2s ease-in-out forwards;
-        animation-delay: 3s;
+        animation: slideFromRight 1s ease-in-out forwards;
+        animation-delay: 2s;
         opacity: 0;
 
         overflow-x: hidden;
@@ -459,7 +459,7 @@
             
             width: 100%;
             animation: slideFromLeft 1s ease-in-out forwards;
-            animation-delay: 3.7s;
+            animation-delay: 2.5s;
             opacity: 0;
             margin: 0%;
         }
@@ -467,7 +467,7 @@
             font-size: 8px;
             margin: 2%;
             animation: fadein 1s ease-in-out forwards;
-            animation-delay: 4.4s;
+            animation-delay: 3s;
             opacity: 0;
         }
         .ProjectTitles {
