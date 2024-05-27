@@ -54,6 +54,8 @@
 <script setup>
 import { useRouter } from 'vue-router';
 
+useHead({ title: 'Contact Us' });
+
 const router = useRouter();
 const isToggleMore = ref(true);
 

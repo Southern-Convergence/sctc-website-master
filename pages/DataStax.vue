@@ -2,149 +2,32 @@
   <div class="gradient h-full w-full text-white">
     <img
       src="/assets/images/datastax.webp"
-      class="header aspect-auto border-8 invert p-3"
-      style="margin: 0px auto 15px auto"
+      class="header aspect-auto border-8 invert p-1 scale-75"
+      style="margin: 0px auto 15px auto;"
     />
 
-    <div class="content-animation h-full">
-      <!-- the content reaching the bottom of the page is intentional -->
-      <div class="w-11/12" style="margin: 0px auto">
-        <v-tabs
-          v-model="tab"
-          grow
-          hide-slider
-          mandatory="force"
-          color="purple-darken-3"
-          class="font-Roboto"
-          style="height: 50px"
-        >
-          <v-tab
-            text="Description"
-            value="description"
-            class="rounded-t-xl w-1/2"
-            :class="tab === 'description' ? 'bg-white' : 'inactive'"
-            style="height: 50px; font-size: 14px"
-          ></v-tab>
-          <v-tab
-            text="Products"
-            value="products"
-            class="rounded-t-xl w-1/2"
-            :class="tab === 'products' ? 'bg-white' : 'inactive'"
-            style="height: 50px; font-size: 14px"
-          ></v-tab>
-        </v-tabs>
-      </div>
-
-      <div class="networkBG w-11/12 bg-white h-full" style="margin: 0px auto">
-        <v-window v-model="tab" direction="horizontal">
-          <v-window-item value="description">
-            <div
-              class="text-center text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl p-5 md:p-10 font-Poppins"
-              style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5)"
-            >
-              <h1
-                class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
-              >
-                DataStax
-              </h1>
-              <v-divider
-                thickness="5"
-                color="black"
-                length="80"
-                class="border-opacity-100 p-0"
-                style="margin: 15px auto 30px auto"
-              >
-              </v-divider>
-
-              <!-- if possible, can we have a description shorter than this? this long will need a scrolling on mobile -->
-              <p class="mb-8">
-                Welcome to the forefront of modern data management with DataStax, a leading provider of distributed
-                hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for
-                enterprises navigating this dynamic landscape.
-              </p>
-              <p class="mb-8">
-                At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE
-                seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering
-                organizations with unparalleled real-time data distribution and analytics capabilities. Additionally,
-                DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on the
-                foundation of Apache Cassandra. Astra is engineered to effortlessly scale and manage data in the cloud,
-                ensuring smooth operations and optimal performance.
-              </p>
-              <p class="mb-8">
-                As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support
-                services strategically crafted to empower organizations in maximizing the potential of their data
-                infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their
-                resilience, bolster agility, and drive innovation within the dynamic realm of digital transformation.
-              </p>
-              <p class="mb-8">
-                Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data
-                management strategy and drive transformative outcomes for your business.
-              </p>
-            </div>
-          </v-window-item>
-          <v-window-item value="products">
-            <div class="p-5 md:p-10" style="margin: 0px auto">
-              <h1
-                class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
-              >
-                Products
-              </h1>
-              <v-divider
-                thickness="5"
-                color="black"
-                length="80"
-                class="border-opacity-100 p-0"
-                style="margin: 15px auto 30px auto"
-              >
-              </v-divider>
-
-              <!-- PRODUCTS WEB VIEW -->
-              <div
-                class="grid grid-cols-1 md:grid-cols-5 scroll-auto hidden-sm-and-down"
-                style="overflow: auto !important"
-              >
-                <!-- copying what's in the current website -->
-                <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
-                  <v-img :src="`/static/images/${product.image}`"></v-img>
-                  <!--`assets/images/${product.image}` -->
-                  <v-card-text class="text-xs md:text-xs 2xl:text-base font-Poppins" style="padding: 20px 0px">
-                    {{ product.text }}
-                  </v-card-text>
-                </v-card>
-              </div>
-
-              <!-- PRODUCTS MOBILE VIEW -->
-              <div class="grid grid-cols-1 scroll-auto hidden-md-and-up" style="overflow: auto !important">
-                <!-- copying what's in the current website -->
-                <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="purple-darken-3">
-                  <v-carousel-item v-for="product in products">
-                    <v-card flat class="mx-4 xl:mx-3">
-                      <v-img :src="`/static/images/${product.image}`"></v-img>
-                      <v-card-text class="text-xs font-Poppins">
-                        {{ product.text }}
-                      </v-card-text>
-                    </v-card>
-                  </v-carousel-item>
-                </v-carousel>
-              </div>
-            </div>
-          </v-window-item>
-        </v-window>
-      </div>
-    </div>
+    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" :tagline="tagline" />
   </div>
 </template>
 
 <script setup>
+import InPartnerContent from '../components/InPartnerContent.vue';
 import { ref } from 'vue';
 
 useHead({
   title: 'DataStax',
 });
 
-let tab = ref('');
+const tagline = ref('Introducing DataStax: a trusted partner for enterprises seeking cutting-edge cloud database solutions');
 
-const products = ref([
+const descriptionDataStax = ref([
+  'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
+  "At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering organizations with unparalleled real-time data distribution and analytics capabilities. Additionally, DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on theensuring smooth operations and optimal performance.",
+  'As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support services strategically crafted to empower organizations in maximizing the potential of their data infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their resilience, bolster agility, and drive innovation within the dynamic realm of digital transformation.',
+  "Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data management strategy and drive transformative outcomes for your business.",
+]);
+
+const productsDataStax = ref([
   {
     image: 'astra-db.png',
     text: 'The groundbreaking, globally distributed, serverless, multi-model database service meticulously crafted by DataStax to cater to users across their preferred cloud platform.',
@@ -177,41 +60,17 @@ const products = ref([
   animation: emphasis 0.8s ease;
 }
 
-.inactive {
-  background-color: #e1bee724;
-  border-top: 2px #e1bee7b1 solid;
-  border-right: 2px #e1bee7b1 solid;
-  border-left: 2px #e1bee7b1 solid;
-  color: #e1bee7;
-}
-
-.networkBG {
-  background-image: url(/assets/images/networkbg-transparent2.png);
-  background-size: auto 100%;
-}
-
-.content-animation {
-  animation: opacity-change 0.8s ease;
-}
-
 @keyframes emphasis {
   0% {
-    transform: scale(0.8); /* Adjust the scale factor as needed */
+    transform: scale(0.75); /* Adjust the scale factor as needed */
   }
   50% {
-    transform: scale(1.1); /* Adjust the scale factor as needed */
+    transform: scale(.85); /* Adjust the scale factor as needed */
   }
   100% {
-    transform: scale(1); /* Adjust the scale factor as needed */
+    transform: scale(.75); /* Adjust the scale factor as needed */
   }
 }
 
-@keyframes opacity-change {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
-  }
-}
+
 </style>

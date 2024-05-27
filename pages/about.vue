@@ -40,7 +40,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 
-useHead({ title: 'About' });
+useHead({ title: 'About Us' });
 
 const router = useRouter();
 
