@@ -43,15 +43,20 @@
   </div>
   <v-dialog activator="#activator-target" max-width="800">
     <template v-slot:default="{ isActive }">
-      <v-card>
-        <v-img height="auto" src="/static/images/sctc-banner-roadshow.jpg" cover>
+      <v-card class="dialog-border">
+        <v-img
+          height="auto"
+          lazy-src="/static/images/sctc-banner-roadshow.jpg"
+          src="/static/images/sctc-banner-roadshow.jpg"
+          cover
+        >
           <v-card-title class="d-flex justify-end align-center">
-            <v-sheet rounded="circle" class="my-2">
+            <v-sheet rounded="circle" class="my-2 scale-75 md:scale-100">
               <v-btn class="close-btn" icon="mdi-close" variant="text" @click="isActive.value = false"></v-btn>
             </v-sheet>
           </v-card-title>
         </v-img>
-        <v-card-text class="font-Poppins text-caption text-md-body-1 text-lg-h6">
+        <v-card-text class="font-Poppins text-caption text-md-body-2 text-lg-body-1 my-5">
           <p>
             Southern Convergence Technologies and DataStax are proud to announce their collaboration, marking a
             significant milestone in revolutionizing data management solutions. On June 5th, in Manila, we invite you to
@@ -74,10 +79,10 @@
           <p>
             <strong class="">
               To secure your spot and unlock the potential of GenAI for your organization.
+              <br />
               <v-btn
                 append-icon="mdi-arrow-right"
-                class="mb-1 pa-0 roadshow-emphasis text-caption text-md-body-1 text-lg-h6"
-                variant="text"
+                class="mt-5 roadshow-register-btn text-caption text-md-body-2 text-lg-body-1"
                 target="_blank"
                 href="https://www.datastax.com/events/apac-genai-roadshow-manila"
               >
@@ -120,11 +125,16 @@ const roadshow_details_btns = [
   background-repeat: no-repeat;
 }
 
-.roadshow-emphasis {
-  color: #ff7b02 !important;
+.roadshow-register-btn {
+  color: white !important;
+  background: #db5856 !important;
 }
 
 .hover-roadshow-btn:hover {
   color: #ff7b02 !important;
+}
+
+.dialog-border {
+  border: 2px solid white !important;
 }
 </style>
