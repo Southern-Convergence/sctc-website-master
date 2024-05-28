@@ -43,7 +43,7 @@
     ></v-text-field>
     <v-textarea variant="outlined" v-model="message" :rules="messageRules" label="Message" required></v-textarea>
     <v-btn variant="flat" type="submit" color="#ff7b02" class="white--text" :disabled="submitDisabled">Submit</v-btn>
-    <v-btn class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" dark variant="text">
+    <v-btn class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" variant="outlined">
       more details
       <v-icon right class="ml-2">mdi-arrow-right</v-icon>
     </v-btn>
