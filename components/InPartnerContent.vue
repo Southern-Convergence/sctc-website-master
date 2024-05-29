@@ -9,7 +9,7 @@
         mandatory="force"
         color="grey-darken-2"
         class="font-Roboto"
-        density="comfortable"
+        density="compact"
         :mobile="false"
       >
         <v-tab
@@ -32,12 +32,9 @@
     <div class="networkBG w-10/12 bg-white h-full" style="margin: 0px auto">
       <v-window v-model="tab" direction="horizontal">
         <v-window-item value="description">
-          <div
-            class="p-5 md:p-20"
-            style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 2em"
-          >
+          <div class="p-5 pt-md-5 w-12/12 md:w-11/12" style=" margin: 0px auto; background-color: rgba(255, 255, 255, 0.5);">
             <h1
-              class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900 pt-1 md:pt-4"
+              class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900 pt-md-5"
               :class="getTitleColor(route.name)"
             >
               {{ tagline }}
@@ -51,10 +48,7 @@
             >
             </v-divider>
 
-            <p
-              class="mb-8 text-xs md:text-sm lg:text-sm xl:text-sm 2xl:text-base font-Poppins"
-              v-for="desc in description"
-            >
+            <p class="mb-4 md:mb-8 text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins" v-for="desc in description">
               {{ desc }}
             </p>
           </div>
