@@ -48,7 +48,7 @@ const productsFastly = ref([
 
 <style scoped>
 .gradient {
-  background-image: linear-gradient(0deg, rgb(255, 168, 168) 0%, rgb(107, 16, 16) 100%);
+  background-image: linear-gradient(0deg, rgb(249, 123, 123) 0%, rgb(101, 0, 0) 100%);
 }
 
 .header {

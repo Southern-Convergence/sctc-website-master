@@ -53,7 +53,7 @@ const productsDataStax = ref([
 
 <style scoped>
 .gradient {
-  background-image: linear-gradient(0deg, #e0a8ffff 0%, #4d106bff 100%);
+  background-image: linear-gradient(0deg, rgb(208, 122, 254) 0%, rgb(69, 0, 104) 100%);
 }
 
 .header {
