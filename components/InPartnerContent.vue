@@ -1,7 +1,7 @@
 <template>
   <div class="slide-animation h-full">
     <!-- the content reaching the bottom of the page is intentional -->
-    <div class="w-11/12" style="margin: 0px auto">
+    <div class="w-10/12" style="margin: 0px auto">
       <v-tabs
         v-model="tab"
         grow
@@ -29,7 +29,7 @@
       </v-tabs>
     </div>
 
-    <div class="networkBG w-11/12 bg-white h-full" style="margin: 0px auto">
+    <div class="networkBG w-10/12 bg-white h-full" style="margin: 0px auto">
       <v-window v-model="tab" direction="horizontal">
         <v-window-item value="description">
           <div
@@ -37,7 +37,7 @@
             style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 2em"
           >
             <h1
-              class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
+              class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900 pt-1 md:pt-4"
               :class="getTitleColor(route.name)"
             >
               {{ tagline }}
@@ -80,8 +80,12 @@
             <div class="grid hidden-sm-and-down" :class="getColsCount()">
               <!-- copying what's in the current website -->
               <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
-                <v-img :src="`/static/images/${product.image}`"></v-img>
-                <v-card-text class="font-Poppins" style="padding: 20px 0px; font-size: 0.8em">
+                <v-img
+                  :src="`/static/images/${product.image}`"
+                  :lazy-src="`/static/images/${product.image}`"
+                  class="floating-image"
+                ></v-img>
+                <v-card-text class="font-Poppins" style="padding: 25px 0px; font-size: 0.8em">
                   <!-- had to use basic css, tailwind text-xs wasn't working -->
                   <!-- md:text-xs 2xl:text-base -->
                   {{ product.text }}
@@ -95,8 +99,12 @@
               <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="grey-darken-1">
                 <v-carousel-item v-for="product in products">
                   <v-card flat class="mx-4 xl:mx-3">
-                    <v-img :src="`/static/images/${product.image}`"></v-img>
-                    <v-card-text class="text-xs font-Poppins" style="padding: 20px 0px">
+                    <v-img
+                      :src="`/static/images/${product.image}`"
+                      :lazy-src="`/static/images/${product.image}`"
+                      class="floating-image"
+                    ></v-img>
+                    <v-card-text class="text-xs font-Poppins" style="padding: 25px 0px">
                       {{ product.text }}
                     </v-card-text>
                   </v-card>
