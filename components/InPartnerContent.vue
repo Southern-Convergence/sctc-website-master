@@ -79,7 +79,7 @@
                   :lazy-src="`/static/images/${product.image}`"
                   class="floating-image"
                 ></v-img>
-                <v-card-text class="font-Poppins" style="padding: 25px 0px; font-size: 0.8em">
+                <v-card-text class="font-Poppins" style="padding: 25px 5px; font-size: 0.8em">
                   <!-- had to use basic css, tailwind text-xs wasn't working -->
                   <!-- md:text-xs 2xl:text-base -->
                   {{ product.text }}
