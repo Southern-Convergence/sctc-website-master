@@ -18,7 +18,7 @@ useHead({
   title: 'DataStax',
 });
 
-const tagline = ref('Introducing DataStax: a trusted partner for enterprises seeking cutting-edge cloud database solutions');
+const tagline = ref('DataStax: a trusted partner for cutting-edge cloud database solutions');
 
 const descriptionDataStax = ref([
   'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
@@ -53,7 +53,7 @@ const productsDataStax = ref([
 
 <style scoped>
 .gradient {
-  background-image: linear-gradient(0deg, #e0a8ffff 0%, #4d106bff 100%);
+  background-image: linear-gradient(0deg, rgb(208, 122, 254) 0%, rgb(69, 0, 104) 100%);
 }
 
 .header {

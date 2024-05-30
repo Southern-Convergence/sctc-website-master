@@ -1,7 +1,7 @@
 <template>
   <div class="slide-animation h-full">
     <!-- the content reaching the bottom of the page is intentional -->
-    <div class="w-11/12" style="margin: 0px auto">
+    <div class="w-10/12" style="margin: 0px auto">
       <v-tabs
         v-model="tab"
         grow
@@ -9,7 +9,7 @@
         mandatory="force"
         color="grey-darken-2"
         class="font-Roboto"
-        density="comfortable"
+        density="compact"
         :mobile="false"
       >
         <v-tab
@@ -29,15 +29,12 @@
       </v-tabs>
     </div>
 
-    <div class="networkBG w-11/12 bg-white h-full" style="margin: 0px auto">
+    <div class="networkBG w-10/12 bg-white h-full" style="margin: 0px auto">
       <v-window v-model="tab" direction="horizontal">
         <v-window-item value="description">
-          <div
-            class="p-5 md:p-20"
-            style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 2em"
-          >
+          <div class="p-5 pt-md-5 w-12/12 md:w-11/12" style=" margin: 0px auto; background-color: rgba(255, 255, 255, 0.5);">
             <h1
-              class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
+              class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900 pt-md-5"
               :class="getTitleColor(route.name)"
             >
               {{ tagline }}
@@ -51,10 +48,7 @@
             >
             </v-divider>
 
-            <p
-              class="mb-8 text-xs md:text-sm lg:text-sm xl:text-sm 2xl:text-base font-Poppins"
-              v-for="desc in description"
-            >
+            <p class="mb-4 md:mb-8 text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins" v-for="desc in description">
               {{ desc }}
             </p>
           </div>
@@ -80,8 +74,12 @@
             <div class="grid hidden-sm-and-down" :class="getColsCount()">
               <!-- copying what's in the current website -->
               <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
-                <v-img :src="`/static/images/${product.image}`"></v-img>
-                <v-card-text class="font-Poppins" style="padding: 20px 0px; font-size: 0.8em">
+                <v-img
+                  :src="`/static/images/${product.image}`"
+                  :lazy-src="`/static/images/${product.image}`"
+                  class="floating-image"
+                ></v-img>
+                <v-card-text class="font-Poppins" style="padding: 25px 5px; font-size: 0.8em">
                   <!-- had to use basic css, tailwind text-xs wasn't working -->
                   <!-- md:text-xs 2xl:text-base -->
                   {{ product.text }}
@@ -95,8 +93,12 @@
               <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="grey-darken-1">
                 <v-carousel-item v-for="product in products">
                   <v-card flat class="mx-4 xl:mx-3">
-                    <v-img :src="`/static/images/${product.image}`"></v-img>
-                    <v-card-text class="text-xs font-Poppins" style="padding: 20px 0px">
+                    <v-img
+                      :src="`/static/images/${product.image}`"
+                      :lazy-src="`/static/images/${product.image}`"
+                      class="floating-image"
+                    ></v-img>
+                    <v-card-text class="text-xs font-Poppins" style="padding: 25px 0px">
                       {{ product.text }}
                     </v-card-text>
                   </v-card>

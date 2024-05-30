@@ -22,8 +22,9 @@ const tagline = ref('Welcome to Our Fastly Partnership: Accelerate Your Digital 
 
 const descriptionFastly = ref([
   "We're thrilled to introduce our partnership with Fastly – the industry leader in content delivery, security, and edge computing. Together, we're committed to helping businesses like yours achieve unparalleled digital performance and security, all while delivering exceptional user experiences.",
-  "Fastly's Content Delivery Network (CDN) is the backbone of modern internet delivery. With strategically positioned edge servers worldwide, Fastly ensures lightning-fast access to web content for users across the globe. Through our partnership, you gain access to this powerful CDN, enabling you to reach your audience faster and more reliably than ever before.",
-  "Security is paramount in today's digital landscape, and Fastly's advanced security features provide peace of mind for businesses of all sizes. From DDoS protection to real-time threat intelligence, Fastly's comprehensive security suite safeguards your digital assets against evolving cyber threats, ensuring the integrity and availability of your online presence.",
+  "Fastly is an innovative cloud platform that enables businesses to deliver websites and applications swiftly and securely to global users. With a strategically positioned global server network, Fastly serves as a high-speed conduit for internet traffic, ensuring rapid and reliable access to web content. By leveraging this network, Fastly optimizes online content delivery, delivering a seamless and efficient browsing experience for users. Moreover, Fastly's platform includes advanced security features to protect against cyber threats, making it a trusted partner for businesses looking to improve their online performance and security.",
+  "As your trusted partner, we're here to help you leverage the full potential of Fastly's platform. Whether you're looking to accelerate content delivery, fortify your security posture, or unlock the power of edge computing, our partnership with Fastly provides the tools and expertise you need to succeed in today's digital landscape.",
+  "Join us in shaping the future of digital delivery and security with Fastly – together, we'll accelerate your online success with confidence.",
 ]);
 
 const productsFastly = ref([
@@ -37,18 +38,18 @@ const productsFastly = ref([
   },
   {
     image: 'security.png',
-    text: "Fastly is dedicated to ensuring the safety and integrity of your digital assets in an ever-evolving cyber landscape. Our comprehensive security solutions offer protection against a wide range of threats, from DDoS attacks to data breaches. With real-time threat intelligence and robust security features, Fastly provides the peace of mind you need to focus on growing your business while we safeguard your online presence. Explore how Fastly's security solutions can elevate your defenses and protect your brand in today's digital world.",
+    text: "Fastly’s comprehensive security solutions offer protection against a wide range of threats, from DDoS attacks to data breaches. With real-time threat intelligence and robust security features, Fastly provides the peace of mind you need to focus on growing your business while we safeguard your online presence.",
   },
   {
     image: 'next-gen_waf.png',
-    text: "Fastly's Next-Gen Web Application Firewall (WAF) is your frontline defense against sophisticated cyber threats targeting your web applications. With advanced threat detection capabilities and real-time updates, our WAF goes beyond traditional security measures to provide proactive protection for your online assets. Explore how Fastly's Next-Gen WAF empowers businesses to confidently navigate the digital landscape, ensuring the integrity and availability of their web applications.",
+    text: "Fastly's Next-Gen Web Application Firewall (WAF) is your frontline defense against sophisticated cyber threats targeting your web applications. With advanced threat detection capabilities and real-time updates, our WAF goes beyond traditional security measures to provide proactive protection for your online assets.",
   },
 ]);
 </script>
 
 <style scoped>
 .gradient {
-  background-image: linear-gradient(0deg, rgb(255, 168, 168) 0%, rgb(107, 16, 16) 100%);
+  background-image: linear-gradient(0deg, rgb(249, 123, 123) 0%, rgb(101, 0, 0) 100%);
 }
 
 .header {
