@@ -2,6 +2,7 @@
   <div class="slide-animation h-full">
     <!-- the content reaching the bottom of the page is intentional -->
     <div class="networkBG w-12/12 bg-white h-full d-flex flex-row" style="margin: 0px auto">
+      <!-- menu for mobile view -->
       <div class="hidden-sm-and-up p-2">
         <v-menu
           width="100%"
@@ -11,8 +12,8 @@
           style="margin: 0px !important; padding: 0px !important"
         >
           <template v-slot:activator="{ props }">
-            <v-btn icon v-bind="props">
-              <v-icon>mdi-menu-right</v-icon>
+            <v-btn icon v-bind="props" variant="tonal">
+              <v-icon :class="getTitleColor(route.name)">mdi-view-list</v-icon>
             </v-btn>
           </template>
           <v-list style="" width="">
