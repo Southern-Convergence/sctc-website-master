@@ -1,5 +1,8 @@
 <template>
-  <div class="gradient h-full w-full text-white">
+  <div class="h-full w-full text-white body-div">
+    <video autoplay loop muted class="video-background">
+      <source src="../assets/images/datastax-bg-animation.mp4" type="video/mp4" />
+    </video>
     <img
       src="/assets/images/datastax.webp"
       class="header aspect-auto border-8 invert p-1 scale-75"
@@ -18,7 +21,7 @@ useHead({
   title: 'DataStax',
 });
 
-const tagline = ref('DataStax: a trusted partner for cutting-edge cloud database solutions');
+const tagline = ref('DataStax: A Trusted Partner for Cutting-edge Cloud Database Solutions');
 
 const descriptionDataStax = ref([
   'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
@@ -52,6 +55,24 @@ const productsDataStax = ref([
 </script>
 
 <style scoped>
+.body-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden; /* Ensure the video doesn't overflow the container */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Position the video behind other content */
+}
+
 .gradient {
   background-image: linear-gradient(0deg, rgb(208, 122, 254) 0%, rgb(69, 0, 104) 100%);
 }
