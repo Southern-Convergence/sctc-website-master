@@ -3,8 +3,12 @@
     <img
       src="/assets/images/fastly.png"
       class="header aspect-auto border-8 invert scale-75"
-      style="margin: 0px auto 15px auto;"
+      style="margin: 0px auto 0px auto;"
     />
+
+    <!--<v-btn icon="mdi-chevron-double-left" class="">
+      
+    </v-btn>-->
 
     <InPartnerContent :products="productsFastly" :description="descriptionFastly" :tagline="tagline" />
   </div>
