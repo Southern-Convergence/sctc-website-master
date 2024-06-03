@@ -5,13 +5,7 @@
     class="networkBG w-full h-full"
   >
     <v-btn @click="emits('toggleDisabled')" variant="flat" icon="mdi-arrow-down" class="return-btn"> </v-btn>
-    <v-carousel
-      hide-delimiter-background
-      delimiter-icon="mdi-circle"
-      touch.boolean="true"
-      height="100%"
-      color="#ff7b02"
-    >
+    <v-carousel hide-delimiter-background hide-delimiters touch.boolean="true" height="100%" color="#ff7b02">
       <template v-slot:prev="{ props }">
         <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-arrow-left"> </v-btn>
       </template>
@@ -22,16 +16,16 @@
         <template v-if="item.tag === 'Partners'">
           <div class="md:mx-24 d-flex align-center justify-center w-75 mx-auto h-75">
             <div class="text-center md:p-12 m-auto">
-              <p class="font-Poppins text-xl md:text-4xl m-6 font-bold text-[#ff7b02]">
+              <p class="font-Poppins text-xl md:text-5xl m-6 font-bold text-[#ff7b02]">
                 {{ item.title }}
               </p>
               <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">{{ item.text }}</p>
-              <div class="d-flex flex-column flex-md-row justify-center mt-8">
+              <div class="d-flex flex-column flex-md-row justify-center align-center mt-8">
                 <template v-for="(image, index) in item.images" :key="index">
                   <v-img
                     :lazy-src="`/static/images/${image}`"
                     :src="`/static/images/${image}`"
-                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover cursor-pointer"
+                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75 md:scale-50 cursor-pointer"
                     @click="redirectToLink(item.links[index])"
                   ></v-img>
                 </template>
@@ -40,34 +34,35 @@
           </div>
         </template>
         <template v-else>
-          <div class="md:mx-24 d-flex align-center justify-center w-75 mx-auto h-75">
-            <v-row align="center" justify="center">
-              <v-col cols="12" md="8">
-                <div class="text-left md:p-12 m-auto">
-                  <p class="font-Poppins text-xl md:text-4xl my-6 font-bold text-[#ff7b02]">
-                    {{ item.title }}
-                  </p>
-                  <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">
-                    {{ item.text }}
-                    <br /><br />
-                    <nuxt-link :to="item.link">
-                      <v-btn color="orange" dark variant="text">
-                        Learn More
-                        <v-icon right class="ml-2">mdi-arrow-right</v-icon>
-                      </v-btn>
-                    </nuxt-link>
-                  </p>
-                </div>
-              </v-col>
-              <v-col cols="12" md="4" class="d-flex">
-                <v-img
-                  class="hidden-sm-and-down floating-image"
-                  :lazy-src="`/static/images/${item.image}`"
-                  :src="`/static/images/${item.image}`"
-                ></v-img>
-              </v-col>
-            </v-row>
-          </div>
+          <v-container class="pa-4">
+            <v-card class="mx-auto" max-width="1200" flat color="transparent">
+              <v-row align="center" justify="center">
+                <v-col cols="12" md="8">
+                  <div class="text-left p-4 md:p-12">
+                    <p class="font-Poppins text-xl md:text-5xl my-6 font-weight-bold text-[#ff7b02]">
+                      {{ item.title }}
+                    </p>
+                    <p class="font-Overpass text-gray-500 text-xs font-weight-medium md:text-lg">
+                      {{ item.text }}
+                    </p>
+                    <v-btn color="orange" density="comfortable" variant="flat" :to="item.link" class="mt-4">
+                      Learn More
+                      <v-icon right class="ml-2">mdi-arrow-right</v-icon>
+                    </v-btn>
+                  </div>
+                </v-col>
+                <v-col cols="12" md="4" class="d-flex">
+                  <v-img
+                    class="hidden-sm-and-down"
+                    :lazy-src="`/static/images/${item.image}`"
+                    :src="`/static/images/${item.image}`"
+                    contain
+                    height="400"
+                  ></v-img>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-container>
         </template>
       </v-carousel-item>
     </v-carousel>
@@ -131,8 +126,8 @@ const redirectToLink = (link) => {
 }
 
 .zoom-on-hover:hover {
-  transform: scale(1.1); /* Adjust the scale factor as needed */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
 }
 
 .return-btn {
