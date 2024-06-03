@@ -1,10 +1,17 @@
 <template>
-  <div class="gradient h-full w-full text-white">
+  <div class="h-full w-full text-white body-div">
+    <video autoplay loop muted class="video-background">
+      <source src="../assets/images/fastly-bg-animation.mp4" type="video/mp4" />
+    </video>
     <img
       src="/assets/images/fastly.png"
       class="header aspect-auto border-8 invert scale-75"
-      style="margin: 0px auto 15px auto;"
+      style="margin: 0px auto 0px auto;"
     />
+
+    <!--<v-btn icon="mdi-chevron-double-left" class="">
+      
+    </v-btn>-->
 
     <InPartnerContent :products="productsFastly" :description="descriptionFastly" :tagline="tagline" />
   </div>
@@ -22,7 +29,7 @@ const tagline = ref('Welcome to Our Fastly Partnership: Accelerate Your Digital 
 
 const descriptionFastly = ref([
   "We're thrilled to introduce our partnership with Fastly – the industry leader in content delivery, security, and edge computing. Together, we're committed to helping businesses like yours achieve unparalleled digital performance and security, all while delivering exceptional user experiences.",
-  "Fastly is an innovative cloud platform that enables businesses to deliver websites and applications swiftly and securely to global users. With a strategically positioned global server network, Fastly serves as a high-speed conduit for internet traffic, ensuring rapid and reliable access to web content. By leveraging this network, Fastly optimizes online content delivery, delivering a seamless and efficient browsing experience for users. Moreover, Fastly's platform includes advanced security features to protect against cyber threats, making it a trusted partner for businesses looking to improve their online performance and security.",
+  "Fastly is an innovative cloud platform that enables businesses to deliver websites and applications swiftly and securely to global users. With a strategically positioned global server network, Fastly serves as a high-speed conduit for internet traffic, ensuring rapid and reliable access to web content. By leveraging this network, Fastly optimizes online content delivery, delivering a seamless and efficient browsing experience for users.",
   "As your trusted partner, we're here to help you leverage the full potential of Fastly's platform. Whether you're looking to accelerate content delivery, fortify your security posture, or unlock the power of edge computing, our partnership with Fastly provides the tools and expertise you need to succeed in today's digital landscape.",
   "Join us in shaping the future of digital delivery and security with Fastly – together, we'll accelerate your online success with confidence.",
 ]);
@@ -48,6 +55,24 @@ const productsFastly = ref([
 </script>
 
 <style scoped>
+.body-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden; /* Ensure the video doesn't overflow the container */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Position the video behind other content */
+}
+
 .gradient {
   background-image: linear-gradient(0deg, rgb(249, 123, 123) 0%, rgb(101, 0, 0) 100%);
 }
