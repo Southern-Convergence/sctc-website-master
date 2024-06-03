@@ -5,7 +5,7 @@
     </video>
     <div class="overlay"></div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
-      <div class="title-container font-black font-Roboto text-xl sm:text:-2xl md:text-4xl lg:text-5xl">
+      <div class="title-container flex flex-col  font-black font-roboto xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -32,11 +32,12 @@
         </v-btn>
       </v-hover>
     </div>
-    <Carousel :disabled="disabled" :carousel="carousel" @toggleDisabled="toggleCarousel" />
+    <Carousel :disabled="disabled" :carousel="carouselData" @toggleDisabled="toggleCarousel" />
   </div>
 </template>
 
 <script setup>
+import { carouselData } from '../data/carousel-data';
 useHead({
   title: 'Southern Convergence Technologies',
 });
@@ -46,30 +47,6 @@ const disabled = ref(false);
 const toggleCarousel = () => {
   disabled.value = !disabled.value;
 };
-
-const carousel = ref([
-  {
-    title: 'Custom Software Development',
-    text: 'We specialize in building and optimizing software solutions tailored to unique business and organizational objectives and processes. Through close collaboration throughout the development process, we ensure continuous alignment with business and operational goals. Our dedication is focused on delivering exceptional software solutions for every client.',
-    image: 'custom-sd.jpg',
-    link: '/ServiceCSD',
-    tag: 'Services',
-  },
-  {
-    title: 'Consulting Services',
-    text: 'Our consulting service offers advanced software development solutions powered by Fastly and DataStax. With our expertise in custom software development, performance optimization, and security, we help businesses build scalable, reliable, and secure applications that drive growth and innovation. Partner with us to unlock the full potential of your software development projects.',
-    image: 'consulting-services.jpg',
-    link: '/ServiceCS',
-    tag: 'Services',
-  },
-  {
-    title: 'Our Partners',
-    text: 'Staying ahead in the technology landscape requires collaboration and innovation. That is why Southern Convergence Technologies has partnered with established technology and software providers to expand our product offerings and provide you with cutting-edge solutions.',
-    images: ['sctc-partners-fastly.png', 'sctc-partners-ds.png'],
-    links: ['/fastly', '/datastax'],
-    tag: 'Partners',
-  },
-]);
 </script>
 
 <style>
@@ -78,7 +55,7 @@ const carousel = ref([
   width: 100%;
   height: 100%;
   color: white;
-  overflow: hidden; /* Ensure the video doesn't overflow the container */
+  overflow: hidden;
 }
 
 .video-background {
@@ -88,7 +65,7 @@ const carousel = ref([
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* Position the video behind other content */
+  z-index: 0;
 }
 
 .overlay {
@@ -111,12 +88,12 @@ const carousel = ref([
 .newContainer {
   position: absolute;
   top: 5%;
-  width: 80%;
-  margin-left: 7%;
+  width: 90%;
 }
 
-.newContainer #title-line2 {
-  margin-left: 20px;
+.newContainer #title-line2,
+.newContainer #title-line1 {
+  align-self: center;
   margin-top: 1%;
   animation: newTitle 0.8s ease;
 }
@@ -138,7 +115,8 @@ const carousel = ref([
   animation: carouselReturn 0.8s ease;
 }
 
-.returnBaseCarousel #title-line2 {
+.returnBaseCarousel #title-line2,
+.returnBaseCarousel #title-line1 {
   animation: returnLine 0.8s ease;
 }
 
@@ -149,12 +127,12 @@ const carousel = ref([
 @keyframes onclicktitlecontainer {
   from {
     top: 69%;
-    margin-left: 5%;
+    opacity: 0;
   }
 
   to {
     top: 5%;
-    margin-left: 7%;
+    opacity: 1;
   }
 }
 
@@ -170,25 +148,21 @@ const carousel = ref([
 
 @keyframes newTitle {
   from {
-    margin-left: 0%;
-    margin-top: 0%;
+    opacity: 0;
   }
 
   to {
-    margin-left: 20px;
-    margin-top: 1%;
+    opacity: 1;
   }
 }
 
 @keyframes returnLine {
   from {
-    margin-left: 20px;
-    margin-top: 1%;
+    opacity: 0;
   }
 
   to {
-    margin-left: 0%;
-    margin-top: 0%;
+    opacity: 1;
   }
 }
 </style>
