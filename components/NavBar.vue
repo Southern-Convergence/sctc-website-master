@@ -5,7 +5,7 @@
     color="black"
     style="position: relative"
     id="overlay-target"
-    class="font-Poppins p-1"
+    class="font-Poppins p-1 text-body-2"
   >
     <!-- NAV BAR IN MOBILE SCREENS -->
     <div class="hidden-md-and-up">
@@ -21,7 +21,7 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list style="background-color: #1b1b1b; color: white; margin: 43px 0px !important" width="100%">
+        <v-list class="mt-14" bg-color="#1b1b1b">
           <v-list-item>
             <NuxtLink to="/about" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
           </v-list-item>
@@ -31,8 +31,8 @@
               <v-overlay
                 activator="parent"
                 transition="false"
+                class="mt-14"
                 width="100%"
-                style="margin-top: 56px"
                 :close-on-content-click="true"
               >
                 <ServicesDropdown />
@@ -45,8 +45,8 @@
               <v-overlay
                 activator="parent"
                 transition="false"
+                class="mt-14"
                 width="100%"
-                style="margin-top: 56px"
                 :close-on-content-click="true"
               >
                 <PartnersDropdown />
@@ -71,7 +71,7 @@
     <!-- NAV BAR IN DESKTOP SCREENS -->
     <v-toolbar-title>
       <nuxt-link to="/" class="hidden-sm-and-down">
-        <img src="/assets/images/logo with txt.png" :width="400" class="cursor-pointer" />
+        <img src="/assets/images/logo_with_txt.png" :width="400" class="cursor-pointer" />
       </nuxt-link>
     </v-toolbar-title>
 

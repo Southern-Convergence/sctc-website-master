@@ -3,11 +3,18 @@
     <v-row align="center" justify="center">
       <v-col class="text-center pa-0 ma-0" cols="12">
         <div>
-          <nuxt-link :to="item.link" v-for="item in icons" :key="item.icon">
-            <v-btn :icon="item.icon" class="footer-item-size ma-0 pa-0" variant="text"></v-btn>
-          </nuxt-link>
+          <v-btn
+            v-for="item in footerData"
+            :key="item.icon"
+            :icon="item.icon"
+            class="footer-item-size mr-3 my-0 pa-0 w-auto"
+            variant="text"
+            target="_blank"
+            :href="item.link"
+          >
+          </v-btn>
           <span class="footer-item-size"
-            >{{ new Date().getFullYear() }} — <strong>Southern Convergence Technologies</strong></span
+            >{{ new Date().getFullYear() }} — <strong>Southern Convergence Technologies Corporation</strong></span
           >
         </div>
       </v-col>
@@ -16,18 +23,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const icons = ref([
-  {
-    icon: 'mdi-facebook',
-    link: 'https://www.facebook.com/southernconvergence/',
-  },
-  {
-    icon: 'mdi-linkedin',
-    link: 'https://ph.linkedin.com/company/southern-convergence-technologies',
-  },
-]);
+import { footerData } from '../data/footer-data';
 </script>
 
 <style scoped>
