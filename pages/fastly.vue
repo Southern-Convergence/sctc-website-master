@@ -1,5 +1,8 @@
 <template>
-  <div class="gradient h-full w-full text-white">
+  <div class="h-full w-full text-white body-div">
+    <video autoplay loop muted class="video-background">
+      <source src="../assets/images/fastly-bg-animation.mp4" type="video/mp4" />
+    </video>
     <img
       src="/assets/images/fastly.png"
       class="header aspect-auto border-8 invert scale-75"
@@ -52,6 +55,24 @@ const productsFastly = ref([
 </script>
 
 <style scoped>
+.body-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden; /* Ensure the video doesn't overflow the container */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Position the video behind other content */
+}
+
 .gradient {
   background-image: linear-gradient(0deg, rgb(249, 123, 123) 0%, rgb(101, 0, 0) 100%);
 }
