@@ -1,15 +1,18 @@
 <template>
-  <div class="h-full w-full text-white body-div">
-    <video autoplay loop muted class="video-background">
-      <source src="../assets/images/datastax-bg-animation.mp4" type="video/mp4" />
-    </video>
+  <video autoplay loop muted class="video-background">
+    <source src="../assets/images/datastax-bg-animation.mp4" type="video/mp4" />
+  </video>
+  <div class="h-full w-full body-div">
+
     <img
       src="/assets/images/datastax.webp"
       class="header aspect-auto border-8 invert p-1 scale-75"
-      style="margin: 0px auto 15px auto;"
+      style="margin: 0px auto 0px auto;"
     />
 
-    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" :tagline="tagline" />
+    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" :tagline="tagline" class="networkBG w-12/12 bg-white h-full"/>
+    
+
   </div>
 </template>
 

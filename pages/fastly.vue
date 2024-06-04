@@ -1,8 +1,9 @@
 <template>
-  <div class="h-full w-full text-white body-div">
-    <video autoplay loop muted class="video-background">
-      <source src="../assets/images/fastly-bg-animation.mp4" type="video/mp4" />
-    </video>
+  <video autoplay loop muted class="video-background">
+    <source src="../assets/images/fastly-bg-animation.mp4" type="video/mp4" />
+  </video>
+  <div class="h-full w-full body-div">
+
     <img
       src="/assets/images/fastly.png"
       class="header aspect-auto border-8 invert scale-75"
@@ -13,7 +14,7 @@
       
     </v-btn>-->
 
-    <InPartnerContent :products="productsFastly" :description="descriptionFastly" :tagline="tagline" />
+    <InPartnerContent :products="productsFastly" :description="descriptionFastly" :tagline="tagline" class="networkBG w-12/12 bg-white h-full"/>
   </div>
 </template>
 
