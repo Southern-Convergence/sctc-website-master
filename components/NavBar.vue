@@ -5,7 +5,7 @@
     color="black"
     style="position: relative"
     id="overlay-target"
-    class="font-Poppins p-1 text-body-2"
+    class="font-Poppins p-1 text-body-2 z-50"
   >
     <!-- NAV BAR IN MOBILE SCREENS -->
     <div class="hidden-md-and-up">
