@@ -6,6 +6,7 @@ import { NuxtLink } from '#build/components';
       <!-- Ensure the list is scrollable -->
       <NuxtLink
         v-for="service in serviceItems"
+        active-class="nuxt-link-active"
         :to="`${$route.params === 'service' ? '' : '/services'}/${service.link}`"
         :key="service.title"
       >
@@ -18,3 +19,8 @@ import { NuxtLink } from '#build/components';
 <script setup>
 import { serviceItems } from '../data/services-data';
 </script>
+<style>
+.nuxt-link-active {
+  color: #ff7b02;
+}
+</style>

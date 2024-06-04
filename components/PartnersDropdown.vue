@@ -2,7 +2,7 @@
   <v-card title="Partners" style="border-radius: 0px" class="max-h-72 pb-4 pl-5 font-Poppins">
     <!-- can only fit up to 4 items, trying to fix it could take time -->
     <v-list lines="one">
-      <NuxtLink v-for="partner in partners" :to="partner.link">
+      <NuxtLink v-for="partner in partners" :to="partner.link" active-class="nuxt-link-active">
         <v-list-item :title="partner.title" :subtitle="partner.subtitle" class="text-hover"></v-list-item>
       </NuxtLink>
     </v-list>
@@ -23,3 +23,8 @@ const partners = ref([
   },
 ]);
 </script>
+<style>
+.nuxt-link-active {
+  color: #ff7b02;
+}
+</style>
