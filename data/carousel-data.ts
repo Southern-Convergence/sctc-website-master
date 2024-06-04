@@ -7,7 +7,7 @@ export const carouselData = [
     tag: 'Services',
   },
   {
-    title: 'Tech Maketing & Sales',
+    title: 'Tech Marketing & Sales',
     text: `Delve into our array of advanced software solutions, harnessing the power of Fastly and DataStax. From DataStax's renowned Apache Cassandra for unparalleled scalability to Fastly's cutting-edge edge cloud platform ensuring lightning-fast content delivery, we offer bespoke products tailored to your specific needs. Collaborate with us to fully unleash the potential of these platforms, enabling your projects to scale seamlessly, operate reliably, and drive continuous innovation and growth.`,
     image: 'tms-icon.png',
     link: '/services/tech-marketing-and-sales',

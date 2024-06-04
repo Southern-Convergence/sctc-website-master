@@ -11,7 +11,7 @@ export const serviceItems = [
     ],
   },
   {
-    title: 'Tech Maketing & Sales',
+    title: 'Tech Marketing & Sales',
     link: 'tech-marketing-and-sales',
     subtitle: 'Innovative Strategies',
     img: 'tms-icon.png',

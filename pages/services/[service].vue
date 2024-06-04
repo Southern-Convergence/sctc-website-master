@@ -16,7 +16,7 @@
                     class="text-h5 text-sm-h4 text-md-h3 font-weight-light italic ma-10"
                     :style="{ color: '#ff7b02' }"
                   >
-                    "{{ slide.subtitle }}""
+                    "{{ slide.subtitle }}"
                   </h2>
                 </v-col>
               </v-row>
@@ -42,11 +42,12 @@
             <v-container class="w-100 md:px-10">
               <v-row class="d-flex justify-center align-center">
                 <v-col cols="12" md="7" class="d-flex flex-column justify-center text-section">
-                  <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
-                    <p
-                      class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light"
-                      :v-html="paragraph"
-                    >
+                  <div
+                    v-for="(paragraph, pIndex) in slide.body"
+                    :key="pIndex"
+                    class="paragraph text-start"
+                  >
+                    <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light">
                       {{ paragraph }}
                     </p>
                   </div>
@@ -88,11 +89,10 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { serviceItems } from '../../data/services-data';
 
 const route = useRoute();
-const router = useRouter();
 const serviceDetails = ref({});
 const currentSlide = ref(0);
 
@@ -139,7 +139,7 @@ onMounted(() => {
 <style scoped>
 .custom-underline {
   text-decoration: underline;
-  text-decoration-color: #ff7b02; /* Tomato color for the underline */
+  text-decoration-color: #ff7b02;
 }
 
 .service-page {
