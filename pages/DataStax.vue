@@ -3,16 +3,14 @@
     <source src="../assets/images/datastax-bg-animation.mp4" type="video/mp4" />
   </video>
   <div class="h-full w-full body-div">
+    <img src="/assets/images/datastax.png" class="header invert p-1 scale-75" style="margin: 0px auto" />
 
-    <img
-      src="/assets/images/datastax.webp"
-      class="header aspect-auto border-8 invert p-1 scale-75"
-      style="margin: 0px auto 0px auto;"
+    <InPartnerContent
+      :products="productsDataStax"
+      :description="descriptionDataStax"
+      :tagline="tagline"
+      class="networkBG w-12/12 bg-white h-full"
     />
-
-    <InPartnerContent :products="productsDataStax" :description="descriptionDataStax" :tagline="tagline" class="networkBG w-12/12 bg-white h-full"/>
-    
-
   </div>
 </template>
 
@@ -23,8 +21,6 @@ import { tagline, descriptionDataStax, productsDataStax } from '../data/datastax
 useHead({
   title: 'DataStax',
 });
-
-
 </script>
 
 <style scoped>
@@ -59,12 +55,10 @@ useHead({
     transform: scale(0.75); /* Adjust the scale factor as needed */
   }
   50% {
-    transform: scale(.85); /* Adjust the scale factor as needed */
+    transform: scale(0.85); /* Adjust the scale factor as needed */
   }
   100% {
-    transform: scale(.75); /* Adjust the scale factor as needed */
+    transform: scale(0.75); /* Adjust the scale factor as needed */
   }
 }
-
-
 </style>

@@ -1,10 +1,9 @@
 export const tagline = 'DataStax: A Trusted Partner for Cutting-edge Cloud Database Solutions';
 
 export const descriptionDataStax = [
-  'Welcome to the forefront of modern data management with DataStax, a leading provider of distributed hybrid cloud database management systems. DataStax offers tailored solutions designed specifically for enterprises navigating this dynamic landscape.',
-  "At the heart of DataStax's offerings lies their flagship product, DataStax Enterprise (DSE). DSE seamlessly merges the scalability of Apache Cassandra with enterprise-grade functionality, empowering organizations with unparalleled real-time data distribution and analytics capabilities. Additionally, DataStax presents Astra, a cloud-native Database-as-a-Service (DBaaS) meticulously built on theensuring smooth operations and optimal performance.",
-  'As a trusted partner of DataStax, we offer an extensive suite of consultancy, training, and support services strategically crafted to empower organizations in maximizing the potential of their data infrastructure. Through our collaborative endeavors, enterprises can confidently fortify their resilience, bolster agility, and drive innovation within the dynamic realm of digital transformation.',
-  "Join us in harnessing the power of DataStax's cutting-edge solutions to revolutionize your data management strategy and drive transformative outcomes for your business.",
+  "Step into the vanguard of modern data management with DataStax, your premier partner for cutting-edge distributed hybrid cloud database systems. Our suite of solutions, including DataStax Enterprise (DSE) and Astra, seamlessly integrates Apache Cassandra's renowned scalability with enterprise-grade functionalities, empowering organizations with unparalleled capabilities in real-time data distribution and analytics.",
+  "We offer consultancy, training, and support services tailored to your specific needs. Whether initiating a new data project or optimizing existing infrastructure, our expert team provides invaluable guidance and assistance at every stage. Let's embark on a transformative journey into the digital age, revolutionizing your data strategy with DataStax's pioneering solutions.",
+  "With DataStax by your side, you'll harness the power of cutting-edge technology and benefit from expertise and support to ensure your success. From strategic planning to implementation, we're committed to partnering with you every step of the way, empowering you to drive innovation across your organization. Join us as we pioneer the future of data management together, unlocking new horizons of possibility for your business.",
 ];
 
 export const productsDataStax = [
