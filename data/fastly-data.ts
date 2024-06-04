@@ -1,10 +1,9 @@
 export const tagline = 'Welcome to Our Fastly Partnership: Accelerate Your Digital Experience with Confidence';
 
 export const descriptionFastly = [
-  "We're thrilled to introduce our partnership with Fastly – the industry leader in content delivery, security, and edge computing. Together, we're committed to helping businesses like yours achieve unparalleled digital performance and security, all while delivering exceptional user experiences.",
-  "Fastly is an innovative cloud platform that enables businesses to deliver websites and applications swiftly and securely to global users. With a strategically positioned global server network, Fastly serves as a high-speed conduit for internet traffic, ensuring rapid and reliable access to web content. By leveraging this network, Fastly optimizes online content delivery, delivering a seamless and efficient browsing experience for users.",
-  "As your trusted partner, we're here to help you leverage the full potential of Fastly's platform. Whether you're looking to accelerate content delivery, fortify your security posture, or unlock the power of edge computing, our partnership with Fastly provides the tools and expertise you need to succeed in today's digital landscape.",
-  "Join us in shaping the future of digital delivery and security with Fastly – together, we'll accelerate your online success with confidence.",
+  "We've partnered with Fastly, a leader in content delivery, security, and edge computing, to revolutionize digital performance and security for enterprises like yours. Together, we guarantee unparalleled user experiences and operational excellence in today's competitive business landscape",
+  "Fastly's cloud platform ensures seamless delivery of websites and applications globally. With a global server network, Fastly provides swift and dependable access to web content, enhancing user satisfaction and operational efficiency. As your ally, we're here to help you leverage Fastly's capabilities, whether it's expediting content delivery, fortifying security, or exploring edge computing opportunities. Let's shape the future of digital delivery and security together, propelling your business to unprecedented success.",
+  "With our expertise and Fastly's solutions, you'll navigate the digital realm with confidence. Together, we'll craft strategies and implement technologies to optimize your digital presence, enhance security, and foster growth and innovation. Embrace digital transformation with us and Fastly, paving the way for a brighter future for your business.",
 ];
 
 export const productsFastly = [
