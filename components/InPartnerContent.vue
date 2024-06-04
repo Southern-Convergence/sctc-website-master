@@ -3,14 +3,8 @@
     <!-- the content reaching the bottom of the page is intentional -->
     <div class="w-12/12 h-full d-flex flex-row slide-animation" style="margin: 0px auto">
       <!-- menu for mobile view -->
-      <div class="hidden-md-and-up p-2">
-        <v-menu
-          width="100%"
-          transition="slide-x-transition"
-          class="font-Poppins"
-          location="center"
-          style="margin: 0px !important; padding: 0px !important"
-        >
+      <div class="hidden-md-and-up p-1">
+        <v-menu width="80%" transition="slide-y-transition" class="font-Poppins" location="center">
           <template v-slot:activator="{ props }">
             <v-btn icon v-bind="props" variant="tonal">
               <v-icon :class="getTitleColor(route.name)">mdi-view-list</v-icon>
@@ -77,8 +71,8 @@
           <v-window v-model="tab" direction="vertical" class="">
             <v-window-item value="description">
               <div
-                class="w-11/12 p-5 md:p-8"
-                style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 1.5rem"
+                class="w-11/12 p-3 md:p-8"
+                style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 1rem"
               >
                 <h1
                   class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
@@ -95,7 +89,10 @@
                 >
                 </v-divider>
 
-                <p class="mb-4 md:mb-8 text-xs xl:text-sm 2xl:text-lg font-Poppins" v-for="desc in description">
+                <p
+                  class="mb-4 md:mb-8 text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins font-weight-light text-justify"
+                  v-for="desc in description"
+                >
                   {{ desc }}
                 </p>
                 <nuxt-link to="/contact">
@@ -117,8 +114,10 @@
                       :lazy-src="`/static/images/${product.image}`"
                       class="floating-image"
                     ></v-img>
-                    <v-card-text class="font-Poppins" style="padding: 25px 5px; font-size: 0.8em">
-                      <!-- had to use basic css, tailwind text-xs wasn't working -->
+                    <v-card-text
+                      class="text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins font-weight-light"
+                      style="padding: 25px 5px"
+                    >
                       <!-- md:text-xs 2xl:text-base -->
                       {{ product.text }}
                     </v-card-text>
