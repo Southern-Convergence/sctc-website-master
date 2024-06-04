@@ -77,7 +77,7 @@
 
     <template v-slot:append>
       <div class="flex hidden-sm-and-down">
-        <NuxtLink to="/about" :class="routeCheck('/about')" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
+        <NuxtLink to="/about" :class="{ 'active-link': route.path === '/about' }" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
 
         <div class="cursor-pointer p-3 text-hover">
           <p :class="{ 'active-link': Object.keys(route.params)[0] === 'service' }">SERVICES</p>
@@ -103,8 +103,8 @@
             <PartnersDropdown />
           </v-overlay>
         </div>
-        <NuxtLink to="/contact" :class="routeCheck('/contact')" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
-        <NuxtLink to="/Roadshow" :class="routeCheck('/Roadshow')" class="cursor-pointer p-3 text-hover"
+        <NuxtLink to="/contact" :class="{ 'active-link': route.path === '/contact' }" class="cursor-pointer p-3 text-hover">CONTACT</NuxtLink>
+        <NuxtLink to="/Roadshow" :class="{ 'active-link': route.path === '/Roadshow' }" class="cursor-pointer p-3 text-hover"
           >ROADSHOW DATASTAX & SCTC</NuxtLink
         >
       </div>
@@ -116,24 +116,11 @@
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-
-const routeCheck = (path) => {
-  return route.path === path ? 'text-selected' : '';
-};
-
-const isActive = (link) => {
-  return Object.keys(route.params)[0] === link;
-};
 </script>
 
 <style>
 .text-hover:hover {
   color: #ff7801;
-}
-
-.text-selected {
-  color: #ff7801;
-  font-weight: 600;
 }
 
 .active-link {
