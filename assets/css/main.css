@@ -7,6 +7,17 @@ body {
   overflow: hidden !important;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #ff7b02;
+}
+
+::selection {
+  color: white;
+  background: #ff7b02;
+}
+
 .slide-animation {
   animation: slideInFromBottom 0.8s ease forwards;
 }

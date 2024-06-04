@@ -80,7 +80,7 @@
         <NuxtLink to="/about" :class="routeCheck('/about')" class="cursor-pointer p-3 text-hover">ABOUT</NuxtLink>
 
         <div class="cursor-pointer p-3 text-hover">
-          SERVICES
+          <p :class="{ 'active-link': Object.keys(route.params)[0] === 'service' }">SERVICES</p>
           <v-overlay
             activator="parent"
             transition="false"
@@ -91,9 +91,8 @@
             <ServicesDropdown />
           </v-overlay>
         </div>
-
         <div class="cursor-pointer p-3 text-hover">
-          PARTNERS
+          <p :class="{ 'active-link': ['/fastly', '/datastax'].includes(route.path) }">PARTNERS</p>
           <v-overlay
             activator="parent"
             transition="false"
@@ -121,6 +120,10 @@ const route = useRoute();
 const routeCheck = (path) => {
   return route.path === path ? 'text-selected' : '';
 };
+
+const isActive = (link) => {
+  return Object.keys(route.params)[0] === link;
+};
 </script>
 
 <style>
@@ -130,6 +133,11 @@ const routeCheck = (path) => {
 
 .text-selected {
   color: #ff7801;
+  font-weight: 600;
+}
+
+.active-link {
+  color: #ff7b02;
   font-weight: 600;
 }
 </style>
