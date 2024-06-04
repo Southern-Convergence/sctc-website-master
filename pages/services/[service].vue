@@ -2,14 +2,16 @@
   <v-container class="service-page fill-height d-flex flex-column justify-center align-center pa-0">
     <div class="slide-animation">
       <!-- Carousel -->
-      <v-carousel v-model="currentSlide" hide-delimiter-background hide-delimiters>
+      <v-carousel v-model="currentSlide" hide-delimiter-background hide-delimiters class="h-100">
         <!-- Slides -->
         <v-carousel-item v-for="(slide, index) in slides" :key="index">
           <section class="text-center pa-12" v-if="index === 0">
-            <v-container class="w-100 pa-0">
+            <v-container class="w-100 pa-0 px-10">
               <v-row>
                 <v-col>
-                  <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4 underline">{{ slide.title }}</h1>
+                  <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4 custom-underline">
+                    {{ slide.title }}
+                  </h1>
                   <h2
                     class="text-h5 text-sm-h4 text-md-h3 font-weight-light italic ma-10"
                     :style="{ color: '#ff7b02' }"
@@ -25,7 +27,7 @@
               <v-row class="d-flex justify-center align-center">
                 <v-col cols="12" md="8" class="d-flex flex-column justify-center align-center text-section">
                   <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4">
-                    How can we <span class="underline"> make it happen </span> for you?
+                    How can we <span class="custom-underline"> make it happen </span> for you?
                   </h1>
 
                   <v-btn color="orange" density="comfortable" variant="flat" to="/contact" class="mt-4">
@@ -42,7 +44,7 @@
                 <v-col cols="12" md="7" class="d-flex flex-column justify-center text-section">
                   <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
                     <p
-                      class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-medium"
+                      class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light"
                       :v-html="paragraph"
                     >
                       {{ paragraph }}
@@ -132,14 +134,13 @@ onMounted(() => {
     };
   }
 });
-
-function getInTouch() {
-  router.push('/contact');
-}
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+.custom-underline {
+  text-decoration: underline;
+  text-decoration-color: #ff7b02; /* Tomato color for the underline */
+}
 
 .service-page {
   font-family: 'Poppins', sans-serif;
