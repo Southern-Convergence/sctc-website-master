@@ -1,9 +1,9 @@
 export const tagline = 'Welcome to Our Fastly Partnership: Accelerate Your Digital Experience with Confidence';
 
 export const descriptionFastly = [
-  "We've partnered with Fastly, a leader in content delivery, security, and edge computing, to revolutionize digital performance and security for enterprises like yours. Together, we guarantee unparalleled user experiences and operational excellence in today's competitive business landscape",
-  "Fastly's cloud platform ensures seamless delivery of websites and applications globally. With a global server network, Fastly provides swift and dependable access to web content, enhancing user satisfaction and operational efficiency. As your ally, we're here to help you leverage Fastly's capabilities, whether it's expediting content delivery, fortifying security, or exploring edge computing opportunities. Let's shape the future of digital delivery and security together, propelling your business to unprecedented success.",
-  "With our expertise and Fastly's solutions, you'll navigate the digital realm with confidence. Together, we'll craft strategies and implement technologies to optimize your digital presence, enhance security, and foster growth and innovation. Embrace digital transformation with us and Fastly, paving the way for a brighter future for your business.",
+  "We've partnered with Fastly, a leader in content delivery, security, and edge computing, to revolutionize digital performance and security for enterprises like yours. Together, we guarantee unparalleled user experiences and operational excellence in today's competitive business landscape.",
+  "Fastly's cloud platform ensures seamless delivery of websites and applications globally. With a global server network, Fastly provides swift and dependable access to web content, enhancing user satisfaction and operational efficiency. As your ally, we're here to help you leverage Fastly's capabilities, whether it's expediting content delivery, fortifying security, or exploring edge computing opportunities.",
+  "Furthermore, our collaborative approach extends beyond implementation, as we provide ongoing support and strategic guidance to optimize your digital infrastructure. With Fastly's cutting-edge solutions and our expertise, you can navigate the complexities of the digital realm with confidence, unlocking new possibilities for growth and innovation.",
 ];
 
 export const productsFastly = [

@@ -16,8 +16,8 @@ export const serviceItems = [
     subtitle: 'Innovative Strategies',
     img: 'tms-icon.png',
     body: [
-      `Crafting bespoke software solutions tailored to your business objectives is our primary focus. We start by delving deep into your business processes through extensive consultations and meticulous analysis. This foundational understanding allows us to design solutions that seamlessly integrate with your existing workflows, ensuring minimal disruption and optimal efficiency.`,
-      `Throughout the development journey, collaboration and communication take center stage. We work closely with you to refine the software in real-time, leveraging your insights to shape the final product. With our seasoned team of professionals, equipped with industry knowledge and technical expertise, your software needs are in capable hands. Together, we'll harness the power of technology to drive your organization towards growth and innovation, realizing its full potential.
+      `Embark on a transformative journey into digital commerce with our platform, where partnerships with DataStax and Fastly redefine marketing and reselling dynamics. Leveraging DataStax's distributed database and Fastly's edge cloud platform, we offer unparalleled scalability and speed in data management and content delivery.`,
+      `From omnichannel marketing to intricate reselling strategies, our platform delivers tangible results through advanced data management and content delivery technologies. Join us at the forefront of digital innovation as we leverage the combined capabilities of DataStax and Fastly to propel your business forward in the digital landscape.
     `,
     ],
   },
@@ -50,8 +50,8 @@ export const serviceItems = [
     subtitle: 'Seamless Integration',
     img: 'obas-icon.png',
     body: [
-      `Welcome to our specialized suite of services dedicated to enhancing website performance and user engagement. We offer tailored onboarding solutions, ensuring a seamless transition whether you're launching a new website or optimizing an existing one. Our expert team guides you from setup to deployment, maximizing efficiency and minimizing downtime.`,
-      `In addition to onboarding, we provide cutting-edge AI support for ad tech. Leveraging AI, our solutions offer intelligent insights and optimizations, from advanced audience targeting to real-time bidding, maximizing ROI. With our combined expertise, we empower your website to thrive in today's digital landscape. Partner with us and discover the difference our comprehensive services can make.
+      `Step into our specialized suite of services tailored to streamline application onboarding. We provide tailored onboarding solutions, ensuring a seamless transition whether you're launching a new application or optimizing an existing one. Our expert team guides you through setup and deployment, maximizing efficiency and minimizing downtime for uninterrupted operations.`,
+      `Beyond onboarding, we offer cutting-edge AI support tailored specifically for ad tech. Harnessing the power of AI, our solutions deliver intelligent insights and optimizations, ranging from advanced audience targeting to real-time bidding, ultimately maximizing your return on investment. With our combined expertise, we equip your application to thrive in today's dynamic digital landscape. Partner with us and experience firsthand the transformative impact our comprehensive services can have on your success.
     `,
     ],
   },
