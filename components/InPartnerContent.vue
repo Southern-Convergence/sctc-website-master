@@ -1,9 +1,9 @@
 <template>
-  <div class="slide-animation h-full">
+  <div class="h-full">
     <!-- the content reaching the bottom of the page is intentional -->
-    <div class="networkBG w-12/12 bg-white h-full d-flex flex-row" style="margin: 0px auto">
+    <div class="w-12/12 h-full d-flex flex-row slide-animation" style="margin: 0px auto">
       <!-- menu for mobile view -->
-      <div class="hidden-sm-and-up p-2">
+      <div class="hidden-md-and-up p-2">
         <v-menu
           width="100%"
           transition="slide-x-transition"
@@ -32,13 +32,13 @@
                   text="Description"
                   value="description"
                   :class="tab === 'description' ? getActiveClass(route.name) : 'bg-white'"
-                  style="font-size: 12px"
+                  style="font-size: 10px"
                 ></v-tab>
                 <v-tab
                   text="Products"
                   value="products"
                   :class="tab === 'products' ? getActiveClass(route.name) : 'bg-white'"
-                  style="font-size: 12px"
+                  style="font-size: 10px"
                 ></v-tab>
               </v-tabs>
             </v-list-item>
@@ -46,8 +46,9 @@
         </v-menu>
       </div>
 
-      <v-row class="">
-        <v-col cols="2" class="hidden-md-and-down">
+      <!-- web view -->
+      <v-row class="p-1 md:p-10">
+        <v-col cols="2" class="hidden-sm-and-down">
           <v-tabs
             v-model="tab"
             grow
@@ -72,7 +73,7 @@
             ></v-tab>
           </v-tabs>
         </v-col>
-        <v-col class="overflow-hidden">
+        <v-col>
           <v-window v-model="tab" direction="vertical" class="">
             <v-window-item value="description">
               <div
@@ -99,7 +100,7 @@
                 </p>
                 <nuxt-link to="/contact">
                   <v-btn variant="text" style="padding: 0px">
-                    <span :class="getTitleColor(route.name)">Learn More</span>
+                    <span :class="getTitleColor(route.name)">Contact Us To Learn More</span>
                     <v-icon right class="ml-2" :class="getTitleColor(route.name)">mdi-arrow-right</v-icon>
                   </v-btn>
                 </nuxt-link>
@@ -107,21 +108,6 @@
             </v-window-item>
             <v-window-item value="products">
               <div class="p-5 md:p-8" style="margin: 0px auto; padding-top: 1.5rem">
-                <!--<h1
-                  class="font-black font-Roboto text-center text-lg md:text-xl xl:text-2xl 2xl:text-4xl text-purple-900"
-                  :class="getTitleColor(route.name)"
-                >
-                  Products
-                </h1>
-                <v-divider
-                  thickness="5"
-                  color="black"
-                  length="80"
-                  class="border-opacity-100 p-0"
-                  style="margin: 15px auto 30px auto"
-                >
-                </v-divider>-->
-
                 <!-- PRODUCTS WEB VIEW -->
                 <div class="grid hidden-sm-and-down" :class="getColsCount()">
                   <!-- copying what's in the current website -->
