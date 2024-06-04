@@ -9,11 +9,11 @@
             <v-container class="w-100 pa-0 px-10">
               <v-row>
                 <v-col>
-                  <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4 custom-underline">
+                  <h1 class="text-h4 text-sm-h2 text-md-h1 font-weight-bold mb-4 custom-underline">
                     {{ slide.title }}
                   </h1>
                   <h2
-                    class="text-h5 text-sm-h4 text-md-h3 font-weight-light italic ma-10"
+                    class="text-h6 text-sm-h4 text-md-h3 font-weight-light italic ma-10"
                     :style="{ color: '#ff7b02' }"
                   >
                     "{{ slide.subtitle }}"
@@ -42,11 +42,7 @@
             <v-container class="w-100 md:px-10">
               <v-row class="d-flex justify-center align-center">
                 <v-col cols="12" md="7" class="d-flex flex-column justify-center text-section">
-                  <div
-                    v-for="(paragraph, pIndex) in slide.body"
-                    :key="pIndex"
-                    class="paragraph text-start"
-                  >
+                  <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
                     <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light">
                       {{ paragraph }}
                     </p>
@@ -68,7 +64,7 @@
         <!-- Custom Arrows -->
         <template v-slot:prev>
           <v-btn v-if="currentSlide > 0" icon class="carousel-arrow left" variant="flat" @click="currentSlide--">
-            <v-icon small>mdi-chevron-left</v-icon>
+            <v-icon size="large">mdi-chevron-left</v-icon>
           </v-btn>
         </template>
         <template v-slot:next>
@@ -79,7 +75,7 @@
             variant="flat"
             @click="currentSlide++"
           >
-            <v-icon small>mdi-chevron-right</v-icon>
+            <v-icon size="large">mdi-chevron-right</v-icon>
           </v-btn>
         </template>
       </v-carousel>
