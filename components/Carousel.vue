@@ -4,7 +4,7 @@
     :class="{ baseCarouselContainer: disabled, closeCarousel: !disabled }"
     class="networkBG w-full h-full"
   >
-    <v-btn @click="emits('toggleDisabled')" variant="flat" icon="mdi-arrow-down" class="return-btn"> </v-btn>
+    <v-btn @click="emits('toggleDisabled')" variant="elevated" icon="mdi-arrow-down" class="return-btn"> </v-btn>
     <v-carousel hide-delimiter-background hide-delimiters touch.boolean="true" height="100%" color="#ff7b02">
       <template v-slot:prev="{ props }">
         <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-arrow-left"> </v-btn>
