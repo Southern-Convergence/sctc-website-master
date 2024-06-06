@@ -17,7 +17,7 @@
                   <ContactForm @toggleMore="toggleMore" />
                 </template>
                 <template v-else>
-                  <MoreDetails @toggleMore="toggleMore" />
+                  <ContactDetails @toggleMore="toggleMore" />
                 </template>
               </div>
             </v-sheet>

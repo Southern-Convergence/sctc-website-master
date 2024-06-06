@@ -15,9 +15,7 @@
         <br />
         Software Development
       </p>
-
       <br />
-
       <v-hover v-slot="{ isHovering, props }">
         <v-btn
           v-bind="props"
@@ -29,6 +27,7 @@
           @click="toggleCarousel"
           class="disable"
           >FIND OUT MORE
+          <v-icon right class="ml-2">mdi-arrow-up</v-icon>
         </v-btn>
       </v-hover>
     </div>
