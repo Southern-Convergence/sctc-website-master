@@ -1,6 +1,11 @@
 <template>
   <div class="h-full w-full body-div">
-    <img :src="`/static/images/${cover}`" class="header invert p-1 scale-75 " style="margin: 0px auto" />
+    <v-img
+      :src="`/static/images/${cover}`"
+      class="header invert p-1 scale-75 aspect-auto md:w-3/5"
+      style="margin: 0px auto"
+      alt="Partner logo"
+    />
     <!-- menu for mobile view -->
     <div class="hidden-md-and-up p-1 absolute top-0.5">
       <v-menu width="80%" transition="slide-y-transition" class="font-Poppins" location="center">
@@ -62,7 +67,7 @@
               <v-tab
                 text="Products"
                 value="products"
-                :class="tab === 'products' ? ['text-[#ff7b02]', 'activeTab']  : 'bg-white'"
+                :class="tab === 'products' ? ['text-[#ff7b02]', 'activeTab'] : 'bg-white'"
                 style="font-size: 12px"
               ></v-tab>
             </v-tabs>
@@ -152,33 +157,35 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { partnersData } from '../../data/partners-data.ts';
 
-useHead({
-  title: 'DataStax',
-});
-
 const route = useRoute();
-let partnerDetails = ref({});
-let cover = ref('');
-let background = ref('');
-let tagline = ref('');
-let description = ref([]);
-let products = ref([]);
+const partnerDetails = ref({});
+const name = ref('');
+const cover = ref('');
+const background = ref('');
+const tagline = ref('');
+const description = ref([]);
+const products = ref([]);
 
 let tab = ref('');
+
+console.log(name.value);
 
 onMounted(() => {
   partnerDetails.value = partnersData.find((partner) => partner.link === route.params.partner);
   if (partnerDetails.value) {
     cover.value = partnerDetails.value.cover;
+    name.value = partnerDetails.value.name;
     background.value = partnerDetails.value.background;
     tagline.value = partnerDetails.value.tagline;
     description.value = partnerDetails.value.description;
     products.value = partnerDetails.value.products;
   }
+  useHead({
+    title: name.value,
+  });
 });
 
 const getColsCount = () => {
@@ -195,8 +202,8 @@ const getColsCount = () => {
   color: white;
   overflow: hidden; /* Ensure the video doesn't overflow the container */
   background: #ff6001;
-  background: linear-gradient(139deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
-    radial-gradient(at left top, #ff6001, #ffa72b);
+  background: linear-gradient(139deg, rgba(50, 50, 50, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+    radial-gradient(at left top, #ff6001, #ffd001);
 }
 
 .video-background {

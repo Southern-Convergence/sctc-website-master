@@ -84,7 +84,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { serviceItems } from '../../data/services-data';
 
@@ -129,6 +128,9 @@ onMounted(() => {
       image: serviceDetails.value.img,
     };
   }
+  useHead({
+    title: slides.value[0].title,
+  });
 });
 </script>
 
