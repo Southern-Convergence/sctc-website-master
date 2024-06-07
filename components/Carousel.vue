@@ -139,6 +139,9 @@ const redirectToLink = (link) => {
   width: 50px;
   height: 50px;
   text-align: center;
+  background-color: white !important;
+  color: #ff7b02 !important;
+  border: 3px #ff7b02 solid !important;
   z-index: 2;
   background-color: white !important;
   color: #ff7b02 !important;
