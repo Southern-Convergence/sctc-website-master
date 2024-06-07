@@ -35,7 +35,7 @@
         </template>
         <template v-else>
           <v-container class="w-75 h-100 d-flex justify-center align-center">
-            <v-card class="mx-auto mb-40" max-width="1200" flat color="transparent">
+            <v-card class="mx-auto mb-20" max-width="1200" flat color="transparent">
               <div class="p-1 md:p-12">
                 <v-row justify="center" align="center">
                   <v-col col="12" md="10" class="">
