@@ -128,9 +128,6 @@ onMounted(() => {
       image: serviceDetails.value.img,
     };
   }
-  useHead({
-    title: slides.value[0].title,
-  });
 });
 </script>
 

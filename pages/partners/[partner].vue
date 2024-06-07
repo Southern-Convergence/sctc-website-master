@@ -181,11 +181,13 @@ onMounted(() => {
     background.value = partnerDetails.value.background;
     tagline.value = partnerDetails.value.tagline;
     description.value = partnerDetails.value.description;
-    products.value = partnerDetails.value.products;
+    products.value = partnerDetails.value.products;;
+    useHead({
+      title: name.value,
+    });
+  } else {
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
   }
-  useHead({
-    title: name.value,
-  });
 });
 
 const getColsCount = () => {
