@@ -127,6 +127,11 @@ onMounted(() => {
       body: serviceDetails.value.body,
       image: serviceDetails.value.img,
     };
+    useHead({
+      title: serviceDetails.value.title,
+    });
+  } else {
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
   }
 });
 </script>

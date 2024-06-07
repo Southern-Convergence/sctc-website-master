@@ -34,33 +34,33 @@
           </div>
         </template>
         <template v-else>
-          <v-container class="pa-4">
-            <v-card class="mx-auto" max-width="1200" flat color="transparent">
-              <v-row align="center" justify="center">
-                <v-col cols="12" md="8">
-                  <div class="text-left p-4 md:p-12">
-                    <p class="font-Poppins text-xl md:text-5xl my-6 font-weight-bold text-[#ff7b02]">
+          <v-container class="w-75 h-100 d-flex justify-center align-center">
+            <v-card class="mx-auto mb-20" max-width="1200" flat color="transparent">
+              <div class="p-1 md:p-12">
+                <v-row justify="center" align="center">
+                  <v-col col="12" md="10" class="">
+                    <p class="font-Poppins text-xl md:text-5xl mb-6 font-weight-bold text-[#ff7b02]">
+                      <v-icon class="pa-1 pa-md-3">
+                        <v-img :lazy-src="`/static/images/${item.image}`" :src="`/static/images/${item.image}`"></v-img>
+                      </v-icon>
                       {{ item.title }}
                     </p>
                     <p class="font-Overpass text-gray-500 text-xs font-weight-medium md:text-lg">
                       {{ item.text }}
                     </p>
-                    <v-btn color="orange" density="comfortable" variant="flat" :to="item.link" class="mt-4">
+                    <v-btn
+                      color="orange"
+                      density="comfortable"
+                      variant="flat"
+                      :to="item.link"
+                      class="mt-4 responsive-btn"
+                    >
                       Learn More
                       <v-icon right class="ml-2">mdi-arrow-right</v-icon>
                     </v-btn>
-                  </div>
-                </v-col>
-                <v-col cols="12" md="4" class="d-flex">
-                  <v-img
-                    class="hidden-sm-and-down"
-                    :lazy-src="`/static/images/${item.image}`"
-                    :src="`/static/images/${item.image}`"
-                    contain
-                    height="400"
-                  ></v-img>
-                </v-col>
-              </v-row>
+                  </v-col>
+                </v-row>
+              </div>
             </v-card>
           </v-container>
         </template>
@@ -99,6 +99,7 @@ const redirectToLink = (link) => {
     width: 50%;
   }
 }
+
 .baseCarouselContainer {
   display: block;
   background: radial-gradient(80% 20% at 50% -5%, #ffcd9388 40%, rgba(255, 255, 255, 0.127) 100%);
@@ -134,6 +135,7 @@ const redirectToLink = (link) => {
   position: absolute;
   top: -25px;
   left: 10%;
+  bottom: 0%;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -141,6 +143,9 @@ const redirectToLink = (link) => {
   color: #ff7b02 !important;
   border: 3px #ff7b02 solid !important;
   z-index: 2;
+  background-color: white !important;
+  color: #ff7b02 !important;
+  border: 3px solid !important;
 }
 
 @keyframes carouselOpen {

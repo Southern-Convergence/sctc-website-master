@@ -47,6 +47,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .responsive-btn {
+    font-size: 10px !important; /* Smaller font size */
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

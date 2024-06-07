@@ -7,7 +7,7 @@
     transition="dialog-top-transition"
   >
     <v-card rounded="lg">
-      <v-img height="auto" src="/static/images/sctc-popup.jpg" cover>
+      <v-img height="auto" :src="`/static/images/${event.img}`" cover>
         <v-card-title class="d-flex justify-end align-center">
           <v-sheet rounded="circle" class="my-2">
             <v-btn class="close-btn" icon="mdi-close" variant="text" @click="closePopUp"></v-btn>
@@ -15,28 +15,28 @@
         </v-card-title>
       </v-img>
       <v-sheet class="ma-4 d-flex justify-center">
-        <v-btn class="text-none" color="#ff7b02" text="Learn More" variant="flat" @click="redirect"></v-btn>
+        <v-btn class="text-none" color="#ff7b02" text="Learn More" variant="flat" @click="redirect(event.link)"></v-btn>
       </v-sheet>
     </v-card>
   </v-dialog>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { event } from '../data/events/pop-up-data';
 import { useRouter } from 'vue-router';
-
-const router = useRouter();
 const showPopUp = ref(false);
 const POPUP_LAST_SHOWN_KEY = 'popup_last_shown';
 const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-const redirect = () => {
-  showPopUp.value = false;
-  router.push('/Roadshow');
-};
+const router = useRouter();
 
 const closePopUp = () => {
   showPopUp.value = false;
+};
+
+const redirect = (link) => {
+  closePopUp();
+  router.push(link);
 };
 
 const shouldShowPopup = () => {
