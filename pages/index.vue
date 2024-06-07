@@ -25,7 +25,7 @@
             color: isHovering ? '#FF5C01 !important' : 'white',
           }"
           @click="toggleCarousel"
-          class="disable"
+          class="disable responsive-btn"
           >FIND OUT MORE
           <v-icon right class="ml-2">mdi-arrow-up</v-icon>
         </v-btn>

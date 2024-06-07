@@ -28,12 +28,12 @@ export const navItems = [
       {
         title: 'DataStax',
         subtitle: 'DataStax Subtitle',
-        link: '/datastax',
+        link: 'datastax',
       },
       {
         title: 'Fastly',
         subtitle: 'Fastly Subtitle',
-        link: '/fastly',
+        link: 'fastly',
       },
     ],
   },

@@ -61,16 +61,6 @@
                   </v-col>
                 </v-row>
               </div>
-
-              <!-- <v-col cols="12" md="4" class="d-flex">
-                  <v-img
-                    class="hidden-sm-and-down"
-                    :lazy-src="`/static/images/${item.image}`"
-                    :src="`/static/images/${item.image}`"
-                    contain
-                    height="300"
-                  ></v-img>
-                </v-col> -->
             </v-card>
           </v-container>
         </template>
@@ -162,12 +152,6 @@ const redirectToLink = (link) => {
 
   to {
     height: 75%;
-  }
-}
-
-@media (max-width: 600px) {
-  .responsive-btn {
-    font-size: 10px !important; /* Smaller font size */
   }
 }
 </style>

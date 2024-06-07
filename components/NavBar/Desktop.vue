@@ -26,26 +26,38 @@
             </nuxt-link>
           </template>
           <template v-if="item.type === 'dropdown'">
-            <div class="cursor-pointer p-3 text-hover">
-              <p
-                :class="{
-                  'active-link': item.nested
-                    ? Object.keys(route.params)[0] === 'service'
-                    : item.sublinks.includes(route.path),
-                }"
-              >
-                {{ item.title }}
-              </p>
-              <v-overlay
-                activator="parent"
-                transition="false"
-                width="100%"
-                style="margin-top: 57px"
-                :close-on-content-click="true"
-              >
-                <component :is="getComponent(item.component)" :props="item.props"></component>
-              </v-overlay>
-            </div>
+            <v-speed-dial location="bottom center" transition="slide-y-reverse-transition">
+              <template v-slot:activator="{ props: activatorProps }">
+                <nuxt-link
+                  v-bind="activatorProps"
+                  class="cursor-pointer p-3 text-hover"
+                  :class="{
+                    'active-link': item.nested
+                      ? Object.keys(route.params)[0] === 'service'
+                      : item.sublinks.includes(route.path),
+                  }"
+                  >{{ item.title }}</nuxt-link
+                >
+              </template>
+              <v-sheet color="black" class="d-flex flex-column align-start mt-3 py-1">
+                <v-btn
+                  v-for="subItem in item.props"
+                  variant="text"
+                  flat
+                  :to="`${item.nested ? '/services/' : '/'}${subItem.link}`"
+                  :key="subItem.title"
+                  class="ma-2 text-left text-hover hidden-sm-and-down"
+                >
+                  <v-icon v-if="subItem.img" class="mr-2">
+                    <v-img
+                      :lazy-src="`/static/images/inverted/${subItem.img}`"
+                      :src="`/static/images/inverted/${subItem.img}`"
+                    ></v-img>
+                  </v-icon>
+                  {{ subItem.title }}
+                </v-btn>
+              </v-sheet>
+            </v-speed-dial>
           </template>
         </template>
       </div>
@@ -56,10 +68,6 @@
 <script setup>
 import { useRoute } from 'vue-router';
 const route = useRoute();
-
-function getComponent(name) {
-  return defineAsyncComponent(() => import(`./Dropdown/${name}.vue`));
-}
 
 const props = defineProps({
   navItems: {

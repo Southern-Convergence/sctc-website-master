@@ -48,7 +48,7 @@ export const serviceItems = [
     title: 'Onboarding Services & Tech AI Support',
     link: 'onboarding-services-and-tech-ai-support',
     subtitle: 'Seamless Integration',
-    img: 'AI support-icon.png',
+    img: 'AI support.png',
     body: [
       `Step into our specialized suite of services tailored to streamline application onboarding. We provide tailored onboarding solutions, ensuring a seamless transition whether you're launching a new application or optimizing an existing one. Our expert team guides you through setup and deployment, maximizing efficiency and minimizing downtime for uninterrupted operations.`,
       `Beyond onboarding, we offer cutting-edge AI support tailored specifically for ad tech. Harnessing the power of AI, our solutions deliver intelligent insights and optimizations, ranging from advanced audience targeting to real-time bidding, ultimately maximizing your return on investment. With our combined expertise, we equip your application to thrive in today's dynamic digital landscape. Partner with us and experience firsthand the transformative impact our comprehensive services can have on your success.
