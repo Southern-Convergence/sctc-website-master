@@ -5,8 +5,8 @@ export const serviceItems = [
     subtitle: 'Tailored Solutions',
     img: 'csd-icon.png',
     body: [
-      `We're dedicated to creating custom software solutions that align perfectly with your business goals. Our process involves in-depth consultations and analysis to understand your operations thoroughly. This ensures that the solutions we design seamlessly integrate with your existing workflows, minimizing disruptions and maximizing efficiency.`,
-      `Throughout development, we prioritize collaboration and communication, refining the software in real-time based on your feedback. With our experienced team of professionals, your software needs are well taken care of. Together, we'll leverage technology to drive your business towards growth and innovation, ensuring your organization reaches its full potential.
+      `We're dedicated to creating custom software solutions that align perfectly with your business goals. Our process involves in-depth consultations and analysis to thoroughly understand your operations. This ensures that the solutions we design seamlessly integrate with your existing workflows, minimizing disruptions and maximizing efficiency.`,
+      `Throughout development, we prioritize collaborative communication, refining the software in real-time based on your feedback. With our experienced team of professionals, your software needs are well taken care of. Together, we'll leverage technology to drive your business towards growth and innovation, ensuring your organization reaches its full potential.
     `,
     ],
   },
@@ -16,8 +16,8 @@ export const serviceItems = [
     subtitle: 'Innovative Strategies',
     img: 'tms-icon.png',
     body: [
-      `Embark on a transformative journey into digital commerce with our platform, where partnerships with DataStax and Fastly redefine marketing and reselling dynamics. Leveraging DataStax's distributed database and Fastly's edge cloud platform, we offer unparalleled scalability and speed in data management and content delivery.`,
-      `From omnichannel marketing to intricate reselling strategies, our platform delivers tangible results through advanced data management and content delivery technologies. Join us at the forefront of digital innovation as we leverage the combined capabilities of DataStax and Fastly to propel your business forward in the digital landscape.
+      `Harnessing our expertise in targeted marketing and efficient distribution, we drive the adoption and success of DataStax and Fastly innovations. In today's rapidly evolving digital landscape, businesses require innovative solutions to stay ahead. With DataStax's prowess in distributed database management and Fastly's groundbreaking content delivery capabilities, we offer unparalleled opportunities to drive revenue growth and expand market reach.`,
+      `At SCTC, we focus on utilizing our comprehensive knowledge of DataStax and Fastly products to create tailored marketing campaigns and ensure smooth distribution. Our experienced team is committed to optimizing your return on investment by connecting you with the appropriate audience and facilitating the adoption of these advanced technologies. Whether you're a startup looking to enhance competitiveness or an established enterprise aiming to refine your technology infrastructure, partnering with us opens doors to new growth opportunities and advances your business.
     `,
     ],
   },

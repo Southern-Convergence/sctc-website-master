@@ -92,7 +92,7 @@
           </v-overlay>
         </div>
         <div class="cursor-pointer p-3 text-hover">
-          <p :class="{ 'active-link': ['/fastly', '/datastax'].includes(route.path) }">PARTNERS</p>
+          <p :class="{ 'active-link': Object.keys(route.params)[0] === 'partner' }">PARTNERS</p>
           <v-overlay
             activator="parent"
             transition="false"
