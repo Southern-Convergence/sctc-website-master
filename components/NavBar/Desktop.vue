@@ -44,7 +44,7 @@
                   v-for="subItem in item.props"
                   variant="text"
                   flat
-                  :to="`${item.nested ? '/services/' : '/'}${subItem.link}`"
+                  :to="`${item.nested ? `/${item.component}/` : '/'}${subItem.link}`"
                   :key="subItem.title"
                   class="ma-2 text-left text-hover hidden-sm-and-down"
                 >
