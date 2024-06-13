@@ -5,7 +5,9 @@
     </video>
     <div class="overlay"></div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
-      <div class="tracking-wider flex flex-col font-semibold font-Poppins xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl">
+      <div
+        class="tracking-wider flex flex-col font-semibold font-Poppins xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl"
+      >
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
@@ -36,7 +38,11 @@
 </template>
 
 <script setup>
-import { carouselData } from '../data/carousel-data';
+import { serviceCarouselData } from '../data/services.content';
+import { partnerCarouselData } from '../data/partners.content';
+
+const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
+
 useHead({
   title: 'Southern Convergence Technologies Corporation',
 });

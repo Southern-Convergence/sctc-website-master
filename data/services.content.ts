@@ -1,4 +1,4 @@
-export const serviceItems = [
+export const serviceData = [
   {
     title: 'Custom Software Development',
     link: 'custom-software-development',
@@ -54,5 +54,43 @@ export const serviceItems = [
       `Beyond onboarding, we offer cutting-edge AI support tailored specifically for ad tech. Harnessing the power of AI, our solutions deliver intelligent insights and optimizations, ranging from advanced audience targeting to real-time bidding, ultimately maximizing your return on investment. With our combined expertise, we equip your application to thrive in today's dynamic digital landscape. Partner with us and experience firsthand the transformative impact our comprehensive services can have on your success.
     `,
     ],
+  },
+];
+
+export const serviceCarouselData = [
+  {
+    title: 'Custom Software Development',
+    text: `We specialize in building and optimizing software solutions tailored to unique business and organizational objectives and processes. Through close collaboration throughout the development process, we ensure continuous alignment with business and operational goals. Our dedication is focused on delivering exceptional software solutions for every client.`,
+    image: 'Custom Sorftware Development.png',
+    link: '/services/custom-software-development',
+    tag: 'Services',
+  },
+  {
+    title: 'Tech Marketing & Sales',
+    text: `Delve into our array of advanced software solutions, harnessing the power of Fastly and DataStax. From DataStax's renowned Apache Cassandra for unparalleled scalability to Fastly's cutting-edge edge cloud platform ensuring lightning-fast content delivery, we offer bespoke products tailored to your specific needs. Collaborate with us to fully unleash the potential of these platforms, enabling your projects to scale seamlessly, operate reliably, and drive continuous innovation and growth.`,
+    image: 'Tech Marketing.png',
+    link: '/services/tech-marketing-and-sales',
+    tag: 'Services',
+  },
+  {
+    title: 'Tech Consulting',
+    text: `Our consulting service offers advanced software development solutions powered by Fastly and DataStax. With our expertise in custom software development, performance optimization, and security, we help businesses build scalable, reliable, and secure applications that drive growth and innovation. Partner with us to unlock the full potential of your software development projects.`,
+    image: 'Tech Consulting.png',
+    link: '/services/tech-consulting',
+    tag: 'Services',
+  },
+  {
+    title: 'Legacy Application Re-Engineering',
+    text: `Introducing SCTC's Legacy Application Re-engineering service, powered by DataStax and Fastly. Seamlessly transitioning from legacy databases with DataStax's Apache Cassandra, we ensure unparalleled scalability. Fastly's edge cloud platform optimizes content delivery for lightning-fast user experiences. Thrive in the modern digital landscape with our expertise, driving efficiency, agility, and innovation across your organization. Unlock your business's full potential with SCTC's Legacy Application Re-engineering service.`,
+    image: 'Legacy Application.png',
+    link: '/services/legacy-application-reengineering',
+    tag: 'Services',
+  },
+  {
+    title: 'Onboarding Services & Tech AI Support',
+    text: `Welcome to our suite of services focused on boosting your website's performance and engagement. From smooth onboarding to advanced AI support for ad tech, we ensure efficiency with minimal downtime. Our AI-driven approach provides smart insights and optimizations, maximizing your advertising ROI. Partner with us today to thrive in the digital world, attracting visitors, driving conversions, and maximizing revenue.`,
+    image: 'AI support.png',
+    link: '/services/onboarding-services-and-tech-ai-support',
+    tag: 'Services',
   },
 ];

@@ -150,7 +150,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { partnersData } from '../../data/partners-data.ts';
+import { partnersData } from '../../data/partners.content';
 
 const route = useRoute();
 const partnerDetails = ref({});

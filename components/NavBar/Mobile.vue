@@ -15,12 +15,12 @@
         </template>
         <v-list class="mt-14" bg-color="#1b1b1b">
           <template v-for="item in navItems">
-            <template v-if="item.type === 'page'">
+            <template v-if="item.type === 'page' && item.enabled">
               <v-list-item>
                 <NuxtLink :to="item.link" class="cursor-pointer p-3 text-hover">{{ item.title }}</NuxtLink>
               </v-list-item>
             </template>
-            <template v-if="item.type === 'dropdown'">
+            <template v-if="item.type === 'dropdown' && item.enabled">
               <v-list-group :value="item.title" class="px-3">
                 <template v-slot:activator="{ props }">
                   <v-list-item v-bind="props" :title="item.title"></v-list-item>

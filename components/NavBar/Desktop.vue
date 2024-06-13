@@ -16,7 +16,7 @@
     <template v-slot:append>
       <div class="flex">
         <template v-for="item in navItems">
-          <template v-if="item.type === 'page'">
+          <template v-if="item.type === 'page' && item.enabled">
             <nuxt-link
               :to="item.link"
               :class="{ 'active-link': route.path === item.link }"
@@ -25,7 +25,7 @@
               {{ item.title }}
             </nuxt-link>
           </template>
-          <template v-if="item.type === 'dropdown'">
+          <template v-if="item.type === 'dropdown' && item.enabled">
             <v-speed-dial location="bottom center" transition="slide-y-reverse-transition">
               <template v-slot:activator="{ props: activatorProps }">
                 <nuxt-link

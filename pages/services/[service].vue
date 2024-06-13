@@ -63,7 +63,7 @@
 
         <!-- Custom Arrows -->
         <template v-slot:prev>
-          <v-btn v-if="currentSlide > 0" icon class="carousel-arrow left" variant="flat" @click="currentSlide--">
+          <v-btn v-if="currentSlide > 0" icon class="carousel-arrow left" variant="elevated" @click="currentSlide--">
             <v-icon size="large">mdi-chevron-left</v-icon>
           </v-btn>
         </template>
@@ -72,7 +72,7 @@
             v-if="currentSlide < slides.length - 1"
             icon
             class="carousel-arrow right"
-            variant="flat"
+            variant="elevated"
             @click="currentSlide++"
           >
             <v-icon size="large">mdi-chevron-right</v-icon>
@@ -85,7 +85,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { serviceItems } from '../../data/services-data';
+import { serviceData } from '../../data/services.content';
 
 const route = useRoute();
 const serviceDetails = ref({});
@@ -113,7 +113,7 @@ const slides = ref([
 ]);
 
 onMounted(() => {
-  serviceDetails.value = serviceItems.find((service) => service.link === route.params.service);
+  serviceDetails.value = serviceData.find((service) => service.link === route.params.service);
   if (serviceDetails.value) {
     slides.value[0] = {
       title: serviceDetails.value.title,
@@ -151,8 +151,9 @@ onMounted(() => {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: transparent;
-  color: #ff7b02;
+  background-color: white !important;
+  color: #ff7b02 !important;
+  border: 3px solid !important;
 }
 
 .carousel-arrow.left {

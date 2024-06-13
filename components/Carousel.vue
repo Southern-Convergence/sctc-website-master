@@ -143,9 +143,6 @@ const redirectToLink = (link) => {
   color: #ff7b02 !important;
   border: 3px #ff7b02 solid !important;
   z-index: 2;
-  background-color: white !important;
-  color: #ff7b02 !important;
-  border: 3px solid !important;
 }
 
 @keyframes carouselOpen {
