@@ -70,7 +70,7 @@ export const partnerCarouselData = [
     title: 'Our Partners',
     text: 'Staying ahead in the technology landscape requires collaboration and innovation. That is why Southern Convergence Technologies has partnered with established technology and software providers to expand our product offerings and provide you with cutting-edge solutions.',
     images: ['sctc-fastly-carousel.png', 'sctc-datastax-carousel.png'],
-    links: ['/fastly', '/datastax'],
+    links: ['/partners/fastly', '/partners/datastax'],
     tag: 'Partners',
   },
 ];
