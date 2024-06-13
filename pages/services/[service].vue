@@ -25,7 +25,7 @@
           <section class="text-center pa-12" v-else-if="index === slides.length - 1">
             <v-container class="w-100 pa-0">
               <v-row class="d-flex justify-center align-center">
-                <v-col cols="12" md="8" class="d-flex flex-column justify-center align-center text-section">
+                <v-col cols="8" class="d-flex flex-column justify-center align-center text-section">
                   <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4">
                     How can we <span class="custom-underline"> make it happen </span> for you?
                   </h1>
@@ -41,7 +41,7 @@
           <section class="text-center pa-4 pa-md-12" v-else>
             <v-container class="w-100 md:px-10">
               <v-row class="d-flex justify-center align-center">
-                <v-col cols="12" md="7" class="d-flex flex-column justify-center text-section">
+                <v-col cols="11" md="7" class="d-flex flex-column justify-center text-section">
                   <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
                     <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light">
                       {{ paragraph }}
