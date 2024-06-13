@@ -1,5 +1,5 @@
-import { serviceItems } from './services-data';
-import { partnersData } from './partners-data';
+import { serviceData } from './services.content';
+import { partnersData } from './partners.content';
 
 // ? Edit this to change navbar items
 
@@ -8,6 +8,7 @@ export const navItems = [
     title: 'ABOUT',
     type: 'page',
     link: '/about',
+    enabled: true,
   },
   {
     title: 'SERVICES',
@@ -15,9 +16,10 @@ export const navItems = [
     component: 'Services',
     routeParamName: 'service',
     link: null,
+    enabled: true,
     nested: true,
     sublinks: null,
-    props: serviceItems,
+    props: serviceData,
   },
   {
     title: 'PARTNERS',
@@ -25,6 +27,7 @@ export const navItems = [
     component: 'Partners',
     routeParamName: 'partner',
     link: null,
+    enabled: true,
     nested: true,
     sublinks: null,
     props: partnersData,
@@ -33,10 +36,12 @@ export const navItems = [
     title: 'CONTACT',
     type: 'page',
     link: '/contact',
+    enabled: true,
   },
   {
     title: 'ROADSHOW DATASTAX & SCTC',
     type: 'page',
     link: '/Roadshow',
+    enabled: false,
   },
 ];

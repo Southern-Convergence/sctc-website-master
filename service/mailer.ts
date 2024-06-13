@@ -29,7 +29,7 @@ export const sendMail = async (payload: any, template: string) => {
   const data = generateEmailContent(payload, template);
 
   // ! Only for production environment
-  //   return await axios.post(`${MAILER_ENDPOINT}/mailer/sendMail`, data);
+  return await axios.post(`${MAILER_ENDPOINT}/mailer/sendMail`, data);
   // ! Only for dev environment
   console.log(data);
   return true;

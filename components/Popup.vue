@@ -56,7 +56,7 @@ const showPopupAndSetTimestamp = () => {
 };
 
 onMounted(() => {
-  if (shouldShowPopup()) {
+  if (shouldShowPopup() && event.enabled) {
     setTimeout(() => {
       showPopupAndSetTimestamp();
     }, 1000);
