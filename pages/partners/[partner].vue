@@ -6,47 +6,31 @@
       style="margin: 0px auto"
       alt="Partner logo"
     />
+
     <!-- menu for mobile view -->
     <div class="hidden-md-and-up p-1 absolute top-0.5">
-      <v-menu width="80%" transition="slide-y-transition" class="font-Poppins" location="center">
+      <v-menu
+        width="80%"
+        transition="slide-x-transition"
+        class="font-Poppins hidden-md-and-up text-black"
+        location="bottom center"
+      >
         <template v-slot:activator="{ props }">
           <v-btn icon v-bind="props" variant="tonal">
             <v-icon class="text-white">mdi-menu-right</v-icon>
           </v-btn>
         </template>
-        <v-list style="" width="">
-          <v-list-item>
-            <v-tabs
-              v-model="tab"
-              grow
-              slider-color="#ff7b02"
-              mandatory="force"
-              class="font-Roboto"
-              density="compact"
-              :mobile="true"
-              direction="vertical"
-            >
-              <v-tab
-                text="Description"
-                value="description"
-                :class="tab === 'description' ? 'text-[#ff7b02]' : 'bg-white'"
-                style="font-size: 10px"
-              ></v-tab>
-              <v-tab
-                text="Products"
-                value="products"
-                :class="tab === 'products' ? 'text-[#ff7b02]' : 'bg-white'"
-                style="font-size: 10px"
-              ></v-tab>
-            </v-tabs>
+        <v-list style="" width="" bg-color="#1b1b1b">
+          <v-list-item v-for="tab in tabsValue">
+            <nuxt-link @click="setTab(tab.value)" class="cursor-pointer p-3 text-hover">{{ tab.title }}</nuxt-link>
           </v-list-item>
         </v-list>
       </v-menu>
     </div>
-    <div class="h-full w-12/12 bg-white networkBG">
-      <!-- the content reaching the bottom of the page is intentional -->
+
+    <!---->
+    <div class="h-full w-12/12 bg-white">
       <div class="w-12/12 h-full d-flex flex-row slide-animation" style="margin: 0px auto">
-        <!-- web view -->
         <v-row class="p-1 md:p-10">
           <v-col cols="2" class="hidden-sm-and-down">
             <v-tabs
@@ -59,20 +43,17 @@
               direction="vertical"
             >
               <v-tab
-                text="Description"
-                value="description"
-                :class="tab === 'description' ? ['text-[#ff7b02]', 'activeTab'] : 'bg-white'"
+                v-for="tab in tabsValue"
+                :text="tab.title"
+                :value="tab.value"
+                selected-class="activeTab"
                 style="font-size: 12px"
-              ></v-tab>
-              <v-tab
-                text="Products"
-                value="products"
-                :class="tab === 'products' ? ['text-[#ff7b02]', 'activeTab'] : 'bg-white'"
-                style="font-size: 12px"
-              ></v-tab>
+              >
+              </v-tab>
             </v-tabs>
           </v-col>
           <v-col>
+            <!-- DESCRIPTION WINDOW -->
             <v-window v-model="tab" direction="vertical" class="">
               <v-window-item value="description">
                 <div
@@ -92,7 +73,6 @@
                     style="margin: 10px auto 20px auto"
                   >
                   </v-divider>
-
                   <p
                     class="mb-4 md:mb-8 text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins text-justify"
                     v-for="desc in description"
@@ -107,11 +87,11 @@
                   </nuxt-link>
                 </div>
               </v-window-item>
+              <!-- PRODUCTS WINDOW -->
               <v-window-item value="products">
                 <div class="p-5 md:p-8" style="margin: 0px auto; padding-top: 1.5rem">
                   <!-- PRODUCTS WEB VIEW -->
                   <div class="grid hidden-sm-and-down" :class="getColsCount()">
-                    <!-- copying what's in the current website -->
                     <v-card flat class="mx-4 xl:mx-3" v-for="product in products">
                       <v-img
                         :src="`/static/images/${product.image}`"
@@ -130,10 +110,22 @@
 
                   <!-- PRODUCTS MOBILE VIEW -->
                   <div class="grid hidden-md-and-up">
-                    <!-- copying what's in the current website -->
+                    <h1
+                      class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl custom-underline"
+                    >
+                      Products
+                    </h1>
+                    <v-divider
+                      thickness="5"
+                      color="black"
+                      length="80"
+                      class="border-opacity-100 p-0"
+                      style="margin: 10px auto 20px auto"
+                    >
+                    </v-divider>
                     <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="#ff7b02">
                       <v-carousel-item v-for="product in products">
-                        <v-card flat class="mx-4 xl:mx-3">
+                        <v-card flat class="mt-2">
                           <v-img
                             :src="`/static/images/${product.image}`"
                             :lazy-src="`/static/images/${product.image}`"
@@ -162,28 +154,37 @@ import { partnersData } from '../../data/partners-data.ts';
 
 const route = useRoute();
 const partnerDetails = ref({});
-const name = ref('');
+const title = ref('');
 const cover = ref('');
 const background = ref('');
 const tagline = ref('');
 const description = ref([]);
 const products = ref([]);
 
-let tab = ref('');
+const tab = ref('');
 
-console.log(name.value);
+const tabsValue = ref([
+  {
+    title: 'Description',
+    value: 'description',
+  },
+  {
+    title: 'Products',
+    value: 'products',
+  },
+]);
 
 onMounted(() => {
   partnerDetails.value = partnersData.find((partner) => partner.link === route.params.partner);
   if (partnerDetails.value) {
     cover.value = partnerDetails.value.cover;
-    name.value = partnerDetails.value.name;
+    title.value = partnerDetails.value.title;
     background.value = partnerDetails.value.background;
     tagline.value = partnerDetails.value.tagline;
     description.value = partnerDetails.value.description;
-    products.value = partnerDetails.value.products;;
+    products.value = partnerDetails.value.products;
     useHead({
-      title: name.value,
+      title: title.value,
     });
   } else {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
@@ -193,6 +194,10 @@ onMounted(() => {
 const getColsCount = () => {
   let classCols = 'md:grid-cols-'.concat(products.value.length);
   return classCols;
+};
+
+const setTab = (value) => {
+  tab.value = value;
 };
 </script>
 
@@ -227,13 +232,15 @@ const getColsCount = () => {
 }
 
 .activeTab {
-  background-color: #ff7b0224;
+  background-color: #ff7c020f;
   color: #ff7b02;
+  border-left: 3px solid #ff7b02;
 }
 
 .custom-underline {
   text-decoration: underline;
   text-decoration-color: #ff7b02;
+  text-decoration-thickness: 0.1em;
 }
 
 .networkBG {

@@ -30,7 +30,7 @@
                   :key="subItem.title"
                   :title="subItem.title"
                   class="text-hover"
-                  @click="redirect(`${item.nested ? '/services/' : '/'}${subItem.link}`)"
+                  @click="redirect(`${item.nested ? `/${item.component}/` : '/'}${subItem.link}`)"
                 >
                   <template v-slot:prepend>
                     <v-icon v-if="subItem.img">

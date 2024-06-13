@@ -1,6 +1,6 @@
 export const partnersData = [
   {
-    name: 'DataStax',
+    title: 'DataStax',
     link: 'datastax',
     cover: 'datastax-cover.png',
     background: 'datastax-bg-animation.mp4',
@@ -34,7 +34,7 @@ export const partnersData = [
     ],
   },
   {
-    name: 'Fastly',
+    title: 'Fastly',
     link: 'fastly',
     cover: 'fastly-cover.png',
     background: 'fastly-bg-animation.mp4',

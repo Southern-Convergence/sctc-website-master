@@ -32,19 +32,17 @@
                   v-bind="activatorProps"
                   class="cursor-pointer p-3 text-hover"
                   :class="{
-                    'active-link': item.nested
-                      ? Object.keys(route.params)[0] === 'service'
-                      : item.sublinks.includes(route.path),
+                    'active-link': item.nested && Object.keys(route.params)[0] === item.routeParamName,
                   }"
-                  >{{ item.title }}</nuxt-link
-                >
+                  >{{ item.title }}
+                </nuxt-link>
               </template>
               <v-sheet color="black" class="d-flex flex-column align-start mt-3 py-1">
                 <v-btn
                   v-for="subItem in item.props"
                   variant="text"
                   flat
-                  :to="`${item.nested ? '/services/' : '/'}${subItem.link}`"
+                  :to="`${item.nested ? `/${item.component}/` : '/'}${subItem.link}`"
                   :key="subItem.title"
                   class="ma-2 text-left text-hover hidden-sm-and-down"
                 >

@@ -1,4 +1,5 @@
 import { serviceItems } from './services-data';
+import { partnersData } from './partners-data';
 
 // ? Edit this to change navbar items
 
@@ -12,6 +13,7 @@ export const navItems = [
     title: 'SERVICES',
     type: 'dropdown',
     component: 'Services',
+    routeParamName: 'service',
     link: null,
     nested: true,
     sublinks: null,
@@ -21,21 +23,11 @@ export const navItems = [
     title: 'PARTNERS',
     type: 'dropdown',
     component: 'Partners',
+    routeParamName: 'partner',
     link: null,
-    nested: false,
-    sublinks: ['/fastly', '/datastax'],
-    props: [
-      {
-        title: 'DataStax',
-        subtitle: 'DataStax Subtitle',
-        link: 'datastax',
-      },
-      {
-        title: 'Fastly',
-        subtitle: 'Fastly Subtitle',
-        link: 'fastly',
-      },
-    ],
+    nested: true,
+    sublinks: null,
+    props: partnersData,
   },
   {
     title: 'CONTACT',

@@ -5,12 +5,12 @@
     </video>
     <div class="overlay"></div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
-      <div class="title-container flex flex-col font-black font-roboto xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl">
+      <div class="tracking-wider flex flex-col font-semibold font-Poppins xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl">
         <p id="title-line1">Crafting Your Digital Advantage</p>
         <p id="title-line2">with Innovative Solutions</p>
       </div>
       <br />
-      <p class="disable font-Overpass text-sm md:text-xl">
+      <p class="disable font-Overpass text-xs md:text-xl font-light">
         Maximize Your Business Potential with Tailor-Made
         <br />
         Software Development
@@ -99,11 +99,6 @@ const toggleCarousel = () => {
 
 .newContainer .disable {
   display: none;
-}
-
-.title-container {
-  font-weight: 900;
-  letter-spacing: 3px;
 }
 
 #sec-line {
