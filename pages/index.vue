@@ -38,8 +38,8 @@
 </template>
 
 <script setup>
-import { serviceCarouselData } from '../data/services.content';
-import { partnerCarouselData } from '../data/partners.content';
+import { serviceCarouselData } from '../data/content/services.content';
+import { partnerCarouselData } from '../data/content/partners.content';
 
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 

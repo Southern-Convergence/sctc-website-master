@@ -1,7 +1,9 @@
-import { serviceData } from './services.content';
-import { partnersData } from './partners.content';
+import { serviceData } from './content/services.content';
+import { partnersData } from './content/partners.content';
+import { eventsData } from './content/events.content';
 
 // ? Edit this to change navbar items
+const currentEvent: any = eventsData.find((event) => event.current);
 
 export const navItems = [
   {
@@ -33,15 +35,15 @@ export const navItems = [
     props: partnersData,
   },
   {
+    title: currentEvent.metaHead.toUpperCase(),
+    type: 'page',
+    link: `/${currentEvent.link}`,
+    enabled: true,
+  },
+  {
     title: 'CONTACT',
     type: 'page',
     link: '/contact',
     enabled: true,
-  },
-  {
-    title: 'ROADSHOW DATASTAX & SCTC',
-    type: 'page',
-    link: '/Roadshow',
-    enabled: false,
   },
 ];
