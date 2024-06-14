@@ -29,7 +29,7 @@
           @click="toggleCarousel"
           class="disable responsive-btn"
           >FIND OUT MORE
-          <v-icon right class="ml-2">mdi-arrow-up</v-icon>
+          <v-icon right class="ml-2">mdi-chevron-up</v-icon>
         </v-btn>
       </v-hover>
     </div>

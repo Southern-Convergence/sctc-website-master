@@ -13,7 +13,7 @@ export const navItems = [
   {
     title: 'SERVICES',
     type: 'dropdown',
-    component: 'Services',
+    component: 'services',
     routeParamName: 'service',
     link: null,
     enabled: true,
@@ -24,7 +24,7 @@ export const navItems = [
   {
     title: 'PARTNERS',
     type: 'dropdown',
-    component: 'Partners',
+    component: 'partners',
     routeParamName: 'partner',
     link: null,
     enabled: true,
