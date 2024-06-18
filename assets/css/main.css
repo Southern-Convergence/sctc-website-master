@@ -36,6 +36,47 @@ body {
   transform: scale(1.01);
 }
 
+.special-link {
+  background: linear-gradient(
+    90deg,
+    rgba(63, 126, 224, 1) 0%,
+    rgba(207, 86, 124, 1) 47%,
+    rgba(63, 126, 224, 1) 100%,
+    rgba(207, 86, 124, 1) 147%,
+    rgba(63, 126, 224, 1) 200% /* Wrap to start for smooth animation */
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-button: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: gradient-animation 4s linear infinite;
+}
+
+.special-link-button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(63, 126, 224, 1) 0%,
+    rgba(207, 86, 124, 1) 47%,
+    rgba(63, 126, 224, 1) 100%,
+    rgba(207, 86, 124, 1) 147%,
+    rgba(63, 126, 224, 1) 200% /* Wrap to start for smooth animation */
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* For Safari */
+  animation: gradient-animation 4s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: -200% 50%;
+  }
+}
+
 @keyframes slideInFromBottom {
   from {
     transform: translateY(100%);
