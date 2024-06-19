@@ -134,7 +134,7 @@
               <v-expansion-panel-title class="text-caption text-md-body-2 text-lg-body-1 hover:text-[#ff7b02]">
                 {{ event.question }}
               </v-expansion-panel-title>
-              <v-expansion-panel-text class="text-caption text-md-body-2 text-lg-body-1 text-justify">
+              <v-expansion-panel-text class="text-caption text-md-body-2 text-lg-body-1 text-justify font-weight-light">
                 <template v-if="event.type == 'string'">
                   {{ event.answer }}
                 </template>

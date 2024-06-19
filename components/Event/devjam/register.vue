@@ -85,7 +85,15 @@
               label="Phone Number"
               required
             ></v-text-field>
-            <v-btn color="#ff7b02" flat variant="outlined" type="submit" block :disabled="submitDisabled">
+            <v-btn
+              color="#ff7b02"
+              flat
+              variant="outlined"
+              type="submit"
+              class="responsive-btn"
+              block
+              :disabled="submitDisabled"
+            >
               Submit
             </v-btn>
           </form>

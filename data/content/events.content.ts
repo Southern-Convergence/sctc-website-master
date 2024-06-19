@@ -102,7 +102,8 @@ export const eventsData = [
       {
         type: 'string',
         question: `Who will be attending Dev Jam 2024?`,
-        answer: `Currently TBA`,
+        answer:
+          'The attendee profile for Dev Jam 2024 primarily targets developers who are currently engaged in the industry. Participants have the flexibility to work individually or in pairs.',
       },
     ],
     eventButtons: [
