@@ -42,8 +42,8 @@ export const eventsData = [
     countdownDate: '07/24/2024',
     header: 'Unlock the Power of AI and AstraDB at Dev Jam 2024',
     text: [
-      `You don’t need to be a Deep Learning Machine Learning Expert / Data Scientist to understand how to use LLM’s like OpenAI and Vector Database like AstraDB to make intelligent Experts, Assistants, and Platforms.`,
-      `We’ll cover what’s happened in the last several months and what you need to know to get going. This Dev Jam will help your enterprise architects, developers and practitioners to quickly become familiar with RAGStack, LLMs and Vector Database. These sessions with a DataStax technical coach, self-paced and hands-on learning assignments. Participants bring in a Gen AI use case, their data and build a Gen AI agent using DataStax Astra platform.`,
+      `You don't have to be an expert in Deep Learning, Machine Learning, or Data Science to learn how to leverage tools like OpenAI's LLMs and AstraDB to create intelligent experts, assistants, and platforms.`,
+      `In this Dev Jam session, we will update you on recent developments and provide the essential information to get started. This program is designed to familiarize your enterprise architects, developers, and practitioners with RAGStack, LLMs, and Vector Database quickly. With guidance from a DataStax technical coach and engaging self-paced assignments, participants will bring their own data and develop a Gen AI agent using the DataStax Astra platform.`,
     ],
     faq: [
       {
