@@ -14,7 +14,7 @@
       </template>
       <v-carousel-item v-for="item in carousel">
         <template v-if="item.tag === 'Partners'">
-          <div class="md:mx-24 d-flex align-center justify-center w-75 mx-auto h-100 border-xl">
+          <div class="md:mx-24 d-flex align-center justify-center w-75 mx-auto h-100">
             <div class="text-center md:p-12 m-auto">
               <p class="font-Poppins text-xl md:text-5xl m-6 font-bold text-[#ff7b02]">
                 {{ item.title }}
@@ -34,7 +34,7 @@
           </div>
         </template>
         <template v-else>
-          <v-container class="w-75 h-100 d-flex justify-center align-center border-xl">
+          <v-container class="w-75 h-100 d-flex justify-center align-center">
             <v-card class="mx-auto mb-20" max-width="1200" flat color="transparent">
               <div class="p-1 md:p-12">
                 <v-row justify="center" align="center">
