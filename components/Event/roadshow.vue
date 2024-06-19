@@ -1,20 +1,20 @@
 <template>
   <div class="bg h-full w-full text-white mb-md-9">
     <v-img
-      :src="'/static/images/sctc-website-banner-roadshow.jpg'"
+      :src="`/static/images/${eventData.bannerImg}`"
       class="header aspect-auto w-75 p-20"
       style="margin: 0px auto"
     />
     <div class="flex items-center justify-center slide-animation">
       <p class="font-semibold text-2xl md:text-4xl text-[#FF7B02] font-Roboto mb-8 text-center">
-        Experience Seamless AI Integration at Our Exclusive Roadshow
+        {{ eventData.bannerText }}
       </p>
     </div>
     <div
       color="black"
       class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-75 mx-auto my-10"
     >
-      <template v-for="(btn, index) in roadshow_details_btns" :key="index">
+      <template v-for="(btn, index) in eventData.eventButtons" :key="index">
         <v-btn
           v-if="btn.type === 'external-link'"
           variant="outlined"
@@ -46,8 +46,8 @@
       <v-card class="dialog-border">
         <v-img
           height="auto"
-          lazy-src="/static/images/sctc-banner-roadshow.jpg"
-          src="/static/images/sctc-banner-roadshow.jpg"
+          :lazy-src="`/static/images/${eventData.dialogImg}`"
+          :src="`/static/images/${eventData.dialogImg}`"
           cover
         >
           <v-card-title class="d-flex justify-end align-center">
@@ -57,36 +57,23 @@
           </v-card-title>
         </v-img>
         <v-card-text class="font-Poppins text-caption text-md-body-2 text-lg-body-1 my-5">
-          <p>
-            Southern Convergence Technologies and DataStax are proud to announce their collaboration, marking a
-            significant milestone in revolutionizing data management solutions. On June 5th, in Manila, we invite you to
-            join us for an exclusive roadshow, showcasing the power of DataStax's GenAI capabilities.
-          </p>
-          <br />
-          <p>
-            This event not only signifies the commencement of our partnership but also heralds a new era of streamlined
-            data handling. In today's fast-paced world, every industry grapples with the challenge of managing vast
-            amounts of paperwork and data. Through GenAI, this burden becomes a thing of the past.
-          </p>
-          <br />
-          <p>
-            Imagine effortlessly sorting through mountains of data with unparalleled ease. It's not just innovation;
-            it's a necessity for businesses striving for efficiency and competitiveness. Join us at this event to
-            witness firsthand how Southern Convergence Technologies and DataStax are shaping the future of data
-            management.
-          </p>
+          <template v-for="dialog in eventData.dialogText">
+            {{ dialog }}
+            <br />
+            <br />
+          </template>
           <br />
           <p>
             <strong class="">
-              To secure your spot and unlock the potential of GenAI for your organization.
+              {{ eventData.dialogActionText }}
               <br />
               <v-btn
                 append-icon="mdi-arrow-right"
                 class="mt-5 roadshow-register-btn text-caption text-md-body-2 text-lg-body-1"
                 target="_blank"
-                href="https://www.datastax.com/events/apac-genai-roadshow-manila"
+                :href="eventData.dialogActionLink"
               >
-                Register now
+                {{ eventData.dialogButtonText }}
               </v-btn>
             </strong>
           </p>
@@ -95,27 +82,21 @@
     </template>
   </v-dialog>
 </template>
-
 <script setup>
 import { useRouter } from 'vue-router';
-
 const router = useRouter();
+
+const props = defineProps({
+  eventData: {
+    type: Object,
+    default: () => ({}),
+  },
+});
 
 const goToPage = (link) => {
   router.push(link);
 };
-
-useHead({
-  title: 'Roadshow DataStax & SCTC ',
-});
-
-const roadshow_details_btns = [
-  { name: 'About the event', link: null, type: 'dialog' },
-  { name: 'Register', link: 'https://www.datastax.com/events/apac-genai-roadshow-manila', type: 'external-link' },
-  { name: 'Get in touch', link: '/contact', type: 'page' },
-];
 </script>
-
 <style>
 .bg {
   background-color: black;

@@ -29,7 +29,7 @@
           @click="toggleCarousel"
           class="disable responsive-btn"
           >FIND OUT MORE
-          <v-icon right class="ml-2">mdi-arrow-up</v-icon>
+          <v-icon right class="ml-2">mdi-chevron-up</v-icon>
         </v-btn>
       </v-hover>
     </div>
@@ -38,8 +38,8 @@
 </template>
 
 <script setup>
-import { serviceCarouselData } from '../data/services.content';
-import { partnerCarouselData } from '../data/partners.content';
+import { serviceCarouselData } from '../data/content/services.content';
+import { partnerCarouselData } from '../data/content/partners.content';
 
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 

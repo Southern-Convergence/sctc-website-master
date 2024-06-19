@@ -15,18 +15,18 @@
 
     <template v-slot:append>
       <div class="flex">
-        <template v-for="item in navItems">
+        <template v-for="(item, index) in navItems" :key="index">
           <template v-if="item.type === 'page' && item.enabled">
             <nuxt-link
               :to="item.link"
-              :class="{ 'active-link': route.path === item.link }"
+              :class="{ 'active-link': route.path === item.link, 'special-link': !item.common }"
               class="cursor-pointer p-3 text-hover"
             >
               {{ item.title }}
             </nuxt-link>
           </template>
           <template v-if="item.type === 'dropdown' && item.enabled">
-            <v-speed-dial location="bottom center" transition="slide-y-reverse-transition">
+            <v-speed-dial location="bottom center" :transition="false">
               <template v-slot:activator="{ props: activatorProps }">
                 <nuxt-link
                   v-bind="activatorProps"
@@ -39,11 +39,11 @@
               </template>
               <v-sheet color="black" class="d-flex flex-column align-start mt-3 py-1">
                 <v-btn
-                  v-for="subItem in item.props"
+                  v-for="(subItem, index) in item.props"
                   variant="text"
                   flat
                   :to="`${item.nested ? `/${item.component}/` : '/'}${subItem.link}`"
-                  :key="subItem.title"
+                  :key="`subItem-${index}`"
                   class="ma-2 text-left text-hover hidden-sm-and-down"
                 >
                   <v-icon v-if="subItem.img" class="mr-2">

@@ -85,7 +85,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { serviceData } from '../../data/services.content';
+import { serviceData } from '../../data/content/services.content';
 
 const route = useRoute();
 const serviceDetails = ref({});

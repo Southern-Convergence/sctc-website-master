@@ -11,6 +11,10 @@ const generateEmailContent = (payload: any, template: string) => {
       rawHtml = MAIL_TEMPLATES.CONTACT_US_FORM_TEMPLATE(payload);
       subject = 'Customer Inquiry';
       break;
+    case 'event':
+      rawHtml = MAIL_TEMPLATES.EVENT_REGISTRATION_TEMPLATE(payload);
+      subject = 'Event Registration';
+      break;
     default:
       throw new Error('Unknown template type');
   }

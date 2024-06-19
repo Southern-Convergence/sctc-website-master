@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { event } from '../data/events/pop-up-data';
+import { event } from '../data/pop-up-data';
 import { useRouter } from 'vue-router';
 const showPopUp = ref(false);
 const POPUP_LAST_SHOWN_KEY = 'popup_last_shown';

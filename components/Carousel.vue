@@ -4,13 +4,13 @@
     :class="{ baseCarouselContainer: disabled, closeCarousel: !disabled }"
     class="networkBG w-full h-full"
   >
-    <v-btn @click="emits('toggleDisabled')" variant="elevated" icon="mdi-arrow-down" class="return-btn"> </v-btn>
+    <v-btn @click="emits('toggleDisabled')" variant="elevated" icon="mdi-chevron-down" class="return-btn" />
     <v-carousel hide-delimiter-background hide-delimiters touch.boolean="true" height="100%" color="#ff7b02">
       <template v-slot:prev="{ props }">
-        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-arrow-left"> </v-btn>
+        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-chevron-left"> </v-btn>
       </template>
       <template v-slot:next="{ props }">
-        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-arrow-right"> </v-btn>
+        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-chevron-right"> </v-btn>
       </template>
       <v-carousel-item v-for="item in carousel">
         <template v-if="item.tag === 'Partners'">
@@ -20,12 +20,12 @@
                 {{ item.title }}
               </p>
               <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">{{ item.text }}</p>
-              <div class="d-flex flex-column flex-md-row justify-center align-center mt-8">
+              <div class="d-flex flex-column justify-space-center align-center mt-8">
                 <template v-for="(image, index) in item.images" :key="index">
                   <v-img
                     :lazy-src="`/static/images/${image}`"
                     :src="`/static/images/${image}`"
-                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75 md:scale-50 cursor-pointer"
+                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75 cursor-pointer"
                     @click="redirectToLink(item.links[index])"
                   ></v-img>
                 </template>
