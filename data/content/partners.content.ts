@@ -55,7 +55,7 @@ export const partnersData = [
       },
       {
         image: 'security.png',
-        text: 'Fastly’s comprehensive security solutions offer protection against a wide range of threats, from DDoS attacks to data breaches. With real-time threat intelligence and robust security features, Fastly provides the peace of mind you need to focus on growing your business while we safeguard your online presence.',
+        text: "Fastly's comprehensive security solutions offer protection against a wide range of threats, from DDoS attacks to data breaches. With real-time threat intelligence and robust security features, Fastly provides the peace of mind you need to focus on growing your business while we safeguard your online presence.",
       },
       {
         image: 'next-gen_waf.png',
