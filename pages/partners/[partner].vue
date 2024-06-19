@@ -22,7 +22,9 @@
         </template>
         <v-list style="" width="" bg-color="#1b1b1b">
           <v-list-item v-for="tab in tabsValue">
-            <nuxt-link @click="setTab(tab.value)" class="cursor-pointer p-3 text-hover">{{ tab.title }}</nuxt-link>
+            <nuxt-link @click="setTab(tab.value)" class="cursor-pointer p-3 hover:text-[#ff7b02]">{{
+              tab.title
+            }}</nuxt-link>
           </v-list-item>
         </v-list>
       </v-menu>

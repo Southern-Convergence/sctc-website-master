@@ -25,7 +25,7 @@
                   <v-img
                     :lazy-src="`/static/images/${image}`"
                     :src="`/static/images/${image}`"
-                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75   cursor-pointer"
+                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75 cursor-pointer"
                     @click="redirectToLink(item.links[index])"
                   ></v-img>
                 </template>

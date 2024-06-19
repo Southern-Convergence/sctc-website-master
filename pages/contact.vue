@@ -44,17 +44,9 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
-
 useHead({ title: 'Contact Us' });
 
-const router = useRouter();
 const isToggleMore = ref(true);
-
-const goToPrev = () => {
-  router.go(-1);
-};
-
 const toggleMore = () => {
   isToggleMore.value = !isToggleMore.value;
 };

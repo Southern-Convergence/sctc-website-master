@@ -1,4 +1,4 @@
-export const RegistrationRules: Record<string, Function[]> = {
+export const RegistrationRules1: Record<string, Function[]> = {
   nameRules: [
     (value: any) => !!value || 'Name is required',
     (value: any) => (value && value.trim().length >= 3) || 'Name must be at least 3 characters long',
@@ -17,6 +17,37 @@ export const RegistrationRules: Record<string, Function[]> = {
   companyRules: [
     (value: any) => !!value || 'Company is required',
     (value: any) => (value && value.trim().length >= 2) || 'Company must be at least 2 characters long',
+  ],
+};
+
+export const RegistrationRules2: Record<string, Function[]> = {
+  firstNameRules: [
+    (value: any) => !!value || 'First Name is required',
+    (value: any) => (value && value.trim().length >= 3) || 'First Name must be at least 3 characters long',
+    (value: any) => /^[a-zA-Z\s]*$/.test(value) || 'First Name must contain only letters and spaces',
+  ],
+  surnameRules: [
+    (value: any) => !!value || 'Surname is required',
+    (value: any) => (value && value.trim().length >= 3) || 'Surname must be at least 3 characters long',
+    (value: any) => /^[a-zA-Z\s]*$/.test(value) || 'Surname must contain only letters and spaces',
+  ],
+  companyRules: [
+    (value: any) => !!value || 'Company Name is required',
+    (value: any) => (value && value.trim().length >= 2) || 'Company Name must be at least 2 characters long',
+  ],
+  positionRules: [
+    (value: any) => !!value || 'Job Position is required',
+    (value: any) => (value && value.trim().length >= 2) || 'Job Position must be at least 2 characters long',
+    (value: any) => /^[a-zA-Z\s]*$/.test(value) || 'Job Position must contain only letters and spaces',
+  ],
+  emailRules: [
+    (value: any) => !!value || 'Email Address is required',
+    (value: any) => /.+@.+\..+/.test(value) || 'Email Address must be valid',
+    (value: any) => (value && value.trim().length <= 50) || 'Email Address must be less than 50 characters long',
+  ],
+  mobileRules: [
+    (value: any) => !!value || 'Phone number is required',
+    (value: any) => /^\+?[0-9]{10,15}$/.test(value) || 'Phone number must be valid (10-15 digits)',
   ],
 };
 

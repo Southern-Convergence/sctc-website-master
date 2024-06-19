@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm" v-if="!isBot">
+  <form @submit.prevent="submitForm" v-if="!isBot" class="slide-animation w-75 w-md-100 mx-auto">
     <input
       type="text"
       name="field1"
@@ -42,11 +42,13 @@
       required
     ></v-text-field>
     <v-textarea variant="outlined" v-model="message" :rules="messageRules" label="Message" required></v-textarea>
-    <v-btn variant="flat" type="submit" color="#ff7b02" class="white--text" :disabled="submitDisabled">Submit</v-btn>
-    <v-btn class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" variant="outlined">
-      more details
-      <v-icon right class="ml-2">mdi-arrow-right</v-icon>
-    </v-btn>
+    <div class="d-flex justify-between">
+      <v-btn variant="flat" type="submit" color="#ff7b02" class="white--text" :disabled="submitDisabled">Submit</v-btn>
+      <v-btn class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" variant="outlined">
+        details
+        <v-icon right class="ml-2">mdi-chevron-right</v-icon>
+      </v-btn>
+    </div>
   </form>
 </template>
 
@@ -61,6 +63,7 @@ const name = ref('');
 const email = ref('');
 const subject = ref('');
 const message = ref('');
+
 const startTime = ref(Date.now());
 const bot = ref(null);
 const isBot = ref(false);
