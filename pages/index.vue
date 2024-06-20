@@ -16,7 +16,6 @@
         Maximize Your Business Potential with Tailor-Made
         <br />
         Software Development
-        {{ SITE_CONFIG }}
       </p>
       <br />
       <v-hover v-slot="{ isHovering, props }">
