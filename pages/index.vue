@@ -47,7 +47,7 @@ import { SITE_CONFIG } from '../config/config';
 
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 
-// Setting up document head with reactive properties
+// Setting up document head with config
 useHead({
   title: SITE_CONFIG.index.title,
   meta: SITE_CONFIG.index.meta,
