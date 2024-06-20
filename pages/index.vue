@@ -46,7 +46,10 @@ const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 const title = ref('Southern Convergence Technologies Corporation');
 const description = ref(`Maximize Your Business Potential with Tailor-Made Software Development`);
 const currentUrl = ref('https://southernconvergence.com'); // Your website's URL
-const imageUrl = ref('https://drive.google.com/uc?export=view&id=1K_j8UysAO809CwpZQ6cdIdoi-OmLu49U'); // Direct link to the Google Drive image
+const imageUrl = ref(
+  'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+); // Direct link to the Google Drive image
+// const imageUrl = ref('https://drive.google.com/uc?export=view&id=1K_j8UysAO809CwpZQ6cdIdoi-OmLu49U'); // Direct link to the Google Drive image
 
 useHead({
   title,
