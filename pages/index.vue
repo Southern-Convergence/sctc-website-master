@@ -43,8 +43,37 @@ import { partnerCarouselData } from '../data/content/partners.content';
 
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 
+const title = ref('Southern Convergence Technologies Corporation');
+const description = ref(`Maximize Your Business Potential with Tailor-Made Software Development`);
+const currentUrl = ref('https://southernconvergence.com'); // Your website's URL
+const imageUrl = ref('https://drive.google.com/uc?export=view&id=1K_j8UysAO809CwpZQ6cdIdoi-OmLu49U'); // Direct link to the Google Drive image
+
 useHead({
-  title: 'Southern Convergence Technologies Corporation',
+  title,
+  meta: [
+    { name: 'description', content: description },
+
+    // Open Graph meta tags (used by Facebook, LinkedIn, Pinterest, and more)
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: currentUrl },
+    { property: 'og:image', content: imageUrl },
+
+    // Twitter specific meta tags
+    { name: 'twitter:card', content: 'summary_large_image' }, // Use 'summary_large_image' for a large image or 'summary' for a smaller image
+    { name: 'twitter:site', content: '@yourTwitterHandle' }, // Optional: Your Twitter handle, if you have one
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: imageUrl },
+
+    // Additional tags for better control and coverage
+    { name: 'twitter:url', content: currentUrl },
+    { property: 'og:site_name', content: 'My App' },
+    { property: 'og:locale', content: 'en_US' }, // Adjust the locale if needed
+    { property: 'og:image:width', content: '1200' }, // Image dimensions for og:image (these are recommended dimensions)
+    { property: 'og:image:height', content: '630' },
+  ],
 });
 
 const disabled = ref(false);
