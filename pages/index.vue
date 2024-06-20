@@ -16,6 +16,7 @@
         Maximize Your Business Potential with Tailor-Made
         <br />
         Software Development
+        {{ SITE_CONFIG }}
       </p>
       <br />
       <v-hover v-slot="{ isHovering, props }">
@@ -38,45 +39,19 @@
 </template>
 
 <script setup>
+// Carousel Data
 import { serviceCarouselData } from '../data/content/services.content';
 import { partnerCarouselData } from '../data/content/partners.content';
 
+// Site Config
+import { SITE_CONFIG } from '../config/config';
+
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 
-const title = ref('Southern Convergence Technologies Corporation');
-const description = ref(`Maximize Your Business Potential with Tailor-Made Software Development`);
-const currentUrl = ref('https://southernconvergence.com'); // Your website's URL
-const imageUrl = ref(
-  'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-); // Direct link to the Google Drive image
-// const imageUrl = ref('https://drive.google.com/uc?export=view&id=1K_j8UysAO809CwpZQ6cdIdoi-OmLu49U'); // Direct link to the Google Drive image
-
+// Setting up document head with reactive properties
 useHead({
-  title,
-  meta: [
-    { name: 'description', content: description },
-
-    // Open Graph meta tags (used by Facebook, LinkedIn, Pinterest, and more)
-    { property: 'og:title', content: title },
-    { property: 'og:description', content: description },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: currentUrl },
-    { property: 'og:image', content: imageUrl },
-
-    // Twitter specific meta tags
-    { name: 'twitter:card', content: 'summary_large_image' }, // Use 'summary_large_image' for a large image or 'summary' for a smaller image
-    { name: 'twitter:site', content: '@yourTwitterHandle' }, // Optional: Your Twitter handle, if you have one
-    { name: 'twitter:title', content: title },
-    { name: 'twitter:description', content: description },
-    { name: 'twitter:image', content: imageUrl },
-
-    // Additional tags for better control and coverage
-    { name: 'twitter:url', content: currentUrl },
-    { property: 'og:site_name', content: 'My App' },
-    { property: 'og:locale', content: 'en_US' }, // Adjust the locale if needed
-    { property: 'og:image:width', content: '1200' }, // Image dimensions for og:image (these are recommended dimensions)
-    { property: 'og:image:height', content: '630' },
-  ],
+  title: SITE_CONFIG.index.title,
+  meta: SITE_CONFIG.index.meta,
 });
 
 const disabled = ref(false);
