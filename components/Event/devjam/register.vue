@@ -200,9 +200,9 @@ const submitForm = async (event) => {
 
       // Notify status
       Swal.fire({
-        title: 'Successfully sent',
+        title: 'Successfully sent. You will hear from us soon.',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000,
         backdrop: `rgba(143,206,0,0.2)`,
       });
     })

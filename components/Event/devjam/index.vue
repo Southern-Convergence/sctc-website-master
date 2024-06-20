@@ -1,6 +1,7 @@
 <template>
   <div class="h-full bg-black">
-    <div class="background-image w-full h-50 text-white d-flex align-center font-poppins">
+    <!-- Banner -->
+    <div class="background-image w-full h-4/6 text-white d-flex align-center font-poppins">
       <!-- Countdown Timer Display -->
       <div class="countdown-container">
         <div class="px-15 py-5 py-md-15 mx-auto">
@@ -36,7 +37,7 @@
 
     <!-- Event Button Group -->
     <div
-      class="mt-md-15 flex align-stretch h-50 h-md-25 align-md-center flex-column flex-md-row justify-center slide-animation w-50 mx-auto"
+      class="flex align-stretch h-2/6 align-md-center flex-column flex-md-row justify-center slide-animation w-50 mx-auto"
     >
       <template v-for="(btn, index) in eventData.eventButtons" :key="index">
         <!-- If Button redirects to an external page -->
