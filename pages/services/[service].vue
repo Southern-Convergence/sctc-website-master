@@ -6,18 +6,15 @@
         <!-- Slides -->
         <v-carousel-item v-for="(slide, index) in slides" :key="index">
           <section class="text-center pa-12" v-if="index === 0">
-            <v-container class="w-100 pa-0 px-10">
-              <v-row>
-                <v-col>
-                  <h1 class="text-h4 text-sm-h2 text-md-h1 font-weight-bold mb-4 custom-underline">
+            <v-container class="w-100 pa-0">
+              <v-row class="d-flex justify-center align-center">
+                <v-col cols="11">
+                  <p class="text-[2rem] text-sm-h2 text-md-h1 font-weight-bold custom-underline">
                     {{ slide.title }}
-                  </h1>
-                  <h2
-                    class="text-h6 text-sm-h4 text-md-h3 font-weight-light italic ma-10"
-                    :style="{ color: '#ff7b02' }"
-                  >
-                    "{{ slide.subtitle }}"
-                  </h2>
+                  </p>
+                  <p class="text-h5 text-sm-h4 text-md-h3 font-weight-light italic ma-10" :style="{ color: '#ff7b02' }">
+                    {{ slide.subtitle }}
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
@@ -26,10 +23,9 @@
             <v-container class="w-100 pa-0">
               <v-row class="d-flex justify-center align-center">
                 <v-col cols="8" class="d-flex flex-column justify-center align-center text-section">
-                  <h1 class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4">
+                  <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4">
                     How can we <span class="custom-underline"> make it happen </span> for you?
-                  </h1>
-
+                  </p>
                   <v-btn color="orange" density="comfortable" variant="flat" to="/contact" class="mt-4">
                     Contact Us
                     <v-icon right class="ml-2">mdi-email</v-icon>
@@ -39,11 +35,11 @@
             </v-container>
           </section>
           <section class="text-center pa-4 pa-md-12" v-else>
-            <v-container class="w-100 md:px-10">
+            <v-container class="w-100 px-md-10">
               <v-row class="d-flex justify-center align-center">
                 <v-col cols="11" md="7" class="d-flex flex-column justify-center text-section">
                   <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
-                    <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins font-weight-light">
+                    <p class="text-[0.73rem] md:text-sm xl:text-md 2xl:text-lg/8 mx-8 font-Poppins font-weight-light">
                       {{ paragraph }}
                     </p>
                   </div>
