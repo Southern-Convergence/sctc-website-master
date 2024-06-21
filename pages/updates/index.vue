@@ -9,8 +9,9 @@
             <div class="py-1 px-4 max-w-5xl h-full">
               <v-row>
                 <!-- column for the thumbnail -->
+                <!-- thumbnail hidden in mobile view -->
                 <v-col cols="2" class="hidden-sm-and-down">
-                  <v-img cover :src="`/static/images/${update.thumbnail}`" class="floating-image" />
+                  <v-img cover :src="`/static/images/${update.thumbnail}`" class="thumbnail" />
                 </v-col>
 
                 <!-- column for the title and date of publishing -->
@@ -27,7 +28,7 @@
           </NuxtLink>
         </v-list-item>
       </v-list>
-      
+
       <div class="w-4/12" style="margin: auto">
         <!-- pagination for multiple articles -->
         <!-- each page only have 4 pages -->
@@ -84,6 +85,21 @@ p:hover {
 
 .hover:hover {
   background-color: #ff7c0217;
+  animation: hovered 0.3s ease;
   transform: scale(1.01);
+}
+
+.thumbnail {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 5px !important;
+}
+
+@keyframes hovered {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.01);
+  }
 }
 </style>
