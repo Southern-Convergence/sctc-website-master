@@ -38,13 +38,19 @@
 </template>
 
 <script setup>
+// Carousel Data
 import { serviceCarouselData } from '../data/content/services.content';
 import { partnerCarouselData } from '../data/content/partners.content';
 
+// Site Config
+import { SITE_CONFIG } from '../config/config';
+
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 
+// Setting up document head with config
 useHead({
-  title: 'Southern Convergence Technologies Corporation',
+  title: SITE_CONFIG.index.title,
+  meta: SITE_CONFIG.index.meta,
 });
 
 const disabled = ref(false);
