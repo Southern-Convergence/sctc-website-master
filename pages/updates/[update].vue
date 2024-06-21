@@ -1,16 +1,27 @@
 <template>
   <div class="flex items-center mx-4 my-6 slide-animation">
-    <v-icon @click="goToPrev" class="hover:text-[#ff7b02]" size="28"> mdi-chevron-left </v-icon>
+    <div @click="goToPrev" class="flex hover:text-[#ff7b02] cursor-pointer items-center">
+      <v-icon size="26"> mdi-chevron-left </v-icon>
+      <span class="font-Poppins font-medium text-base md:text-xl whitespace-normal">Back</span>
+    </div>
   </div>
-  <v-row class="flex flex-col flex-wrap">
-        <v-img v-for="image in banner" :aspect-ratio="16/9" :src="`/static/images/${image}`" />
-  </v-row>
+  <div class="flex">
+    <!-- banner images for desktop view -->
+    <v-col cols="4" v-for="image in banner" class="hidden-sm-and-down" style="padding: 0px !important">
+      <v-img cover :src="`/static/images/${image}`" :aspect-ratio="50 / 18" />
+    </v-col>
 
-  <p>
-    {{ title }}
-  </p>
+    <!-- banner images for desktop view -->
+    <v-col cols="4" v-for="image in banner" class="hidden-md-and-up" style="padding: 0px !important">
+      <v-img cover :src="`/static/images/${image}`" :aspect-ratio="50 / 30" />
+    </v-col>
+  </div>
+  <div class="m-4">
+    <p>
+      {{ title }}
+    </p>
+  </div>
 </template>
-\
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
