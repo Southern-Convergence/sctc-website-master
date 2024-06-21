@@ -63,18 +63,10 @@
                   style="margin: 0px auto; background-color: rgba(255, 255, 255, 0.5); padding-top: 1rem"
                 >
                   <h1
-                    class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl custom-underline"
+                    class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl custom-underline mb-4"
                   >
                     {{ tagline }}
                   </h1>
-                  <v-divider
-                    thickness="5"
-                    color="black"
-                    length="80"
-                    class="border-opacity-100 p-0"
-                    style="margin: 10px auto 20px auto"
-                  >
-                  </v-divider>
                   <p
                     class="mb-4 md:mb-8 text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins text-justify"
                     v-for="desc in description"
@@ -113,29 +105,21 @@
                   <!-- PRODUCTS MOBILE VIEW -->
                   <div class="grid hidden-md-and-up">
                     <h1
-                      class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl custom-underline"
+                      class="font-black font-Roboto text-center text-xl md:text-xl xl:text-2xl 2xl:text-4xl custom-underline mb-4"
                     >
                       Products
                     </h1>
-                    <v-divider
-                      thickness="5"
-                      color="black"
-                      length="80"
-                      class="border-opacity-100 p-0"
-                      style="margin: 10px auto 20px auto"
-                    >
-                    </v-divider>
-                    <v-carousel cycle hide-delimiters touch show-arrows="hover" progress="#ff7b02">
-                      <v-carousel-item v-for="product in products">
-                        <v-card flat class="mt-2">
+                    <v-carousel cycle :show-arrows="false" class="w-10/12">
+                      <v-carousel-item v-for="product in products" class="h-min">
+                        <v-card flat class="mt-1">
                           <v-img
                             :src="`/static/images/${product.image}`"
                             :lazy-src="`/static/images/${product.image}`"
-                            class="floating-image"
+                            class="floating-image aspect-auto w-56 mx-auto"
                           ></v-img>
-                          <v-card-text class="text-xs font-Poppins" style="padding: 25px 0px">
+                          <p class="text-sm font-Poppins mx-5" style="padding: 25px 0px">
                             {{ product.text }}
-                          </v-card-text>
+                          </p>
                         </v-card>
                       </v-carousel-item>
                     </v-carousel>
