@@ -8,19 +8,37 @@
           <NuxtLink :to="`/updates/${update.link}`">
             <div class="py-1 px-4 max-w-5xl h-full">
               <v-row>
-                <!-- column for the thumbnail -->
-                <!-- thumbnail hidden in mobile view -->
+                <!-- column for the thumbnail 
+                 thumbnail hidden in mobile view -->
                 <v-col cols="2" class="hidden-sm-and-down">
-                  <v-img cover :src="`/static/images/${update.thumbnail}`" class="thumbnail" />
+                  <v-img
+                    cover
+                    :src="`/static/images/updates/${thumbnails[index + indexMultiplier].images[1]}`"
+                    class="thumbnail"
+                  />
+                  <!-- thumbnails[index+indexMultiplier].images[1]
+                    gets the second image from all objects in updatesGallery
+                    the image to fetch can be changed, i just decided to get the 2nd picture -->
                 </v-col>
 
-                <!-- column for the title and date of publishing -->
+                <!-- column for the title and date of event -->
                 <v-col>
                   <p class="font-Poppins font-medium text-base md:text-xl whitespace-normal custom-underline mb-2">
                     {{ update.title }}
                   </p>
                   <v-list-item-subtitle class="font-Overpass">
-                    {{ update.date }}
+                    {{ update.subtitle[0].content }}
+                    <!-- sample data:
+                     subtitle: [
+                      {
+                        icon: 'mdi-calendar',
+                        content: 'June 5, 2024',
+                      },
+                      {
+                        icon: 'mdi-map-marker-radius',
+                        content: 'Makati Shangri-La, Manila',
+                      },
+                    ], -->
                   </v-list-item-subtitle>
                 </v-col>
               </v-row>
@@ -48,11 +66,14 @@
 </template>
 
 <script setup>
-import { updatesData } from '../../data/content/updates.content.ts';
+import { updatesData } from '../../../data/content/updates/updates.content.ts';
+import { updatesGallery } from '../../../data/content/updates/updates.gallery.ts';
 
 const updates = ref({});
+const thumbnails = ref({});
 
 updates.value = updatesData;
+thumbnails.value = updatesGallery;
 
 const currentPage = ref(1);
 const itemsPerPage = 4;
@@ -71,9 +92,15 @@ const updatesInPage = computed(() => {
 const onPageChange = (page) => {
   currentPage.value = page;
 };
+
+// calculates the number addedd to index to get the correct thumbnail from updatesGallery
+// just return 0,1,2,3...
+const indexMultiplier = computed(() => {
+  return itemsPerPage * (currentPage.value - 1);
+});
 </script>
 
-<style>
+<style scoped>
 .custom-underline {
   text-decoration: underline;
   text-decoration-color: #ff7b02;
@@ -81,6 +108,8 @@ const onPageChange = (page) => {
 
 p:hover {
   color: #ff7b02;
+  text-decoration: underline;
+  text-decoration-color: #ff7b02;
 }
 
 .hover:hover {
