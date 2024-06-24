@@ -4,74 +4,102 @@
     :class="{ baseCarouselContainer: disabled, closeCarousel: !disabled }"
     class="networkBG w-full h-full"
   >
-    <v-btn @click="emits('toggleDisabled')" variant="elevated" icon="mdi-chevron-down" class="return-btn" />
-    <v-carousel hide-delimiter-background hide-delimiters touch.boolean="true" height="100%" color="#ff7b02">
-      <template v-slot:prev="{ props }">
-        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-chevron-left"> </v-btn>
-      </template>
-      <template v-slot:next="{ props }">
-        <v-btn class="carouselBtn" variant="flat" @click="props.onClick" icon="mdi-chevron-right"> </v-btn>
-      </template>
-      <v-carousel-item v-for="item in carousel">
-        <template v-if="item.tag === 'Partners'">
-          <div class="md:mx-24 d-flex align-center justify-center w-75 mx-auto h-100">
-            <div class="text-center md:p-12 m-auto">
-              <p class="font-Poppins text-xl md:text-5xl m-6 font-bold text-[#ff7b02]">
-                {{ item.title }}
-              </p>
-              <p class="font-Overpass text-gray-500 text-sm font-semibold md:text-xl">{{ item.text }}</p>
-              <div class="d-flex flex-column justify-space-center align-center mt-8">
-                <template v-for="(image, index) in item.images" :key="index">
-                  <v-img
-                    :lazy-src="`/static/images/${image}`"
-                    :src="`/static/images/${image}`"
-                    class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover scale-75 cursor-pointer"
-                    @click="redirectToLink(item.links[index])"
-                  ></v-img>
-                </template>
-              </div>
+    <div class="h-4/5">
+      <v-carousel
+        v-model="model"
+        hide-delimiter-background
+        hide-delimiters
+        progress="#ff7b02"
+        :show-arrows="false"
+        class="h-100"
+      >
+        <v-carousel-item v-for="(item, i) in carousel" :key="item" :value="i">
+          <v-sheet color="rgba(255, 0, 0, 0.0)" class="h-full">
+            <div class="d-flex fill-height justify-center align-center">
+              <!-- Services -->
+              <template v-if="item.tag === 'Services'">
+                <div class="w-100 px-10 mt-8 h-100 d-flex justify-center align-center">
+                  <v-card class="mx-auto" max-width="1200" flat color="transparent">
+                    <div class="p-1 md:p-12">
+                      <v-row justify="center" align="end">
+                        <v-col col="12" md="12" class="">
+                          <p class="font-Poppins text-xl md:text-5xl mb-6 font-weight-bold text-[#ff7b02]">
+                            <v-icon class="pa-1 pa-md-3">
+                              <v-img
+                                :lazy-src="`/static/images/${item.image}`"
+                                :src="`/static/images/${item.image}`"
+                              ></v-img>
+                            </v-icon>
+                            {{ item.title }}
+                          </p>
+                          <p class="font-Overpass text-gray-500 text-xs font-weight-medium md:text-lg text-justify">
+                            {{ item.text }}
+                          </p>
+                          <v-btn color="orange" variant="flat" :to="item.link" class="mt-4 responsive-btn">
+                            Learn More
+                            <v-icon right class="ml-2">mdi-arrow-right</v-icon>
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </div>
+                  </v-card>
+                </div>
+              </template>
+
+              <!-- Partners -->
+              <template v-if="item.tag === 'Partners'">
+                <div class="w-100 px-10 mt-12 h-100 d-flex justify-center align-center">
+                  <v-card class="mx-auto" max-width="1200" flat color="transparent">
+                    <div class="p-1 md:p-12">
+                      <v-row justify="center" align="center">
+                        <v-col col="12" md="12" class="d-flex flex-column justify-space-center align-center">
+                          <p class="font-Poppins text-xl md:text-5xl mb-6 font-weight-bold text-[#ff7b02]">
+                            {{ item.title }}
+                          </p>
+                          <p class="font-Overpass text-gray-500 text-xs font-weight-medium md:text-lg text-center">
+                            {{ item.text }}
+                          </p>
+                          <v-divider class="border-opacity-50 w-75 my-4" />
+                          <div class="flex flex-column flex-md-row w-100 w-md-75">
+                            <v-img
+                              v-for="(image, index) in item.images"
+                              :key="image"
+                              :lazy-src="`/static/images/${image}`"
+                              :src="`/static/images/${image}`"
+                              class="partner-logo mx-auto my-2 mx-md-2 zoom-on-hover cursor-pointer"
+                              @click="redirectToLink(item.links[index])"
+                            >
+                            </v-img>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </div>
+                  </v-card>
+                </div>
+              </template>
             </div>
-          </div>
-        </template>
-        <template v-else>
-          <v-container class="w-75 h-100 d-flex justify-center align-center">
-            <v-card class="mx-auto mb-20" max-width="1200" flat color="transparent">
-              <div class="p-1 md:p-12">
-                <v-row justify="center" align="center">
-                  <v-col col="12" md="10" class="">
-                    <p class="font-Poppins text-xl md:text-5xl mb-6 font-weight-bold text-[#ff7b02]">
-                      <v-icon class="pa-1 pa-md-3">
-                        <v-img :lazy-src="`/static/images/${item.image}`" :src="`/static/images/${item.image}`"></v-img>
-                      </v-icon>
-                      {{ item.title }}
-                    </p>
-                    <p class="font-Overpass text-gray-500 text-xs font-weight-medium md:text-lg">
-                      {{ item.text }}
-                    </p>
-                    <v-btn
-                      color="orange"
-                      density="comfortable"
-                      variant="flat"
-                      :to="item.link"
-                      class="mt-4 responsive-btn"
-                    >
-                      Learn More
-                      <v-icon right class="ml-2">mdi-arrow-right</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </div>
-            </v-card>
-          </v-container>
-        </template>
-      </v-carousel-item>
-    </v-carousel>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
+    </div>
+    <div class="h-1/5 flex justify-end align-start pa-5 w-100">
+      <div class="flex justify-around align-center w-3/6 md:w-1/6">
+        <v-btn icon="mdi-chevron-left" class="carousel-arrow" @click="model = Math.max(model - 1, 0)" />
+        <v-btn class="carousel-arrow" @click="emits('toggleDisabled')" icon="mdi-chevron-down" />
+        <v-btn
+          icon="mdi-chevron-right"
+          class="carousel-arrow"
+          @click="model = Math.min(model + 1, carousel.length - 1)"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
 
 const emits = defineEmits(['toggleDisabled']);
+const model = ref(0);
 const props = defineProps({
   disabled: {
     type: Boolean,
@@ -98,6 +126,12 @@ const redirectToLink = (link) => {
   .partner-logo {
     width: 50%;
   }
+}
+
+.carousel-arrow {
+  background-color: white !important;
+  color: #ff7b02 !important;
+  border: 3px solid !important;
 }
 
 .baseCarouselContainer {
@@ -127,22 +161,8 @@ const redirectToLink = (link) => {
 }
 
 .zoom-on-hover:hover {
-  transform: scale(0.7);
+  transform: scale(1.1);
   transition: transform 0.3s ease;
-}
-
-.return-btn {
-  position: absolute;
-  top: -25px;
-  left: 10%;
-  bottom: 0%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  background-color: white !important;
-  color: #ff7b02 !important;
-  border: 3px #ff7b02 solid !important;
-  z-index: 2;
 }
 
 @keyframes carouselOpen {
