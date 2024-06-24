@@ -1,8 +1,8 @@
 <template>
   <NuxtLayout name="common">
-    <template #header>Events and Updates</template>
+    <template #header>Events & Updates</template>
     <v-col cols="12">
-      <v-list class="w-11/12 md:w-3/5 overflow-hidden" style="margin: auto">
+      <v-list class="w-11/12 md:w-3/5 overflow-hidden m-auto">
         <v-list-item v-for="(update, index) in updatesInPage" :key="index" class="mb-3 hover">
           <!-- links to each article link -->
           <NuxtLink :to="`/updates/${update.link}`">
@@ -23,7 +23,9 @@
 
                 <!-- column for the title and date of event -->
                 <v-col>
-                  <p class="font-Poppins font-medium text-base md:text-xl whitespace-normal custom-underline mb-2">
+                  <p
+                    class="font-Poppins font-medium text-base md:text-xl whitespace-normal underline decoration-[#ff7b02] mb-2"
+                  >
                     {{ update.title }}
                   </p>
                   <v-list-item-subtitle class="font-Overpass">
@@ -69,6 +71,8 @@
 import { updatesData } from '../../../data/content/updates/updates.content.ts';
 import { updatesGallery } from '../../../data/content/updates/updates.gallery.ts';
 
+useHead({ title: 'Events & Updates' });
+
 const updates = ref({});
 const thumbnails = ref({});
 
@@ -101,11 +105,6 @@ const indexMultiplier = computed(() => {
 </script>
 
 <style scoped>
-.custom-underline {
-  text-decoration: underline;
-  text-decoration-color: #ff7b02;
-}
-
 p:hover {
   color: #ff7b02;
   text-decoration: underline;

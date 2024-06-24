@@ -40,7 +40,7 @@ export const navItems = [
 
   // temporary link for events and updates; might change later
   {
-    title: 'EVENTS AND UPDATES',
+    title: 'EVENTS & UPDATES',
     common: true,
     type: 'page',
     link: '/updates',
