@@ -1,82 +1,87 @@
 <template>
-  <v-container class="service-page fill-height d-flex flex-column justify-center align-center pa-0">
-    <div class="slide-animation">
-      <!-- Carousel -->
-      <v-carousel v-model="currentSlide" hide-delimiter-background hide-delimiters class="h-100">
-        <!-- Slides -->
-        <v-carousel-item v-for="(slide, index) in slides" :key="index">
-          <section class="text-center pa-12" v-if="index === 0">
-            <v-container class="w-100 pa-0">
-              <v-row class="d-flex justify-center align-center">
-                <v-col cols="11">
-                  <p class="text-[2rem] text-sm-h2 text-md-h1 font-weight-bold custom-underline">
-                    {{ slide.title }}
-                  </p>
-                  <p class="text-h5 text-sm-h4 text-md-h3 font-weight-light italic ma-10" :style="{ color: '#ff7b02' }">
-                    {{ slide.subtitle }}
-                  </p>
-                </v-col>
-              </v-row>
-            </v-container>
-          </section>
-          <section class="text-center pa-12" v-else-if="index === slides.length - 1">
-            <v-container class="w-100 pa-0">
-              <v-row class="d-flex justify-center align-center">
-                <v-col cols="8" class="d-flex flex-column justify-center align-center text-section">
-                  <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4">
-                    How can we <span class="custom-underline"> make it happen </span> for you?
-                  </p>
-                  <v-btn color="orange" density="comfortable" variant="flat" to="/contact" class="mt-4">
-                    Contact Us
-                    <v-icon right class="ml-2">mdi-email</v-icon>
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-container>
-          </section>
-          <section class="text-center pa-4 pa-md-12" v-else>
-            <v-container class="w-100 px-md-10">
-              <v-row class="d-flex justify-center align-center">
-                <v-col cols="11" md="7" class="d-flex flex-column justify-center text-section">
-                  <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
-                    <p class="text-[0.73rem] md:text-sm xl:text-md 2xl:text-lg/8 mx-8 font-Poppins font-weight-light">
-                      {{ paragraph }}
-                    </p>
-                  </div>
-                </v-col>
-                <v-col cols="12" md="5" class="d-flex justify-center align-center image-section">
-                  <v-img
-                    :src="`/static/images/${slide.image}`"
-                    alt="Service Image"
-                    height="400"
-                    class="service-image hidden-sm-and-down"
-                  />
-                </v-col>
-              </v-row>
-            </v-container>
-          </section>
-        </v-carousel-item>
-
-        <!-- Custom Arrows -->
-        <template v-slot:prev>
-          <v-btn v-if="currentSlide > 0" icon class="carousel-arrow left" variant="elevated" @click="currentSlide--">
-            <v-icon size="large">mdi-chevron-left</v-icon>
-          </v-btn>
-        </template>
-        <template v-slot:next>
-          <v-btn
-            v-if="currentSlide < slides.length - 1"
-            icon
-            class="carousel-arrow right"
-            variant="elevated"
-            @click="currentSlide++"
-          >
-            <v-icon size="large">mdi-chevron-right</v-icon>
-          </v-btn>
-        </template>
+  <div class="h-full">
+    <div class="h-4/5">
+      <v-carousel
+        v-model="currentSlide"
+        hide-delimiter-background
+        hide-delimiters
+        progress="#ff7b02"
+        :show-arrows="false"
+        class="h-100"
+      >
+        <v-sheet class="h-full slide-animation">
+          <v-carousel-item v-for="(slide, index) in slides" :key="slides" :value="index">
+            <div class="d-flex fill-height justify-center align-center">
+              <!-- Intro -->
+              <section class="text-center ma-3" v-if="index === 0">
+                <v-container>
+                  <v-row class="d-flex justify-center align-center">
+                    <v-col cols="12">
+                      <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold underline decoration-[#ff7b02]">
+                        {{ slide.title }}
+                      </p>
+                      <p class="text-h4 text-md-h3 font-weight-light italic ma-10" :style="{ color: '#ff7b02' }">
+                        {{ slide.subtitle }}
+                      </p>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </section>
+              <!-- Contact -->
+              <section class="text-center" v-else-if="index === slides.length - 1">
+                <div class="w-100 pa-0">
+                  <v-row class="d-flex justify-center align-center">
+                    <v-col cols="8" class="d-flex flex-column justify-center align-center text-section">
+                      <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4 underline decoration-[#ff7b02]">
+                        How can we <span class="custom-underline"> make it happen </span> for you?
+                      </p>
+                      <v-btn color="orange" density="comfortable" variant="flat" to="/contact" class="mt-4">
+                        Contact Us
+                        <v-icon right class="ml-2">mdi-email</v-icon>
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </div>
+              </section>
+              <!-- Information -->
+              <section class="flex justify-center align-center text-center pa-0 pa-md-12 h-100" v-else>
+                <v-container>
+                  <v-row class="d-flex justify-center align-center">
+                    <v-col cols="12" md="7" class="d-flex flex-column justify-center text-section">
+                      <div v-for="(paragraph, pIndex) in slide.body" :key="pIndex" class="paragraph text-start">
+                        <br />
+                        <p class="text-xs md:text-sm xl:text-md 2xl:text-lg/8 mx-8 font-Poppins font-weight-light">
+                          {{ paragraph }}
+                        </p>
+                      </div>
+                    </v-col>
+                    <v-col cols="12" md="5" class="d-flex justify-center align-center image-section">
+                      <v-img
+                        :src="`/static/images/${slide.image}`"
+                        alt="Service Image"
+                        height="400"
+                        class="service-image hidden-sm-and-down"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </section>
+            </div>
+          </v-carousel-item>
+        </v-sheet>
       </v-carousel>
     </div>
-  </v-container>
+    <div class="h-1/5 flex justify-end align-start pa-5 w-100">
+      <div class="flex justify-around align-center w-3/6 md:w-1/6">
+        <v-btn icon class="carousel-arrow" @click="currentSlide = Math.max(currentSlide - 1, 0)">
+          <v-icon size="large">mdi-chevron-left</v-icon>
+        </v-btn>
+        <v-btn icon class="carousel-arrow" @click="currentSlide = Math.min(currentSlide + 1, slides.length - 1)">
+          <v-icon size="large">mdi-chevron-right</v-icon>
+        </v-btn>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -85,8 +90,6 @@ import { serviceData } from '../../data/content/services.content';
 
 const route = useRoute();
 const serviceDetails = ref({});
-const currentSlide = ref(0);
-
 const slides = ref([
   {
     title: '',
@@ -107,6 +110,8 @@ const slides = ref([
     image: '',
   },
 ]);
+
+const currentSlide = ref(0);
 
 onMounted(() => {
   serviceDetails.value = serviceData.find((service) => service.link === route.params.service);
@@ -132,56 +137,10 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.custom-underline {
-  text-decoration: underline;
-  text-decoration-color: #ff7b02;
-}
-
-.service-page {
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-}
-
+<style>
 .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background-color: white !important;
   color: #ff7b02 !important;
   border: 3px solid !important;
-}
-
-.carousel-arrow.left {
-  left: 16px;
-}
-
-.carousel-arrow.right {
-  right: 16px;
-}
-
-.progress-bar {
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.service-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.paragraph {
-  margin-bottom: 1rem;
-  text-align: start;
-}
-
-.active-delimiter .v-icon {
-  color: #ff7b02 !important;
-}
-
-.v-btn.primary {
-  background-color: #ff7b02;
-  color: #fff;
 }
 </style>

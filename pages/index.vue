@@ -1,6 +1,6 @@
 <template>
   <div class="body-div">
-    <video autoplay loop muted class="video-background">
+    <video autoplay loop muted playsinline class="video-background pointer-events-none">
       <source src="../assets/images/sctc-bg-animation.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>

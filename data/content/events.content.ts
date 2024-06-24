@@ -8,6 +8,7 @@ export const eventsData = [
     bannerText: 'Experience Seamless AI Integration at Our Exclusive Roadshow',
     bannerImg: 'sctc-website-banner-roadshow.jpg',
     bannerDialogImg: 'roadshow-dialog-banner.jpg',
+    ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png',
     dialogText: [
       `Southern Convergence Technologies and DataStax are proud to announce their collaboration, marking a
             significant milestone in revolutionizing data management solutions. On June 5th, in Manila, we invite you to
@@ -37,6 +38,7 @@ export const eventsData = [
     link: 'devjam',
     bannerImg: 'devjam-header.jpg',
     bannerDialogImg: 'devjam-dialog-banner.jpg',
+    ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_event.png',
     countdownBannerHeader: 'Gen AI Dev Jam',
     countdownBannerText: `Join us on July 24, 2023, for the first GenAI Dev Jam in the Philippines! Connect, innovate, and explore the future of AI with developers nationwide in an exciting day of collaboration and cutting-edge ideas. Don't miss out!`,
     countdownDate: '07/24/2024',
