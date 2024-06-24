@@ -123,6 +123,6 @@ export const eventsData = [
       eventName: 'Dev Jam',
     },
     metaHead: 'Dev Jam',
-    current: false,
+    current: true,
   },
 ];
