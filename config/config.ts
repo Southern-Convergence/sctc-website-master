@@ -1,29 +1,11 @@
-import { eventsData } from '../data/content/events.content';
-
 // Mailer Endpoint
 export const MAILER_ENDPOINT = 'https://sctc-mailer-service-w4zzk.ondigitalocean.app';
 
 // OG Meta tags
-
-const currentEvent: any = eventsData.find((event) => event.current); // search if theres an active event
-
-const isEventAvailable = (event: string) => {
-  return new Date(event) >= new Date();
-};
-
-let IMAGE_URL = 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png'; // initially set non meta event
-let TITLE = 'Southern Convergence Technologies Corporation';
-let DESCRIPTION = 'Maximize Your Business Potential with Tailor-Made Software Development';
-let URL = 'https://southernconvergence.com';
-
-if (currentEvent) {
-  // if event is active and event has not yet concluded
-  IMAGE_URL = isEventAvailable(currentEvent.countdownDate)
-    ? currentEvent.ogMetaImg
-    : 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png';
-
-  // ? [Optional] - We can edit other fields
-}
+const TITLE = 'Southern Convergence Technologies Corporation';
+const DESCRIPTION = 'Maximize Your Business Potential with Tailor-Made Software Development';
+const URL = 'https://southernconvergence.com';
+const IMAGE_URL = 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png';
 
 export const SITE_CONFIG = {
   index: {
