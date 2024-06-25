@@ -43,14 +43,16 @@ import { serviceCarouselData } from '../data/content/services.content';
 import { partnerCarouselData } from '../data/content/partners.content';
 
 // Site Config
-import { SITE_CONFIG } from '../config/config';
-
 const carouselData = ref([...serviceCarouselData, ...partnerCarouselData]);
 
-// Setting up document head with config
-useHead({
-  title: SITE_CONFIG.index.title,
-  meta: SITE_CONFIG.index.meta,
+// Override Default Meta Tags
+onMounted(async () => {
+  const { META_CONFIG } = await import('../config/config');
+
+  useHead({
+    title: META_CONFIG.index.title,
+    meta: META_CONFIG.index.meta,
+  });
 });
 
 const disabled = ref(false);

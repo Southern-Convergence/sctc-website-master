@@ -4,7 +4,6 @@ import { eventsData } from '../data/content/events.content';
 export const MAILER_ENDPOINT = 'https://sctc-mailer-service-w4zzk.ondigitalocean.app';
 
 // OG Meta tags
-
 const currentEvent: any = eventsData.find((event) => event.current); // search if theres an active event
 
 const isEventAvailable = (event: string) => {
@@ -25,7 +24,7 @@ if (currentEvent) {
   // ? [Optional] - We can edit other fields
 }
 
-export const SITE_CONFIG = {
+export const META_CONFIG = {
   index: {
     title: TITLE,
     meta: [
