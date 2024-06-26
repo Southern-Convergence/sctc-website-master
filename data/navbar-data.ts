@@ -37,6 +37,17 @@ export const navItems = [
     sublinks: null,
     props: partnersData,
   },
+
+  // temporary link for events and updates; might change later
+  {
+    title: 'EVENTS & UPDATES',
+    common: true,
+    type: 'page',
+    link: '/updates',
+    enabled: true,
+  },
+  // temporary link for events and updates
+
   {
     title: 'CONTACT',
     common: true,
