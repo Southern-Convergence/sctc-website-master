@@ -18,7 +18,7 @@
         <ContactForm />
       </v-sheet>
     </v-col>
-    <v-col cols="12" md="4" class="hidden-sm-and-down mt-5">
+    <v-col cols="12" md="4" class="hidden-sm-and-down">
       <div>
         <p class="text-xxs sm:text-xs md:text-sm xl:text-md 2xl:text-lg font-Poppins">
           We know that our clients have unique needs and circumstances. Tell us more about your project, and we will get

@@ -4,7 +4,18 @@
 
 html,
 body {
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
+  max-height: 100vh;
+  background-color: black;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
 
 ::-moz-selection {

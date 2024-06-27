@@ -1,13 +1,5 @@
 <template>
-  <form @submit.prevent="submitForm" v-if="!isBot" class="slide-animation w-75 w-md-100 mx-auto">
-    <input
-      type="text"
-      name="field1"
-      style="opacity: 0 !important; pointer-events: none !important; cursor: none; color: white"
-      tabindex="-1"
-      v-model="bot"
-      autocomplete="thisisbot"
-    />
+  <form @submit.prevent="submitForm" v-if="!isBot" class="slide-animation w-75 w-md-100  mx-auto">
     <v-text-field
       @click.right.prevent
       @keydown="keydown"
@@ -41,6 +33,14 @@
       label="Subject"
       required
     ></v-text-field>
+    <input
+      type="text"
+      name="field1"
+      style="opacity: 0 !important; pointer-events: none !important; cursor: none; color: white"
+      tabindex="-1"
+      v-model="bot"
+      autocomplete="thisisbot"
+    />
     <v-textarea variant="outlined" v-model="message" :rules="messageRules" label="Message" required></v-textarea>
     <div class="d-flex justify-between w-75 w-md-100">
       <v-btn variant="flat" type="submit" color="#ff7b02" block :disabled="submitDisabled">Submit</v-btn>

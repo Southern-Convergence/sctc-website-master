@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black h-100">
+  <div class="bg- h-100">
     <div class="w-100 h-75 d-flex justify-center align-center">
       <div class="d-flex justify-center align-center">
         <v-container>
@@ -12,9 +12,9 @@
               v-model="bot"
               autocomplete="thisisbot"
             />
-            <div class="flex items-center mx-2 mt-6 mb-4 slide-animation">
+            <div class="flex items-center mx-2 mb-5 slide-animation">
               <v-icon @click="goToPrev" class="hover:text-[#ff7b02]" size="36"> mdi-chevron-left </v-icon>
-              <p class="font-semibold text-2xl md:text-5xl special-link ml-5 font-Roboto">
+              <p class="font-semibold text-2xl md:text-5xl special-link ml-5 pb-1 font-Roboto">
                 {{ eventData.registerText }}
               </p>
             </div>
