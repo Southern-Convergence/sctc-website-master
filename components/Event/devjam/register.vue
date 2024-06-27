@@ -1,5 +1,5 @@
 <template>
-  <div class="bg- h-100">
+  <div class="bg-black h-100">
     <div class="w-100 h-75 d-flex justify-center align-center">
       <div class="d-flex justify-center align-center">
         <v-container>
