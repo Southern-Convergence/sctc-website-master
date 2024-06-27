@@ -82,7 +82,7 @@
         </v-carousel-item>
       </v-carousel>
     </div>
-    <div class="h-1/5 flex justify-end align-start pa-5 w-100">
+    <div class="h-1/5 flex justify-end align-start pr-5 w-100">
       <div class="flex justify-around align-center w-3/6 md:w-1/6">
         <v-btn icon="mdi-chevron-left" class="carousel-arrow" @click="model = Math.max(model - 1, 0)" />
         <v-btn class="carousel-arrow" @click="emits('toggleDisabled')" icon="mdi-chevron-down" />

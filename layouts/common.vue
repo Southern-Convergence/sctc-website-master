@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 md:p-8 lg:p-16">
+  <div class="py-2 md:p-8">
     <div class="flex items-center mx-2 mt-6 slide-animation">
       <v-icon @click="goToPrev" class="hover:text-[#ff7b02]" size="36"> mdi-chevron-left </v-icon>
       <p class="font-semibold text-2xl md:text-5xl text-[#FF7B02] ml-5 font-Roboto">

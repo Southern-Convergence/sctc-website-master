@@ -2,7 +2,7 @@
   <NuxtLayout name="common">
     <template #header>About us</template>
     <v-col cols="12" md="6" lg="7">
-      <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-8 font-Poppins text-justify">
+      <p class="text-xs md:text-sm xl:text-md 2xl:text-lg mx-4 font-Poppins text-justify">
         We are a dynamic software company based in the Philippines, specializing in the design, development, and
         delivery of intelligent custom software solutions for Government, SMEs, and Enterprise clients. Leveraging
         strategic partnerships with industry leaders such as Fastly and Datastax, we seamlessly integrate their

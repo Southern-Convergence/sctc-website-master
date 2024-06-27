@@ -99,7 +99,7 @@ export const eventsData = [
       {
         type: 'string',
         question: `Where is Dev Jam 2024 being held?`,
-        answer: `Currently TBA`,
+        answer: `AIM Conference Centre Manila, Benavidez Street, Corner Trasierra, Legazpi Village, Makati, 1229 Metro Manila`,
       },
       {
         type: 'string',
