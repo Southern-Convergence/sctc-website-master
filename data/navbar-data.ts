@@ -44,7 +44,7 @@ export const navItems = [
     common: true,
     type: 'page',
     link: '/updates',
-    enabled: true,
+    enabled: false,
   },
   // temporary link for events and updates
 
