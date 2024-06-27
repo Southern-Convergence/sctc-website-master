@@ -42,11 +42,10 @@
       autocomplete="thisisbot"
     />
     <v-textarea variant="outlined" v-model="message" :rules="messageRules" label="Message" required></v-textarea>
-    <div class="d-flex justify-between w-75 w-md-100">
+    <div class="d-flex justify-between w-50 w-md-100">
       <v-btn variant="flat" type="submit" color="#ff7b02" block :disabled="submitDisabled">Submit</v-btn>
-      <v-btn class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" variant="outlined">
+      <v-btn append-icon="mdi-chevron-right" class="hidden-md-and-up ml-4" @click="emits('toggleMore')" color="orange" variant="outlined">
         details
-        <v-icon right class="ml-2">mdi-chevron-right</v-icon>
       </v-btn>
     </div>
   </form>

@@ -35,7 +35,7 @@
                       <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold mb-4 underline decoration-[#ff7b02]">
                         How can we <span class="custom-underline"> make it happen </span> for you?
                       </p>
-                      <v-btn color="orange" density="comfortable" variant="flat" to="/contact" class="mt-4">
+                      <v-btn color="orange" variant="flat" to="/contact" class="mt-10">
                         Contact Us
                         <v-icon right class="ml-2">mdi-email</v-icon>
                       </v-btn>
