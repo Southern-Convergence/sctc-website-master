@@ -13,7 +13,9 @@
               autocomplete="thisisbot"
             />
             <div class="flex items-center mx-2 mb-5 slide-animation">
-              <v-icon @click="goToPrev" class="hover:text-[#ff7b02]" size="36"> mdi-chevron-left </v-icon>
+              <v-icon @click="goToPrev(eventData.eventLink)" class="hover:text-[#ff7b02]" size="36">
+                mdi-chevron-left
+              </v-icon>
               <p class="font-semibold text-2xl md:text-5xl special-link ml-5 pb-1 font-Roboto">
                 {{ eventData.registerText }}
               </p>
@@ -115,8 +117,8 @@ const props = defineProps({
   },
 });
 
-const goToPrev = () => {
-  router.go(-1);
+const goToPrev = (link) => {
+  router.push(link);
 };
 
 const { firstNameRules, surnameRules, companyRules, positionRules, emailRules, mobileRules } = props.eventData.rules;
@@ -189,6 +191,7 @@ const submitForm = async (event) => {
     {
       eventName: props.eventData.eventName,
       eventDeadline: props.eventData.deadline,
+      receivingEmail: props.eventData.registerEmail || null,
       ...formData.value,
     },
     'event',

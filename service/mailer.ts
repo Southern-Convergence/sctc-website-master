@@ -23,7 +23,7 @@ const generateEmailContent = (payload: any, template: string) => {
     fromName: 'Southern Convergence Technologies',
     fromAddress: 'no-reply@sctc.support',
     // admin email
-    to: 'info@southernconvergence.com',
+    to: payload.receivingEmail || 'info@southernconvergence.com',
     subject,
     rawHtml,
   };
