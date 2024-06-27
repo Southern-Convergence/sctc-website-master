@@ -55,7 +55,7 @@ export const eventsData = [
       },
       {
         type: 'objectArr',
-        question: `What you’ll learn or What we will cover`,
+        question: `What you’ll learn and What we will cover`,
         answer: {
           contents: [
             {
@@ -89,11 +89,11 @@ export const eventsData = [
         type: 'array',
         question: `Pre-requisites`,
         answer: [
-          'Bring your Data (Sample datasets can be provided, if needed)',
+          'Bring your Data (We will provide sample datasets, if needed)',
           'Laptop with python or node js development environment',
           'Signup for astra.datastax.com',
           'Signup for openai.com',
-          'Bring your enthusiasm',
+          'Bring your unbridled enthusiasm',
         ],
       },
       {
