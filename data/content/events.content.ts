@@ -37,7 +37,7 @@ export const eventsData = [
     eventType: 'DevJam',
     link: 'devjam',
     bannerImg: 'devjam-header.jpg',
-    bannerDialogImg: 'devjam-dialog-banner.jpg',
+    bannerDialogImg: 'devjam-dialog-banner.png',
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_event.png',
     countdownBannerHeader: 'Gen AI Dev Jam',
     countdownBannerText: `Join us on July 24, 2023, for the first GenAI Dev Jam in the Philippines! Connect, innovate, and explore the future of AI with developers nationwide in an exciting day of collaboration and cutting-edge ideas. Don't miss out!`,
