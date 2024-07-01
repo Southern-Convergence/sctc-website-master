@@ -40,12 +40,12 @@ export const eventsData = [
     bannerDialogImg: 'devjam-dialog-banner.png',
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_event.png',
     countdownBannerHeader: 'Gen AI Dev Jam',
-    countdownBannerText: `Join us on July 24, 2023, for the first GenAI Dev Jam in the Philippines! Connect, innovate, and explore the future of AI with developers nationwide in an exciting day of collaboration and cutting-edge ideas. Don't miss out!`,
+    countdownBannerText: `Join us for the first-ever GenAI Dev Jam in the Philippines on July 24, 2023! This free event is your chance to connect with developers from across the nation, unleash your creativity, and dive into the future of AI. Get ready for a thrilling day of collaboration, innovation, and groundbreaking ideas. Don't miss out on this electrifying experience!`,
     countdownDate: '07/24/2024',
     header: 'Unlock the Power of AI and AstraDB at Dev Jam 2024',
     text: [
-      `You don't have to be an expert in Deep Learning, Machine Learning, or Data Science to learn how to leverage tools like OpenAI's LLMs and AstraDB to create intelligent experts, assistants, and platforms.`,
-      `In this Dev Jam session, we will update you on recent developments and provide the essential information to get started. This program is designed to familiarize your enterprise architects, developers, and practitioners with RAGStack, LLMs, and Vector Database quickly. With guidance from a DataStax technical coach and engaging self-paced assignments, participants will bring their own data and develop a Gen AI agent using the DataStax Astra platform.`,
+      `Join us for a free event where you don't have to be an expert in Deep Learning, Machine Learning, or Data Science to learn how to leverage tools like OpenAI's LLMs and AstraDB to create intelligent experts, assistants, and platforms.`,
+      `In this Dev Jam session, we'll update you on recent developments and provide the essential information to get started. This program is designed to quickly familiarize your enterprise architects, developers, and practitioners with RAGStack, LLMs, and Vector Database technology. With guidance from a DataStax technical coach and engaging self-paced assignments, participants will bring their own data and develop a Gen AI agent using the DataStax Astra platform.`,
     ],
     faq: [
       {
@@ -53,6 +53,11 @@ export const eventsData = [
         question: `What you’ll Build and Deploy`,
         answer: `Bring your use case or requirement and sample data, and we will design the solution, build the Agent or Chatbot and deploy this. You will walk away with a working Generative AI Agent/chatbot and/or enhanced search or recommendations using context at the end of this session. We will provide you with sample data, code and the framework to build and deploy your Gen AI Application.`,
       },
+      {
+        type: 'string',
+        question: 'Is there a cost to participate in the Dev Jam?',
+        answer: `It's free! So don't hesitate to join us for a hands-on experience with Generative AI.`,
+      },      
       {
         type: 'objectArr',
         question: `What you’ll learn and What we will cover`,
