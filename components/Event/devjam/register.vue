@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black h-100">
     <div class="w-100 h-75 d-flex justify-center align-center">
-      <div class="d-flex justify-center align-center">
+      <div class="d-flex justify-center align-center mt-10">
         <v-container>
           <form @submit.prevent="submitForm" v-if="!isBot" class="slide-animation w-100 mx-auto mt-8">
             <input
