@@ -40,7 +40,7 @@ export const eventsData = [
     bannerDialogImg: 'devjam-dialog-banner.png',
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_event.png',
     countdownBannerHeader: 'Gen AI Dev Jam',
-    countdownBannerText: `Join us for the first-ever GenAI Dev Jam in the Philippines on July 24, 2023! This free event is your chance to connect with developers from across the nation, unleash your creativity, and dive into the future of AI. Get ready for a thrilling day of collaboration, innovation, and groundbreaking ideas. Don't miss out on this electrifying experience!`,
+    countdownBannerText: `Join us for the first-ever GenAI Dev Jam in the Philippines on July 24, 2024! This free event is your chance to connect with developers from across the nation, unleash your creativity, and dive into the future of AI. Get ready for a thrilling day of collaboration, innovation, and groundbreaking ideas. Don't miss out on this electrifying experience!`,
     countdownDate: '07/24/2024',
     header: 'Unlock the Power of AI and AstraDB at Dev Jam 2024',
     text: [
