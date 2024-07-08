@@ -2,7 +2,7 @@ import axios from 'axios';
 import { MAILER_ENDPOINT } from '../config/config';
 import { MAIL_TEMPLATES } from '../config/mailContents';
 
-const generateEmailContent = (payload: any, template: string) => {
+const generateEmailContent = (payload: any, template: string, sendToAdmin = true) => {
   let rawHtml: string;
   let subject: string;
 
@@ -15,23 +15,25 @@ const generateEmailContent = (payload: any, template: string) => {
       rawHtml = MAIL_TEMPLATES.EVENT_REGISTRATION_TEMPLATE(payload);
       subject = 'Event Registration';
       break;
+    case 'queue_registration':
+      rawHtml = MAIL_TEMPLATES.DEVJAM_QUEUE_MAIL_TEMPLATE(payload);
+      subject = payload.emailContent.subject;
+      break;
     default:
       throw new Error('Unknown template type');
   }
 
   return {
-    fromName: 'Southern Convergence Technologies',
+    fromName: payload.fromName || 'Southern Convergence Technologies',
     fromAddress: 'no-reply@sctc.support',
-    // admin email
-    to: payload.receivingEmail || 'info@southernconvergence.com',
+    to: sendToAdmin ? payload.receivingEmail || 'info@southernconvergence.com' : payload.email,
     subject,
     rawHtml,
   };
 };
 
-export const sendMail = async (payload: any, template: string) => {
-  const data = generateEmailContent(payload, template);
-
+export const sendMail = async (payload: any, template: string, sendToAdmin: boolean = true) => {
+  const data = generateEmailContent(payload, template, sendToAdmin);
   // ! Only for production environment
   return await axios.post(`${MAILER_ENDPOINT}/mailer/sendMail`, data);
   // ! Only for dev environment

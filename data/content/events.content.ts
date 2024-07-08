@@ -127,6 +127,18 @@ export const eventsData = [
       deadline: '07/24/2024',
       eventName: 'Dev Jam',
       eventLink: '/devjam',
+      fromName: 'no-reply@sctc.support',
+      emailContent: {
+        subject: 'Registration Received: Awaiting Confirmation for Dev Jam 2024',
+        withConfirmation: true,
+        shortHeadline: 'Dev Jam 2024',
+        headline: 'One-Stop Generative AI Stack',
+        body: `Thank you for registering for the hands-on workshop. Your registration has been emailed, and our team will reply as soon as it is acknowledged.`,
+        salutation: 'SCTC / DataStax',
+        eventRegisterLink: 'https://southernconvergence.com/devjam',
+        eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialog-banner-2.png',
+      },
+
     },
     metaHead: 'Dev Jam',
     current: true,
