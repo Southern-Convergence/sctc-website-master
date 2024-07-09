@@ -196,7 +196,7 @@ const submitForm = async (event) => {
     },
     'event',
   )
-    .then(() => {
+    .then(async () => {
       // Update the email timestamps
       recentEmails.push(now);
       localStorage.setItem('emailTimestamps', JSON.stringify(recentEmails));
@@ -208,6 +208,23 @@ const submitForm = async (event) => {
         timer: 2000,
         backdrop: `rgba(143,206,0,0.2)`,
       });
+
+      // Send email to user regarding registration is queued
+
+      if (props.eventData.emailContent.withConfirmation) {
+        await sendMail(
+          {
+            eventName: props.eventData.eventName,
+            eventDeadline: props.eventData.deadline,
+            receivingEmail: props.eventData.registerEmail || null,
+            fromName: props.eventData.fromName,
+            emailContent: props.eventData.emailContent,
+            ...formData.value,
+          },
+          'queue_registration',
+          false,
+        );
+      }
     })
     .catch(() => {
       Swal.fire({
