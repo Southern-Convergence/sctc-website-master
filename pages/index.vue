@@ -8,8 +8,8 @@
       <div
         class="tracking-wider flex flex-col font-semibold font-Poppins xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl"
       >
-        <p id="title-line1">Crafting Your Digital Advantage</p>
-        <p id="title-line2">with Innovative Solutions</p>
+        <p id="title-line1">Forging Your Digital Future</p>
+        <p id="title-line2">with Groundbreaking Solutions</p>
       </div>
       <br />
       <p class="disable font-Overpass text-xs md:text-xl font-light">
