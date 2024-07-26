@@ -5,6 +5,10 @@ import { eventsData } from './content/events.content';
 // ? Edit this to change navbar items
 const currentEvent: any = eventsData.find((event) => event.current);
 
+const isEventAvailable = (event: string) => {
+  return new Date(event) >= new Date();
+};
+
 export const navItems = [
   {
     title: 'ABOUT',
@@ -55,11 +59,13 @@ export const navItems = [
     link: '/contact',
     enabled: true,
   },
+
+  // link for events
   {
     title: currentEvent.metaHead.toUpperCase(),
     common: false,
     type: 'page',
     link: `/${currentEvent.link}`,
-    enabled: true,
+    enabled: isEventAvailable(currentEvent.countdownDate),
   },
 ];
