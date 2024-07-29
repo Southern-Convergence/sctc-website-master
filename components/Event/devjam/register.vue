@@ -186,7 +186,7 @@ const submitForm = async (event) => {
     },
   });
 
-  // Send Email
+  // Send Email to admin
   await sendMail(
     {
       eventName: props.eventData.eventName,
@@ -209,7 +209,7 @@ const submitForm = async (event) => {
         backdrop: `rgba(143,206,0,0.2)`,
       });
 
-      // Send email to user regarding registration is queued
+      // Send Email to user regarding registration is queued
 
       if (props.eventData.emailContent.withConfirmation) {
         await sendMail(

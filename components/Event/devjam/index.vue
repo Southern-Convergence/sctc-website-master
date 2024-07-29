@@ -18,6 +18,7 @@
                 </span>
               </v-col>
               <v-col
+                v-if="eventData.countdownDate"
                 v-for="time in timeLeft"
                 cols="3"
                 class="d-flex flex-column flex-md-row align-center justify-center md:mt-5"
