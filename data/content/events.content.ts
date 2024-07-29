@@ -124,9 +124,7 @@ export const eventsData = [
       registerText: 'Dev Jam Registration',
       registerLink: '/register/events/devjam',
       registerFields: ['First Name', 'Surname', 'Company', 'Position', 'Mobile Number', 'Email'],
-      // ? Performing Test
-      registerEmail: 'gabesantos725@gmail.com',
-      // registerEmail: 'info@southernconvergence.com',
+      registerEmail: 'info@southernconvergence.com',
       rules: RegistrationRules2,
       // ! Update in the future if dates are settled
       deadline: null,
