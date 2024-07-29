@@ -7,6 +7,7 @@ export const MAILER_ENDPOINT = 'https://sctc-mailer-service-w4zzk.ondigitalocean
 const currentEvent: any = eventsData.find((event) => event.current); // search if theres an active event
 
 const isEventAvailable = (event: string) => {
+  if (!event) return false;
   return new Date(event) >= new Date();
 };
 

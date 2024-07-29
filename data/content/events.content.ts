@@ -37,11 +37,13 @@ export const eventsData = [
     eventType: 'DevJam',
     link: 'devjam',
     bannerImg: 'devjam-header.jpg',
-    bannerDialogImg: 'devjam-dialog-banner.png',
+    // ! Update in the future if dates are settled
+    bannerDialogImg: 'devjam-dialog-banner-temp.png',
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_event.png',
     countdownBannerHeader: 'Gen AI Dev Jam',
-    countdownBannerText: `Join us for the first-ever GenAI Dev Jam in the Philippines on July 24, 2024! This free event is your chance to connect with developers from across the nation, unleash your creativity, and dive into the future of AI. Get ready for a thrilling day of collaboration, innovation, and groundbreaking ideas. Don't miss out on this electrifying experience!`,
-    countdownDate: '07/24/2024',
+    // ! Update in the future if dates are settled
+    countdownBannerText: `Join us for the first-ever GenAI Dev Jam in the Philippines! This free event is your chance to connect with developers from across the nation, unleash your creativity, and dive into the future of AI. Get ready for a thrilling day of collaboration, innovation, and groundbreaking ideas. Don't miss out on this electrifying experience!`,
+    countdownDate: null,
     header: 'Unlock the Power of AI and AstraDB at Dev Jam 2024',
     text: [
       `Join us for a free event where you don't have to be an expert in Deep Learning, Machine Learning, or Data Science to learn how to leverage tools like OpenAI's LLMs and AstraDB to create intelligent experts, assistants, and platforms.`,
@@ -57,7 +59,7 @@ export const eventsData = [
         type: 'string',
         question: 'Is there a cost to participate in the Dev Jam?',
         answer: `It's free! So don't hesitate to join us for a hands-on experience with Generative AI.`,
-      },      
+      },
       {
         type: 'objectArr',
         question: `What you’ll learn and What we will cover`,
@@ -122,9 +124,12 @@ export const eventsData = [
       registerText: 'Dev Jam Registration',
       registerLink: '/register/events/devjam',
       registerFields: ['First Name', 'Surname', 'Company', 'Position', 'Mobile Number', 'Email'],
-      registerEmail: 'info@southernconvergence.com',
+      // ? Performing Test
+      registerEmail: 'gabesantos725@gmail.com',
+      // registerEmail: 'info@southernconvergence.com',
       rules: RegistrationRules2,
-      deadline: '07/24/2024',
+      // ! Update in the future if dates are settled
+      deadline: null,
       eventName: 'Dev Jam',
       eventLink: '/devjam',
       fromName: 'no-reply@sctc.support',
@@ -135,10 +140,11 @@ export const eventsData = [
         headline: 'One-Stop Generative AI Stack',
         body: `Thank you for registering for the hands-on workshop. Your registration has been emailed, and our team will reply as soon as it is acknowledged.`,
         salutation: 'SCTC / DataStax',
-        eventRegisterLink: 'https://southernconvergence.com/devjam',
-        eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialog-banner-2.png',
+        eventPageLink: 'https://southernconvergence.com/devjam',
+        // ! Update in the future if dates are settled
+        eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialogue-banner-temp.png',
+        // eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialog-banner-2.png',
       },
-
     },
     metaHead: 'Dev Jam',
     current: true,

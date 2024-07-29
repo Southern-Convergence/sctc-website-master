@@ -130,7 +130,7 @@ const EVENT_REGISTRATION_TEMPLATE = (data: any) => {
               </div>
               <div class="content">
                 <p>Dear Team,</p>
-                <p>You have received a new registration for the event on <strong>${deadlineDate}</strong>.</p>
+                <p>You have received a new registration for the event on <strong>${data.eventDeadline ? deadlineDate : 'TBC'}</strong>.</p>
                 <p><strong>Event Name:</strong> ${data.eventName}</p>
                 <p><strong>Registrant Details:</strong></p>
                 <ul>
@@ -171,7 +171,7 @@ const DEVJAM_QUEUE_MAIL_TEMPLATE = (payload: any) => {
         <td align="center" style="padding: 0;">
           <div id="fullwidthBannerModuleImage01" style="margin: 0;">
             <a
-              href="${payload.emailContent.eventRegisterLink}"
+              href="${payload.emailContent.eventPageLink}"
               style="color: blue; margin: 0;"
               target="_blank"
               ><img
