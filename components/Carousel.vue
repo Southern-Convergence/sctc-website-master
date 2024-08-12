@@ -131,7 +131,6 @@ const redirectToLink = (link) => {
 .carousel-arrow {
   background-color: white !important;
   color: #ff7b02 !important;
-  border: 3px solid !important;
 }
 
 .baseCarouselContainer {
