@@ -49,7 +49,7 @@ export const navItems = [
     common: true,
     type: 'page',
     link: '/milestones',
-    enabled: true,
+    enabled: false,
   },
 
   {
@@ -57,7 +57,7 @@ export const navItems = [
     common: true,
     type: 'page',
     link: '/updates',
-    enabled: true,
+    enabled: false,
   },
   // temporary link for events and updates
 
@@ -71,10 +71,10 @@ export const navItems = [
 
   // link for events
   {
-    title: currentEvent.metaHead.toUpperCase(),
+    title: currentEvent?.metaHead.toUpperCase(),
     common: false,
     type: 'page',
-    link: `/${currentEvent.link}`,
-    enabled: isEventAvailable(currentEvent.countdownDate),
+    link: `/${currentEvent?.link}`,
+    enabled: currentEvent && isEventAvailable(currentEvent?.countdownDate),
   },
 ];

@@ -8,8 +8,8 @@ const isEventAvailable = (event: string) => {
 };
 
 export const event = {
-  title: currentEvent.metaHead.toUpperCase(),
-  img: currentEvent.bannerDialogImg,
-  link: `/${currentEvent.link}`,
-  enabled: isEventAvailable(currentEvent.countdownDate),
+  title: currentEvent?.metaHead.toUpperCase(),
+  img: currentEvent?.bannerDialogImg,
+  link: `/${currentEvent?.link}`,
+  enabled: currentEvent && isEventAvailable(currentEvent?.countdownDate),
 };

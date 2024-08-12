@@ -145,6 +145,6 @@ export const eventsData = [
       },
     },
     metaHead: 'Dev Jam',
-    current: true,
+    current: false,
   },
 ];
