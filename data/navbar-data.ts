@@ -6,8 +6,11 @@ import { eventsData } from './content/events.content';
 const currentEvent: any = eventsData.find((event) => event.current);
 
 const isEventAvailable = (event: string) => {
-  if (!event) return true;
-  return new Date(event) >= new Date();
+    const endDate = new Date(event).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
+    return endDate >= today && endDate !== today;
+  // if (!event) return true;
+  // return new Date(event) >= new Date();
 };
 
 export const navItems = [
@@ -72,9 +75,9 @@ export const navItems = [
   // link for events
   {
     title: currentEvent?.metaHead.toUpperCase(),
-    common: false,
+    common: true,
     type: 'page',
     link: `/${currentEvent?.link}`,
-    enabled: currentEvent && isEventAvailable(currentEvent?.countdownDate),
+    enabled: isEventAvailable(currentEvent.countdownDate),
   },
 ];

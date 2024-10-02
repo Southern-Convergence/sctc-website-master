@@ -22,7 +22,7 @@
               :class="{ 'active-link': route.path === item.link, 'special-link': !item.common }"
               class="cursor-pointer p-3 text-hover"
             >
-              {{ item.title }}
+              {{ item.title }} 
             </nuxt-link>
           </template>
           <template v-if="item.type === 'dropdown' && item.enabled">

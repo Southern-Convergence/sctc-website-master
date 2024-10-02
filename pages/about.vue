@@ -1,4 +1,4 @@
-<template>
+<template> 
   <NuxtLayout name="common">
     <template #header>About us</template>
     <v-col cols="12" md="6" lg="7">

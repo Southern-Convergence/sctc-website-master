@@ -1,6 +1,7 @@
 <template>
   <EventDevjam v-if="eventData.eventType === 'DevJam'" :eventData="eventData" />
   <EventRoadshow v-if="eventData.eventType === 'Roadshow'" :eventData="eventData" />
+  <EventHcd v-if="eventData.eventType === 'HCD'" :eventData="eventData"/>
 </template>
 
 <script setup>

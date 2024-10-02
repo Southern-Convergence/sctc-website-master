@@ -251,7 +251,7 @@ onUnmounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .dialog-border {
   border: 2px solid white !important;
 }

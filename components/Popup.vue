@@ -7,13 +7,16 @@
     transition="dialog-top-transition"
   >
     <v-card rounded="lg">
-      <v-img height="auto" :src="`/static/images/${event.img}`" cover>
+      <v-card-text> 
+        <p v-html="event.text"> </p>
+      </v-card-text>
+      <!-- <v-img height="auto" :src="`/static/images/${event.img}`" cover>
         <v-card-title class="d-flex justify-end align-center">
           <v-sheet rounded="circle" class="my-2">
             <v-btn class="close-btn" icon="mdi-close" variant="text" @click="closePopUp"></v-btn>
           </v-sheet>
         </v-card-title>
-      </v-img>
+      </v-img> -->
       <v-sheet class="ma-4 d-flex justify-center">
         <v-btn class="text-none" color="#ff7b02" text="Learn More" variant="flat" @click="redirect(event.link)"></v-btn>
       </v-sheet>
@@ -64,7 +67,7 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .close-btn:hover {
   color: #ff7801;
 }

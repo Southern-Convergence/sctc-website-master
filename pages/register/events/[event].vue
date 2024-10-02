@@ -1,5 +1,6 @@
 <template>
   <EventDevjamRegister v-if="eventData.eventType === 'DevJam'" :eventData="eventData.register" />
+  <event-hcd-registration v-if="eventData.eventType === 'HCD'" :eventData="eventData.register" />
 </template>
 
 <script setup>

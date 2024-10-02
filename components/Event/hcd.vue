@@ -1,15 +1,19 @@
 <template>
   <div class="bg h-full w-full text-white mb-md-9">
-    <v-img
-      :src="`/static/images/${eventData.bannerImg}`"
-      class="header aspect-auto w-75 p-20"
-      style="margin: 0px auto"
-    />
     <div class="flex items-center justify-center slide-animation">
       <p class="font-semibold text-2xl md:text-4xl text-[#FF7B02] font-Roboto mb-8 text-center">
-        {{ eventData.bannerText }}
+        {{ eventData.pageText }}
       </p>
+
+      
     </div>
+    <div class="slide-animation" style="width: 500px; margin: 0 auto; position: relative;">
+    <p style="text-align: justify; text-justify: inter-word;" 
+       class="text-caption md:text-subtitle text-[#FF7B02] font-Roboto mb-8" 
+       v-html="eventData.pageContent">
+    </p>
+  </div>
+
     <div
       color="black"
       class="flex align-stretch flex-column flex-md-row justify-center slide-animation w-75 mx-auto my-10"
@@ -58,22 +62,23 @@
         </v-img>
         <v-card-text class="font-Poppins text-caption text-md-body-2 text-lg-body-1 my-5">
           <template v-for="dialog in eventData.dialogText">
-            {{ dialog }}
-            <br />
+            <p v-html="dialog"></p>
             <br />
           </template>
           <br />
           <p>
+          
             <strong class="">
-              {{ eventData.dialogActionText }}
+              <!-- {{ eventData.dialogActionText }} -->
               <br />
               <v-btn
                 append-icon="mdi-arrow-right"
                 class="mt-5 roadshow-register-btn text-caption text-md-body-2 text-lg-body-1"
                 target="_blank"
-                :href="eventData.dialogActionLink"
+                :to="eventData.dialogActionLink"
               >
                 {{ eventData.dialogButtonText }}
+                
               </v-btn>
             </strong>
           </p>
@@ -117,5 +122,12 @@ const goToPage = (link) => {
 
 .dialog-border {
   border: 2px solid white !important;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>

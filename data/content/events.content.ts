@@ -147,4 +147,113 @@ export const eventsData = [
     metaHead: 'Dev Jam',
     current: false,
   },
+  {
+    eventType : 'HCD',
+    link      : 'hcd',
+    countdownDate: '10/17/2024',
+    bannerText: `Unlock the future of AI-ready data at our <b>free exclusive event</b> with DataStax! 
+      Discover how Hyper-Converged Database (HCD) technology can revolutionize your data infrastructure, 
+      optimize AI workloads, and enhance real-time edge computing. Register now to secure your spot and 
+      gain valuable insights from industry experts.`,
+    pageText : 'Unlock the Future of AI-Ready Data with DataStax Hyper-Converged Database',
+    pageContent: `
+      <p>
+        Join us for a free exclusive event where we explore the groundbreaking potential of 
+        DataStax Hyper-Converged Database (HCD) technology. Learn how to revolutionize your data management, 
+        optimize AI and generative AI workloads, and power real-time edge computing. 
+        Featuring live demos and expert insights, this event offers an in-depth look at the future of AI-ready 
+        data infrastructure. Register now to secure your spot!
+      </p> 
+      <br/>
+      <p class="font-weight-bold">What You'll Experience:</p>
+      <br/>
+      <ul style="gap: 10px;  flex-direction: column; display: flex;">
+        <li >
+          <b class="text-decoration-underline">Revolutionize Your Data Management:</b> Learn how DataStax's HCD infrastructure modernizes enterprise data,
+          enabling seamless scalability and flexible resource allocation.
+        </li>
+        <li>
+          <b class="text-decoration-underline"> Optimize AI Workloads:</b> Explore how to integrate AI and generative AI applications at scale using HCD's high-performance,
+          cloud-native architecture.
+        </li>
+        <li>
+          <b class="text-decoration-underline">Reall-Time Edge Computing: </b> Understand how HCD can power low-latency, real-time applications, ideal for industries like
+          5G edge computing and customer-centric services.
+        </li>
+        <li>
+          <b class="text-decoration-underline">Hands-On Demonstration:</b> Witness live demonstrations of HCD's capabilities in integrating with AI applications, 
+          cloud environments, and enterprise data infrastructure.
+        </li>
+        <li>
+          <b class="text-decoration-underline">Networking Opportunities: </b> Engage with industry leaders, data experts, and peers to exchange ideas on the future
+          of data infrastructure, AI-driven technoloy, and hyper-converge system.
+        </li>
+      </ul>
+      <br/>
+      <p>
+        <b>Why You Should Attend:</b> This event is essential for data professionals, business leaders, and AI enthusiasts looking to modernize
+        their data infrastructure, scale AI workloads, and enhance real-time data processing capabilities. With SCTC and DataStax's combined
+        expertise, you'll gain access to actionable strategies and cuttin-edge technologies that can transform your orginzation's approach to data.
+        Best of all the event is <b>completely free,</b> so register now to reserve your spot.
+      </p>
+      
+      `,
+    bannerImg: 'sctc-website-banner-roadshow.jpg',
+    bannerDialogImg: 'roadshow-dialog-banner.jpg',
+    ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png',
+    dialogText: [
+      `<b>Unlock the Future of AI-Ready Data with SCTC and DataStax</b>`,
+      `<p style="font-weight: bold;">Date: October 17, 2024</p>
+       <p style="font-weight: bold;">Time: </p>
+       <p style="font-weight: bold;">Venue: </p>`,
+      
+      `SCTC, in partnership with <b>DataStax,</b> invites you to an exciting, <b>free exclusive event</b> that will explore
+      that will explore the power of Hyper-Converged Database (HCD) technology in revolutionizing enterprise data management.
+      Whether you're working with AI-driven applications, hybrid cloud environments, or real-time data services, this event will provide
+      the insights and practical solutions needed to stay ahead of the curve`,
+
+      `For those unfamiliar with <b>DataStax,</b> it is a global leader in data management technology, known for building
+      high-performance, cloud-native databases that enable businesses to unlock the full potential of real-time data. DataStax powers
+      some of the world's largest enterprises with its scalable, distributed cloud database solutions, helping organizations thrive in
+      the era of AI and digital transformation.`
+    ],
+    register: {
+      registerText: 'HCD Registration',
+      registerLink: '/register/events/hcd',
+      registerFields: ['First Name', 'Surname', 'Company', 'Position', 'Mobile Number', 'Email'],
+      registerEmail: 'info@southernconvergence.com',
+      rules: RegistrationRules2,
+      // ! Update in the future if dates are settled
+      deadline: null,
+      eventName: 'HCD',
+      eventLink: '/hcd',
+      fromName: 'no-reply@sctc.support',
+      emailContent: {
+        subject: 'Thank You for Registering! – Unlock the Future of AI-Ready Data with DataStax',
+        withConfirmation: true,
+        shortHeadline: 'HCD',
+        headline: 'One-Stop Generative AI Stack',
+        salutation: 'SCTC / DataStax',
+        eventPageLink: 'https://southernconvergence.com/devjam',
+        // ! Update in the future if dates are settled
+        eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialogue-banner-temp.png',
+        // eventBannerPageLink: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/devjam-dialog-banner-2.png',
+      },
+    },
+    invitationContent: {
+      subject: "Join the Future of Data: Free AI-Driven Data Event with DataStax and SCTC"
+    },
+    dialogImg: 'sctc-banner-roadshow.jpg',
+    dialogActionText: 'To secure your spot and unlock the potential of GenAI for your organization.',
+    dialogButtonText: 'Register now',
+    dialogActionLink: '/register/events/hcd',
+    eventButtons: [
+      { name: 'About the event', link: null, type: 'dialog' },
+      { name: 'Register', link: '/register/events/hcd', type: 'page' },
+      { name: 'Get in touch', link: '/contact', type: 'page' },
+    ],
+    metaHead: 'Datastax HCD',
+    current: true, // only one event should have this set as true, the rest will be false
+  },
+
 ];

@@ -117,7 +117,7 @@ const redirectToLink = (link) => {
   router.push(link);
 };
 </script>
-<style>
+<style scoped>
 .partner-logo {
   width: 50%; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */

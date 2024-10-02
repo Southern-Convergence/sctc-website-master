@@ -62,7 +62,7 @@ const toggleCarousel = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .body-div {
   position: relative;
   width: 100%;

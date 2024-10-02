@@ -137,7 +137,7 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .carousel-arrow {
   background-color: white !important;
   color: #ff7b02 !important;

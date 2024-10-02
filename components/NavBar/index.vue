@@ -7,7 +7,7 @@
 import { navItems } from '../../data/navbar-data';
 </script>
 
-<style>
+<style scoped>
 .text-hover:hover {
   color: #ff7801;
 }
