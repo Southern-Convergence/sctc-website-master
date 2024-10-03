@@ -178,7 +178,7 @@ onBeforeMount(async () => {
     loadParticipants(),
     loadInvitedParticipants()
   ]).then(() => {
-    loader.value = false
+    loader.value = true
   })
 });
 
@@ -228,18 +228,7 @@ const form = ref({
 async function inviteParticipants(){
 
   try {
-     Swal.fire({
-      title: "Sending Email",
-      icon: "success",
-      willOpen: () => {
-        // Dynamically adjust z-index if needed
-        const swalElement = document.querySelector('.swal2-container');
-        if (swalElement) {
-          swalElement.style.zIndex = '99999'; // Set it to a very high value
-        }
-
-      }
-    });
+  
     const emailPayload = {
       eventName: eventData.value.register.eventName,
       eventDeadline: eventData.value.register.deadline,
@@ -249,17 +238,19 @@ async function inviteParticipants(){
       ...form.value,
     };
     // First, send the request to save the invited participants
-    axios.post(`${MAILER_ENDPOINT}/mailer/saveInvitedParticipants`, {
+    await axios.post(`${MAILER_ENDPOINT}/mailer/saveInvitedParticipants`, {
       ...form.value,
       event_type: eventData.value.eventType,
     });
+    await loadInvitedParticipants();
 
-    loadInvitedParticipants()
     sendMail(emailPayload, 'hcd_invitation', false);
     inviteDialog.value = false
+   
     Swal.fire({
-      title: "Sending Email",
+      title: "Sent Email",
       icon: "success",
+      howConfirmButton: false,
       willOpen: () => {
         // Dynamically adjust z-index if needed
         const swalElement = document.querySelector('.swal2-container');
@@ -287,7 +278,7 @@ const item_headers = ref([
 
 
 // Start: Login Form
-const loginFormDialog = ref(false)
+const loginFormDialog = ref(true)
 const loginform = ref({
   username: '',
   password: ''

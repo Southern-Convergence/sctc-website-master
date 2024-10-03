@@ -25,7 +25,7 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
       break;
     case 'hcd_invitation':
       rawHtml = MAIL_TEMPLATES.HCD_INVITATION(payload)
-      subject = payload.emailContent.subject;
+      subject = payload.invitationContent.subject; 
       break;
     default:
       throw new Error('Unknown template type');
