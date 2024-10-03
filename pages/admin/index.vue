@@ -172,11 +172,14 @@ const route = useRoute();
 
 
 onBeforeMount(async () => {
+  
   Promise.all([
     loadEventData(),
     loadParticipants(),
     loadInvitedParticipants()
-  ])
+  ]).then(() => {
+    loader.value = false
+  })
 });
 
 const loader = ref(true)
@@ -202,6 +205,7 @@ const invitedparticipantsHeader = ref()
 async function loadInvitedParticipants() {
   axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
       .then((response: any) => {
+        console.log(response.data)
         return  listOfInvitedParticipants.value = response.data
       })
 }
@@ -222,7 +226,20 @@ const form = ref({
 
 
 async function inviteParticipants(){
+
   try {
+     Swal.fire({
+      title: "Sending Email",
+      icon: "success",
+      willOpen: () => {
+        // Dynamically adjust z-index if needed
+        const swalElement = document.querySelector('.swal2-container');
+        if (swalElement) {
+          swalElement.style.zIndex = '99999'; // Set it to a very high value
+        }
+
+      }
+    });
     const emailPayload = {
       eventName: eventData.value.register.eventName,
       eventDeadline: eventData.value.register.deadline,
@@ -237,11 +254,21 @@ async function inviteParticipants(){
       event_type: eventData.value.eventType,
     });
 
-    console.log('Success');
-
     loadInvitedParticipants()
     sendMail(emailPayload, 'hcd_invitation', false);
     inviteDialog.value = false
+    Swal.fire({
+      title: "Sending Email",
+      icon: "success",
+      willOpen: () => {
+        // Dynamically adjust z-index if needed
+        const swalElement = document.querySelector('.swal2-container');
+        if (swalElement) {
+          swalElement.style.zIndex = '99999'; // Set it to a very high value
+        }
+
+      }
+    });
   } catch (error) {
     console.error('Error:', error);
   }
@@ -260,7 +287,7 @@ const item_headers = ref([
 
 
 // Start: Login Form
-const loginFormDialog = ref(true)
+const loginFormDialog = ref(false)
 const loginform = ref({
   username: '',
   password: ''
