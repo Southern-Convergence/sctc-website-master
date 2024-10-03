@@ -163,6 +163,7 @@
 import { useRoute } from 'vue-router';
 import { getParticipants, sendMail, login } from '../../../service/mailer.ts';
 import {eventsData} from '../../data/content/events.content.ts'
+import { MAILER_ENDPOINT } from '../../config/config.ts';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 const {$rest} = useNuxtApp()
@@ -199,7 +200,7 @@ const loadParticipants = async () => {
 const listOfInvitedParticipants = ref([])
 const invitedparticipantsHeader = ref()
 async function loadInvitedParticipants() {
-  axios.get('http://localhost:7003/mailer/getInvitedParticipants')
+  axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
       .then((response: any) => {
         return  listOfInvitedParticipants.value = response.data
       })
@@ -217,7 +218,7 @@ const form = ref({
   email     : '',
   number   : ''
 });
-// 
+// End: Invitation Form Dialog
 
 
 async function inviteParticipants(){
@@ -231,7 +232,7 @@ async function inviteParticipants(){
       ...form.value,
     };
     // First, send the request to save the invited participants
-    axios.post('http://localhost:7003/mailer/saveInvitedParticipants', {
+    axios.post(`${MAILER_ENDPOINT}/mailer/saveInvitedParticipants`, {
       ...form.value,
       event_type: eventData.value.eventType,
     });

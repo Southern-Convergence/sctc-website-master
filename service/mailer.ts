@@ -61,7 +61,7 @@ export const getParticipants = async () => {
 }
 
 export const getInvitedParticipants = async () => {
-  const data =  await axios.get(`http://localhost:7003/mailer/getInvitedParticipants`)
+  const data =  await axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
   return data
 }
 
