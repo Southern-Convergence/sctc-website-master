@@ -46,7 +46,6 @@
       </v-col>
     </v-row>
 
-     
     <v-dialog v-model="inviteDialog" width="500">
       <v-card>
         <v-toolbar density="compact" color="#ff7b02">
@@ -141,7 +140,7 @@
       </v-card>
     </v-dialog>
 
-    <v-dialog persistent v-model="loginFormDialog" width="400" v-if="loader">
+    <v-dialog persistent v-model="loginFormDialog" width="400">
       <v-card >
         <v-toolbar color="#ff7b02">
           <v-toolbar-title> Login </v-toolbar-title>
@@ -149,7 +148,7 @@
         </v-toolbar>
         <v-card-text>
           <v-text-field  variant="outlined" label="Username" v-model="loginform.username"/>
-          <v-text-field variant="outlined" label="Password" v-model="loginform.password"/>
+          <v-text-field type="password" variant="outlined" label="Password" v-model="loginform.password"/>
         </v-card-text>
         <v-card-actions>
           <v-btn @click="loginAdmin">Login</v-btn>
@@ -157,12 +156,6 @@
       </v-card>
     </v-dialog>
   </div>
-
-
-
-
-
-
 </div>  
 </template>
 
@@ -276,22 +269,20 @@ async function loginAdmin(){
   await login({
     ...loginform.value
   }).then(() => {
-    loginFormDialog.value = false
     loader.value = false
-    // Swal.fire({
-    //   title: "Success",
-    //   icon: "success",
-    //   willOpen: () => {
-    //     
-    //     
-    //     // Dynamically adjust z-index if needed
-    //     const swalElement = document.querySelector('.swal2-container');
-    //     if (swalElement) {
-    //       swalElement.style.zIndex = '99999'; // Set it to a very high value
-    //     }
+    loginFormDialog.value = false
+    Swal.fire({
+      title: "Success",
+      icon: "success",
+      willOpen: () => {
+        // Dynamically adjust z-index if needed
+        const swalElement = document.querySelector('.swal2-container');
+        if (swalElement) {
+          swalElement.style.zIndex = '99999'; // Set it to a very high value
+        }
 
-    //   }
-    // });
+      }
+    });
 
   }).catch(() => {
     Swal.fire({
