@@ -198,7 +198,7 @@ export const eventsData = [
       </p>
       
       `,
-    bannerImg: 'sctc-website-banner-roadshow.jpg',
+    bannerImg: 'hcd-banner.png',
     bannerDialogImg: 'roadshow-dialog-banner.jpg',
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png',
     dialogText: [

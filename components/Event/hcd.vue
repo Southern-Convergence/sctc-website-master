@@ -1,13 +1,18 @@
 <template>
   <div class="bg h-full w-full text-white mb-md-9">
-    <div class="flex items-center justify-center slide-animation">
+      <v-img
+      :src="`/static/images/${eventData.bannerImg}`"
+      class="header aspect-auto w-75 p-20"
+      style="margin: 0px auto"
+    />
+    <div class="flex items-center justify-center slide-animation"> 
       <p class="font-semibold text-2xl md:text-4xl text-[#FF7B02] font-Roboto mb-8 text-center">
         {{ eventData.pageText }}
       </p>
 
       
     </div>
-    <div class="slide-animation" style="width: 500px; margin: 0 auto; position: relative;">
+    <div class="slide-animation" style="width: 1200px; margin: 0 auto; position: relative;">
     <p style="text-align: justify; text-justify: inter-word;" 
        class="text-caption md:text-subtitle text-[#FF7B02] font-Roboto mb-8" 
        v-html="eventData.pageContent">
