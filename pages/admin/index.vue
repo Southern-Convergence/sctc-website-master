@@ -178,7 +178,7 @@ onBeforeMount(async () => {
     loadParticipants(),
     loadInvitedParticipants()
   ]).then(() => {
-    loader.value = true
+    loader.value = false
   })
 });
 
@@ -203,7 +203,7 @@ const loadParticipants = async () => {
 const listOfInvitedParticipants = ref([])
 const invitedparticipantsHeader = ref()
 async function loadInvitedParticipants() {
-  axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
+  return axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
       .then((response: any) => {
         console.log(response.data)
         return  listOfInvitedParticipants.value = response.data
@@ -224,45 +224,54 @@ const form = ref({
 });
 // End: Invitation Form Dialog
 
-
-async function inviteParticipants(){
-
+// Start: Add Invited Participants to DB
+async function addInvitedParticipants(){
   try {
-  
-    const emailPayload = {
-      eventName: eventData.value.register.eventName,
-      eventDeadline: eventData.value.register.deadline,
-      receivingEmail: eventData.value.register.registerEmail || null,
-      fromName: eventData.value.register.fromName,
-      emailContent: eventData.value.register.emailContent,
-      ...form.value,
-    };
-    // First, send the request to save the invited participants
-    await axios.post(`${MAILER_ENDPOINT}/mailer/saveInvitedParticipants`, {
+    const response = await axios.post(`http://localhost:7003/mailer/saveInvitedParticipants`, {
       ...form.value,
       event_type: eventData.value.eventType,
     });
-    await loadInvitedParticipants();
+    
+    console.log('Response received:', response);
+    return response; 
+  } catch (error) {
 
-    sendMail(emailPayload, 'hcd_invitation', false);
-    inviteDialog.value = false
-   
-    Swal.fire({
+    console.log(Error)
+  }
+}
+// End: Add Invited Participants to DB
+
+function inviteParticipants(){
+  
+  const emailPayload = {
+    eventName: eventData.value.register.eventName,
+    eventDeadline: eventData.value.register.deadline,
+    receivingEmail: eventData.value.register.registerEmail || null,
+    fromName: eventData.value.register.fromName,
+    emailContent: eventData.value.invitationContent,
+    ...form.value,
+  };
+  
+   addInvitedParticipants()
+    .then((response) => {
+      loadInvitedParticipants()
+      sendMail(emailPayload, 'hcd_invitation', false);
+      Swal.fire({
       title: "Sent Email",
       icon: "success",
-      howConfirmButton: false,
+      showConfirmButton: false,
       willOpen: () => {
         // Dynamically adjust z-index if needed
         const swalElement = document.querySelector('.swal2-container');
         if (swalElement) {
           swalElement.style.zIndex = '99999'; // Set it to a very high value
         }
-
       }
     });
-  } catch (error) {
-    console.error('Error:', error);
-  }
+    })
+    .catch((error) => {
+      console.error('Error adding participants:', error);
+    });
 }
 
 
@@ -278,7 +287,7 @@ const item_headers = ref([
 
 
 // Start: Login Form
-const loginFormDialog = ref(true)
+const loginFormDialog = ref(false)
 const loginform = ref({
   username: '',
   password: ''

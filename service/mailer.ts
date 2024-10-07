@@ -25,7 +25,7 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
       break;
     case 'hcd_invitation':
       rawHtml = MAIL_TEMPLATES.HCD_INVITATION(payload)
-      subject = payload.invitationContent.subject; 
+      subject = payload.emailContent.subject; 
       break;
     default:
       throw new Error('Unknown template type');
@@ -53,7 +53,8 @@ export const sendMail = async (payload: any, template: string, sendToAdmin: bool
 };
 
 export const saveParticipants = async (payload: any) => {
-  return await axios.post(`${MAILER_ENDPOINT}/mailer/saveParticipants`, payload)
+  const response = await axios.post(`${MAILER_ENDPOINT}/mailer/saveParticipants`, payload)
+  return response
 }
 export const getParticipants = async () => {
   const data =  await axios.get(`${MAILER_ENDPOINT}/mailer/getParticipants`)
