@@ -1,7 +1,7 @@
 <template>
 <div class="mt-10">
   <div>
-    <v-row no-gutters justify="center" v-if="loader === false">
+    <v-row no-gutters justify="center" v-if="loginFormDialog === false">
       <v-col cols="12">
         <v-card class="mx-auto" width="1000">
           <v-card-text class="bg-surface-light pt-4">
@@ -148,7 +148,7 @@
         </v-toolbar>
         <v-card-text>
           <v-text-field  variant="outlined" label="Username" v-model="loginform.username"/>
-          <v-text-field type="password" variant="outlined" label="Password" v-model="loginform.password"/>
+          <v-text-field type="password" variant="outlined" label="Password" v-model="loginform.password" @keyup.enter="loginAdmin"/>
         </v-card-text>
         <v-card-actions>
           <v-btn @click="loginAdmin">Login</v-btn>
@@ -287,7 +287,7 @@ const item_headers = ref([
 
 
 // Start: Login Form
-const loginFormDialog = ref(false)
+const loginFormDialog = ref(true)
 const loginform = ref({
   username: '',
   password: ''
@@ -326,6 +326,8 @@ async function loginAdmin(){
     });
   })
 }
+
+
 </script>
 <style scoped>
 .container {
