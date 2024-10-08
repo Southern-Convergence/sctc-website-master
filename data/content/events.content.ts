@@ -243,7 +243,7 @@ export const eventsData = [
     invitationContent: {
       subject: "Join the Future of Data: Free AI-Driven Data Event with DataStax and SCTC"
     },
-    dialogImg: 'sctc-banner-roadshow.jpg',
+    dialogImg: 'hcd-banner.png',
     dialogActionText: 'To secure your spot and unlock the potential of GenAI for your organization.',
     dialogButtonText: 'Register now',
     dialogActionLink: '/register/events/hcd',
