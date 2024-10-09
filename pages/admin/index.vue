@@ -227,7 +227,7 @@ const form = ref({
 // Start: Add Invited Participants to DB
 async function addInvitedParticipants(){
   try {
-    const response = await axios.post(`http://localhost:7003/mailer/saveInvitedParticipants`, {
+    const response = await axios.post(`${MAILER_ENDPOINT}/mailer/saveInvitedParticipants`, {
       ...form.value,
       event_type: eventData.value.eventType,
     });
