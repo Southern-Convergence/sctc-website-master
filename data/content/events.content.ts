@@ -151,10 +151,36 @@ export const eventsData = [
     eventType : 'HCD',
     link      : 'hcd',
     countdownDate: '10/17/2024',
-    bannerText: `Unlock the future of AI-ready data at our <b>free exclusive event</b> with DataStax! 
-      Discover how Hyper-Converged Database (HCD) technology can revolutionize your data infrastructure, 
-      optimize AI workloads, and enhance real-time edge computing. Register now to secure your spot and 
-      gain valuable insights from industry experts.`,
+    bannerText: `
+      <p>
+      Harness AI-Ready Data with AstraDB Discover how 
+      hyper-converged databases can supercharge your organization's efficiency.
+
+      <ul style="gap: 0px;  flex-direction: column; display: flex; margin-top: 10px;">
+        <li>  Date : <b>Nov. 13, 2024</b> </li>
+        <li>  Time : <b>1:00pm - 5:00pm</b> </li>
+        <li>  Venue: <b>Microtel by Wyndham UP Technohub</b> </li>
+        <li>  Address: <b> Commonwealth Avenue UP Ayala Land Technohub, Quezon City, 1121</b> </li>
+      </ul>
+     
+      </p> 
+      
+      <p style="margin-top: 10px;">
+        Southern Convergence Technologies Corporation (SCTC), in partnership with DataStax, 
+        invites you to an exciting, free exclusive event that will explore the power of Hyper-Converged Database (HCD) 
+        technology to revolutionize enterprise data management. Whether you're working with AI-driven applications, 
+        hybrid cloud environments, or real-time data services, this event will provide the insights and practical solutions 
+        needed to stay ahead of the curve.
+      </p>
+
+      <p style="margin-top: 10px;">
+       DataStax is a global leader in data management technology, known for building high-performance, 
+       cloud-native databases that enable businesses and organizations to unlock the full potential of 
+       real-time data. DataStax powers some of the world's largest enterprises with its scalable, 
+       distributed cloud database solutions, helping organizations thrive in the era of AI and digital 
+       transformation.
+      </p>
+      `,
     pageText : 'Unlock the Future of AI-Ready Data with DataStax Hyper-Converged Database',
     pageContent: `
       <p>
