@@ -157,10 +157,10 @@ export const eventsData = [
       hyper-converged databases can supercharge your organization's efficiency.
 
       <ul style="gap: 0px;  flex-direction: column; display: flex; margin-top: 10px;">
-        <li>  Date : <b>Nov. 13, 2024</b> </li>
+        <li>  Date : <b>November. 13, 2024 | Wednesday</b> </li>
         <li>  Time : <b>1:00pm - 5:00pm</b> </li>
         <li>  Venue: <b>Microtel by Wyndham UP Technohub</b> </li>
-        <li>  Address: <b> Commonwealth Avenue UP Ayala Land Technohub, Quezon City, 1121</b> </li>
+        <li>  Address: <b> UP Ayala Land Technohub, Commonwealth Avenue, Quezon City, 1121 </b> </li>
       </ul>
      
       </p> 
@@ -203,7 +203,7 @@ export const eventsData = [
           cloud-native architecture.
         </li>
         <li>
-          <b class="text-decoration-underline">Reall-Time Edge Computing: </b> Understand how HCD can power low-latency, real-time applications, ideal for industries like
+          <b class="text-decoration-underline">Real-Time Edge Computing:</b> Understand how HCD can power low-latency, real-time applications, ideal for industries like
           5G edge computing and customer-centric services.
         </li>
         <li>
@@ -211,16 +211,16 @@ export const eventsData = [
           cloud environments, and enterprise data infrastructure.
         </li>
         <li>
-          <b class="text-decoration-underline">Networking Opportunities: </b> Engage with industry leaders, data experts, and peers to exchange ideas on the future
-          of data infrastructure, AI-driven technoloy, and hyper-converge system.
+          <b class="text-decoration-underline">Networking Opportunities:</b> Engage with industry leaders, data experts, and peers to exchange ideas on the future
+          of data infrastructure, AI-driven technology, and hyper-converged system.
         </li>
       </ul>
       <br/>
       <p>
         <b>Why You Should Attend:</b> This event is essential for data professionals, business leaders, and AI enthusiasts looking to modernize
         their data infrastructure, scale AI workloads, and enhance real-time data processing capabilities. With SCTC and DataStax's combined
-        expertise, you'll gain access to actionable strategies and cuttin-edge technologies that can transform your orginzation's approach to data.
-        Best of all the event is <b>completely free,</b> so register now to reserve your spot.
+        expertise, you'll gain access to actionable strategies and cutting-edge technologies that can transform your organization's approach to data.
+        Best of all, the event is <b>completely free,</b> so register now to reserve your spot.
       </p>
       
       `,
