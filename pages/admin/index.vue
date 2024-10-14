@@ -280,6 +280,7 @@ const item_headers = ref([
   { title: 'Type of Event', key: 'event_type' },
   { title: 'Firstname',     key: 'firstname' },
   { title: 'Lastname',      key: 'lastname' },
+  { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
   { title: 'Number',        key: 'number' }
