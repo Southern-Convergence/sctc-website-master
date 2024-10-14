@@ -121,7 +121,6 @@
               label="Phone Number"
               v-model="form.number"
               type="number"
-              :rules="[v => !!v || 'Phone number is required']"
             />
           </v-form>
         </v-card-text>
