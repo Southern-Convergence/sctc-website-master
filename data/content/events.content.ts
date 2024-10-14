@@ -160,7 +160,6 @@ export const eventsData = [
         <li>  Date : <b>November. 13, 2024 | Wednesday</b> </li>
         <li>  Time : <b>1:00pm - 5:00pm</b> </li>
         <li>  Venue: <b>Microtel by Wyndham UP Technohub</b> </li>
-        <li>  Address: <b> UP Ayala Land Technohub, Commonwealth Avenue, Quezon City, 1121 </b> </li>
       </ul>
      
       </p> 
@@ -229,9 +228,9 @@ export const eventsData = [
     ogMetaImg: 'https://sctc-buckets.sgp1.cdn.digitaloceanspaces.com/meta_non_event.png',
     dialogText: [
       `<b>Unlock the Future of AI-Ready Data with SCTC and DataStax</b>`,
-      `<p style="font-weight: bold;">Date: October 17, 2024</p>
-       <p style="font-weight: bold;">Time: </p>
-       <p style="font-weight: bold;">Venue: </p>`,
+      `<p style="font-weight: bold;">Date: Wednesday, Nov 13, 2024</p>
+       <p style="font-weight: bold;">Time: 1:00pm - 4:00pm</p>
+       <p style="font-weight: bold;">Venue: Microtel by Wyndham UP Technohub</p>`,
       
       `SCTC, in partnership with <b>DataStax,</b> invites you to an exciting, <b>free exclusive event</b> that will explore
       that will explore the power of Hyper-Converged Database (HCD) technology in revolutionizing enterprise data management.
