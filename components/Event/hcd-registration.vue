@@ -107,7 +107,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import Swal from 'sweetalert2';
-import { sendMail, saveParticipants } from '../../../service/mailer.ts';
+import { sendMail, saveParticipants, getParticipants } from '../../../service/mailer.ts';
 
 const router = useRouter();
 const props = defineProps({
@@ -143,7 +143,8 @@ const submitForm = async (event) => {
       Swal.showLoading();
     },
   });
-  await sendMail(
+  saveRegistration().then(async () => {
+    await sendMail(
     {
       eventName: props.eventData.eventName,
       eventDeadline: props.eventData.deadline,
@@ -155,8 +156,9 @@ const submitForm = async (event) => {
     'hcd_registration',
     false,
     ).then(() => {
-      saveRegistration()
+      
     Swal.fire({
+      icon: 'success',
       title: 'Successfully sent. You will hear from us soon.',
       showConfirmButton: false,
       timer: 2000,
@@ -164,7 +166,18 @@ const submitForm = async (event) => {
     });
     clearForm(event);
   });
+  }).catch(error => {
+    Swal.fire({
+      icon: 'warning',
+      title: error.response.data,
+      showConfirmButton: false,
+      timer: 3000,
+      backdrop: `rgba(143,206,0,0.2)`,
+    });
+  })
+
 };
+
 
 const saveRegistration = async () => {
   await saveParticipants({
