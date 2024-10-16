@@ -282,7 +282,6 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
-  { title: 'Number',        key: 'number' }
 ].map(v => ({ ...v, align: 'center', sortable: false, divider: true })));
 
 
