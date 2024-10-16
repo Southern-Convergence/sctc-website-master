@@ -1,106 +1,130 @@
 <template>
-<div class="mt-10">
-  <div>
-    <v-row no-gutters justify="center" v-if="loginFormDialog === false">
-      <v-col cols="12">
-        <v-card class="mx-auto" width="1000">
-          <v-card-text class="bg-surface-light pt-4">
-            <v-data-table :headers="item_headers" :items="listOfParticipants" :item-value="'event_type'">
-              <template v-slot:top>
-                <v-toolbar density="compact" color="#ff7b02">
-                  <v-toolbar-title> List of Registered Participants </v-toolbar-title>
-                </v-toolbar>
-              </template>
+<div>
+  <v-row no-gutters justify="center" v-if="loginFormDialog === false">
+    <v-col cols="12">
+      <!-- Start: Table for Registered Participants -->
+      <v-card class="mx-auto" variant="outlined" width="1000">
+        <v-data-table :headers="item_headers" :items="listOfParticipants" :item-value="'event_type'">
+          <template v-slot:top>
+            <v-toolbar density="compact" color="#ff7b02">
+              <v-toolbar-title> List of Registered Participants </v-toolbar-title>
+            </v-toolbar>
+          </template>
 
-              <template v-slot:[`item.event_type`]="{value}">
-                <v-chip color="#ff7b02">
-                  {{ value }}
-                </v-chip>
-              </template>
-            </v-data-table>
-          </v-card-text>
-        </v-card>
-      </v-col>
+          <template v-slot:[`item.event_type`]="{value}">
+            <v-chip color="#ff7b02">
+              {{ value }}
+            </v-chip>
+          </template>
+        </v-data-table>
+      </v-card>
+      <!-- Start: Table for Registered Participants -->
+    </v-col>
 
-      <v-col cols="12">
-        <v-card class="mx-auto" width="1000">
-          <v-card-text class="bg-surface-light pt-4">
-            <v-data-table :headers="item_headers" :items="listOfInvitedParticipants">
-              <template v-slot:top>
-                <v-toolbar density="compact" color="#ff7b02">
-                  <v-toolbar-title> List of Invited Participants </v-toolbar-title>
-                  <v-spacer></v-spacer>
-                  <v-btn variant="elevated" @click="inviteDialog = true"> Invite Participants </v-btn>
-                </v-toolbar>
-              </template>
+    <v-col cols="12">
+      <!-- Start: Table for Invited Participants -->
+      <v-card class="mx-auto mt-2" variant="outlined" width="1000">
+        <v-data-table :headers="item_headers" :items="listOfInvitedParticipants">
+          <template v-slot:top>
+            <v-toolbar density="compact" color="#ff7b02">
+              <v-toolbar-title> List of Invited Participants </v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn variant="elevated" @click="inviteDialog = true"> Invite Participants </v-btn>
+            </v-toolbar>
+          </template>
 
-              <template v-slot:[`item.event_type`]="{value}">
-                  <v-chip color="#ff7b02">
-                    {{ value }}
-                  </v-chip>
-                </template>
-            </v-data-table>          
-          </v-card-text>
+          <template v-slot:[`item.event_type`]="{value}">
+              <v-chip color="#ff7b02">
+                {{ value }}
+              </v-chip>
+            </template>
+        </v-data-table>   
+      </v-card>
+      <!-- End: Table for Invited Participants -->
+    </v-col>
+  </v-row>
 
-        </v-card>
-      </v-col>
-    </v-row>
+  <v-dialog v-model="inviteDialog" width="500">
+    <v-card>
+      <v-toolbar density="compact" color="#ff7b02">
+        <v-toolbar-title> Fill in the details of the participants </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="inviteDialog = false">
+          <v-icon icon="mdi-close" />
+        </v-btn>
+      </v-toolbar>
+      <v-card-text>
+        <v-form ref="invitationForm" v-model="isFormValid">
+          <v-text-field
+            required
+            @click.right.prevent
+            @copy.prevent
+            @paste.prevent
+            variant="outlined"
+            label="Firstname"
+            v-model="form.firstname"
+            :rules="[v => !!v || 'Firstname is required']"
+          />
 
-    <v-dialog v-model="inviteDialog" width="500">
-      <v-card>
-        <v-toolbar density="compact" color="#ff7b02">
-          <v-toolbar-title> Fill in the details of the participants </v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-btn icon @click="inviteDialog = false">
-            <v-icon icon="mdi-close" />
-          </v-btn>
-        </v-toolbar>
-        <v-card-text>
-          <v-form ref="invitationForm" v-model="isFormValid">
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Firstname"
-              v-model="form.firstname"
-              :rules="[v => !!v || 'Firstname is required']"
-            />
+          <v-text-field
+            required
+            @click.right.prevent
+            @copy.prevent
+            @paste.prevent
+            variant="outlined"
+            label="Surname"
+            v-model="form.lastname"
+            :rules="[v => !!v || 'Surname is required']"
+          />
 
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Surname"
-              v-model="form.lastname"
-              :rules="[v => !!v || 'Surname is required']"
-            />
+          <v-text-field
+            required
+            @click.right.prevent
+            @copy.prevent
+            @paste.prevent
+            variant="outlined"
+            label="Company Name"
+            v-model="form.company"
+            :rules="[v => !!v || 'Company Name is required']"
+          />
 
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Company Name"
-              v-model="form.company"
-              :rules="[v => !!v || 'Company Name is required']"
-            />
+          <v-text-field
+            required
+            @click.right.prevent
+            @copy.prevent
+            @paste.prevent
+            variant="outlined"
+            label="Job Position"
+            v-model="form.position"
+            :rules="[v => !!v || 'Position is required']"
+          />
 
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Job Position"
-              v-model="form.position"
-              :rules="[v => !!v || 'Position is required']"
-            />
-
+          <v-text-field
+            required
+            @click.right.prevent
+            @copy.prevent
+            @paste.prevent
+            variant="outlined"
+            label="Email Address"
+            v-model="form.email"
+            :rules="[v => !!v || 'Email is required', v => /.+@.+\..+/.test(v) || 'Email must be valid']"
+          />
+        </v-form>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn
+          variant="elevated"
+          class="text-white"
+          color="orange"
+          :disabled="!isFormValid"
+          @click="inviteParticipants"
+        >
+          <v-icon left icon="mdi-email-fast-outline" class="mr-2" />
+          Send Invitation
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
             <v-text-field
               required
               @click.right.prevent
@@ -139,23 +163,23 @@
       </v-card>
     </v-dialog>
 
-    <v-dialog persistent v-model="loginFormDialog" width="400">
-      <v-card >
-        <v-toolbar color="#ff7b02">
-          <v-toolbar-title> Login </v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-card-text>
-          <v-text-field  variant="outlined" label="Username" v-model="loginform.username"/>
-          <v-text-field type="password" variant="outlined" label="Password" v-model="loginform.password" @keyup.enter="loginAdmin"/>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn @click="loginAdmin">Login</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
-</div>  
+  <v-dialog persistent v-model="loginFormDialog" width="400">
+    <v-card >
+      <v-toolbar color="#ff7b02">
+        <v-toolbar-title> Login </v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>
+      <v-card-text>
+        <v-text-field  variant="outlined" label="Username" v-model="loginform.username"/>
+        <v-text-field type="password" variant="outlined" label="Password" v-model="loginform.password" @keyup.enter="loginAdmin"/>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn @click="loginAdmin">Login</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</div>
+
 </template>
 
 <script setup lang="ts">
