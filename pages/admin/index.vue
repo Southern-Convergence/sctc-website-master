@@ -111,18 +111,6 @@
               v-model="form.email"
               :rules="[v => !!v || 'Email is required', v => /.+@.+\..+/.test(v) || 'Email must be valid']"
             />
-
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Phone Number"
-              v-model="form.number"
-              type="number"
-              :rules="[v => !!v || 'Phone number is required']"
-            />
           </v-form>
         </v-card-text>
         <v-card-actions>
@@ -283,7 +271,6 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
-  { title: 'Number',        key: 'number' }
 ].map(v => ({ ...v, align: 'center', sortable: false, divider: true })));
 
 
