@@ -125,43 +125,6 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Email Address"
-              v-model="form.email"
-              :rules="[v => !!v || 'Email is required', v => /.+@.+\..+/.test(v) || 'Email must be valid']"
-            />
-
-            <v-text-field
-              required
-              @click.right.prevent
-              @copy.prevent
-              @paste.prevent
-              variant="outlined"
-              label="Phone Number"
-              v-model="form.number"
-              type="number"
-            />
-          </v-form>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn
-            variant="elevated"
-            class="text-white"
-            color="orange"
-            :disabled="!isFormValid"
-            @click="inviteParticipants"
-          >
-            <v-icon left icon="mdi-email-fast-outline" class="mr-2" />
-            Send Invitation
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
 
   <v-dialog persistent v-model="loginFormDialog" width="400">
     <v-card >
