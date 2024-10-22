@@ -150,7 +150,7 @@ export const eventsData = [
   {
     eventType : 'HCD',
     link      : 'hcd',
-    countdownDate: '10/17/2024',
+    countdownDate: '11/14/2024',
     bannerText: `
       <p>
       Harness AI-Ready Data with AstraDB Discover how 
