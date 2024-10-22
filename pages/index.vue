@@ -1,9 +1,9 @@
 <template>
-  <div class="body-div">
+  <div >
     <video autoplay loop muted playsinline class="video-background pointer-events-none">
-      <source src="../assets/images/sctc-bg-animation.mp4" type="video/mp4" />
+      <source src="@/assets/images/sctc-bg-animation.mp4" type="video/mp4" />
     </video>
-    <div class="overlay"></div>
+    <div class="overlay">asdsa</div>
     <div :class="[{ baseContainer: true, inBetween: disabled, newContainer: disabled, returnBaseCarousel: !disabled }]">
       <div
         class="tracking-wider flex flex-col font-semibold font-Poppins xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl"
