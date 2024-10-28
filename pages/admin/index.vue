@@ -18,15 +18,6 @@
             </v-chip>
           </template>
 
-          <template v-slot:[`item.status`]="{value}">
-            <v-chip :color="value ? '#ff7b02' : 'green'">
-              {{ value ? value : 'Pending'}}
-            </v-chip>
-          </template>
-
-          <template v-slot:[`item.action`]="{item}">
-            <v-btn size="small" @click="send_reminder(item)">Send</v-btn>
-          </template>
         </v-data-table>
       </v-card>
       <!-- Start: Table for Registered Participants -->
@@ -48,6 +39,16 @@
             <v-chip color="#ff7b02">
               {{ value }}
             </v-chip>
+          </template>
+
+          <template v-slot:[`item.status`]="{value}">
+            <v-chip :color="value ? '#ff7b02' : 'green'">
+              {{ value ? value : 'Pending'}}
+            </v-chip>
+          </template>
+
+          <template v-slot:[`item.action`]="{item}">
+            <v-btn size="small" @click="send_reminder(item)">Send</v-btn>
           </template>
 
           
@@ -289,8 +290,6 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
-  { title: 'Status',         key: 'status' },
-  { title: 'Action',        key: 'action' }, 
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 const invited_headers = ref([
@@ -300,6 +299,8 @@ const invited_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
+  // { title: 'Status',         key: 'status' },
+  { title: 'Action',        key: 'action' }, 
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 // Start: Login Form
