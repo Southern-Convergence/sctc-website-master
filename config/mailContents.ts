@@ -576,10 +576,104 @@ Each company/agency can register up to <b style="color: #000">three attendees</b
   `
 }
 
+const HCD_REMINDER = (payload: any) => {
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Converge Database Seminar Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 3px solid orange; /* Border color */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+            text-align: left;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0 0 1em;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .footer {
+            color: #999;
+            font-size: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p>Dear ${payload.firstname},</p>
+            <p>We’re excited to remind you that the Hyper Converge Database Seminar is just around the corner! As we finalize preparations, we kindly ask you to confirm your attendance to ensure your spot.</p>
+
+            <h3>Event Details:</h3>
+            <p>
+                Date: November 13, 2024<br>
+                Time: 1:00 PM – 4:00 PM<br>
+                Venue: Microtel by Wyndham UP Technohub<br>
+                Room: Sanggumay Hall<br>
+                Address: Commonwealth Avenue, UP Ayala Land Technohub, Quezon City, 1121
+            </p>
+
+            <p>This event will provide valuable insights into the future of AI-driven data management and real-time computing. It’s a unique opportunity to connect with industry experts and witness live demos of cutting-edge technology.</p>
+
+            <div class="button-container">
+                <a href="https://southernconvergence.com/event-confirmation?app_id=${payload._id}" class="button">Confirm Attendance</a>
+            </div>
+
+            <p>We look forward to seeing you there! If you have any questions, feel free to reach out to us at <a href="mailto:info@southernconvergence.com">info@southernconvergence.com</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p>Best regards,<br>
+            The SCTC Team</p>
+        </div>
+    </div>
+</body>
+</html>
+  `
+}
+
 export const MAIL_TEMPLATES = {
   CONTACT_US_FORM_TEMPLATE,
   EVENT_REGISTRATION_TEMPLATE,
   DEVJAM_QUEUE_MAIL_TEMPLATE,
   HCD_REGISTRATION,
-  HCD_INVITATION
+  HCD_INVITATION,
+  HCD_REMINDER
 };

@@ -161,7 +161,6 @@ export const eventsData = [
         <li>  Time : <b>1:00pm - 5:00pm</b> </li>
         <li>  Venue: <b>Microtel by Wyndham UP Technohub</b> </li>
       </ul>
-     
       </p> 
       
       <p style="margin-top: 10px;">

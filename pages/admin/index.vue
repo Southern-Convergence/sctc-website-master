@@ -3,18 +3,29 @@
   <v-row no-gutters justify="center" v-if="loginFormDialog === false">
     <v-col cols="12">
       <!-- Start: Table for Registered Participants -->
-      <v-card class="mx-auto" variant="outlined" width="1000">
-        <v-data-table :headers="item_headers" :items="listOfParticipants" :item-value="'event_type'">
+      <v-card class="mx-auto" variant="outlined" width="1300">
+        <v-data-table :headers="item_headers" :items="listOfParticipants" >
           <template v-slot:top>
             <v-toolbar density="compact" color="#ff7b02">
               <v-toolbar-title> List of Registered Participants </v-toolbar-title>
             </v-toolbar>
           </template>
 
+
           <template v-slot:[`item.event_type`]="{value}">
             <v-chip color="#ff7b02">
               {{ value }}
             </v-chip>
+          </template>
+
+          <template v-slot:[`item.status`]="{value}">
+            <v-chip :color="value ? '#ff7b02' : 'green'">
+              {{ value ? value : 'Pending'}}
+            </v-chip>
+          </template>
+
+          <template v-slot:[`item.action`]="{item}">
+            <v-btn size="small" @click="send_reminder(item)">Send</v-btn>
           </template>
         </v-data-table>
       </v-card>
@@ -23,8 +34,8 @@
 
     <v-col cols="12">
       <!-- Start: Table for Invited Participants -->
-      <v-card class="mx-auto mt-2" variant="outlined" width="1000">
-        <v-data-table :headers="item_headers" :items="listOfInvitedParticipants">
+      <v-card class="mx-auto mt-2" variant="outlined" width="1300">
+        <v-data-table :headers="invited_headers" :items="listOfInvitedParticipants">
           <template v-slot:top>
             <v-toolbar density="compact" color="#ff7b02">
               <v-toolbar-title> List of Invited Participants </v-toolbar-title>
@@ -34,10 +45,12 @@
           </template>
 
           <template v-slot:[`item.event_type`]="{value}">
-              <v-chip color="#ff7b02">
-                {{ value }}
-              </v-chip>
-            </template>
+            <v-chip color="#ff7b02">
+              {{ value }}
+            </v-chip>
+          </template>
+
+          
         </v-data-table>   
       </v-card>
       <!-- End: Table for Invited Participants -->
@@ -187,7 +200,6 @@ const loadParticipants = async () => {
 
 // Start: Get invited participants
 const listOfInvitedParticipants = ref([])
-const invitedparticipantsHeader = ref()
 async function loadInvitedParticipants() {
   return axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
       .then((response: any) => {
@@ -261,6 +273,14 @@ function inviteParticipants(){
 }
 
 
+function send_reminder(items: any){
+  return sendMail(items, 'hcd_reminder', false).then(() => {
+    console.log('Succ')
+  }).catch((error: any) => {
+    console.log(error)
+  })
+}
+
 // Table headers
 const item_headers = ref([
   { title: 'Type of Event', key: 'event_type' },
@@ -269,11 +289,21 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
-].map(v => ({ ...v, align: 'center', sortable: false, divider: true })));
+  { title: 'Status',         key: 'status' },
+  { title: 'Action',        key: 'action' }, 
+].map(v => ({ ...v, align: 'center', sortable: false})));
 
+const invited_headers = ref([
+  { title: 'Type of Event', key: 'event_type' },
+  { title: 'Firstname',     key: 'firstname' },
+  { title: 'Lastname',      key: 'lastname' },
+  { title: 'Company',       key: 'company' },
+  { title: 'Position',      key: 'position' },
+  { title: 'Email',         key: 'email' },
+].map(v => ({ ...v, align: 'center', sortable: false})));
 
 // Start: Login Form
-const loginFormDialog = ref(true)
+const loginFormDialog = ref(false)
 const loginform = ref({
   username: '',
   password: ''
@@ -312,8 +342,6 @@ async function loginAdmin(){
     });
   })
 }
-
-
 </script>
 <style scoped>
 .container {

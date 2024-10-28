@@ -27,6 +27,10 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
       rawHtml = MAIL_TEMPLATES.HCD_INVITATION(payload)
       subject = payload.emailContent.subject; 
       break;
+    case 'hcd_reminder':
+      rawHtml = MAIL_TEMPLATES.HCD_REMINDER(payload)
+      subject = 'REMINDER'; 
+      break;
     default:
       throw new Error('Unknown template type');
   }
@@ -41,12 +45,16 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
 };
 
 export const sendMail = async (payload: any, template: string, sendToAdmin: boolean = true) => {
-
+  console.log(
+    payload,
+    template,
+    sendToAdmin
+  )
   const data = generateEmailContent(payload, template, sendToAdmin);
-  // ! Only for production environment
+  // // ! Only for production environment
   return await axios.post(`${MAILER_ENDPOINT}/mailer/sendMail`, data);
   // return await axios.post(`http://localhost:7003/mailer/sendMail`, data)
-  // ! Only for dev environment
+  // // ! Only for dev environment
 
   
   return true;
