@@ -304,7 +304,7 @@ const invited_headers = ref([
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 // Start: Login Form
-const loginFormDialog = ref(false)
+const loginFormDialog = ref(true)
 const loginform = ref({
   username: '',
   password: ''

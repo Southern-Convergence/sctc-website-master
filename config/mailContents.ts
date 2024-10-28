@@ -670,11 +670,138 @@ const HCD_REMINDER = (payload: any) => {
   `
 }
 
+const HCD_REINVITE = (payload: any) => {
+  return `
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Invitation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+        }
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid orange;
+        }
+        .image-container {
+            width: 100%;
+            height: 180px;
+            background-color: #d9e8f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 20px;
+            color: orange;
+            margin: 20px 0 10px;
+            text-align: left;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .event-details {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-weight: 500;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: orange;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #004c99;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://e.hypermatic.com/e251c5c25c448a0a7e5de78fbf0db4b2.png" alt="Event Banner">
+        </div>
+        <div class="header">Join Us for a Free Exclusive Event: Hyper Converge Database</div>
+        <p>We’re just two weeks away from our free event that could redefine how you approach data management! Join us for a unique experience where we’ll showcase how modern data solutions can empower your business to be more agile, efficient, and prepared for the AI-driven future.</p>
+        <p><strong>Each company/agency can register up to three attendees for this exclusive event!</strong></p>
+        
+        <div class="event-details">
+            <p><strong>Date:</strong> November 13, 2024</p>
+            <p><strong>Time:</strong> 1:00 PM – 4:00 PM</p>
+            <p><strong>Venue:</strong> Microtel by Wyndham UP Technohub</p>
+            <p><strong>Address:</strong> Commonwealth Avenue, UP Ayala Land Technohub, Quezon City, 1121</p>
+        </div>
+
+        <div class="section-title">What You’ll Experience:</div>
+        <p><strong>Transform Data Management:</strong> Learn how HCD can make data handling more flexible and efficient, allowing your business to grow and adapt with ease.</p>
+        <p><strong>Boost AI Performance:</strong> Find out how HCD supports large-scale AI, enabling your business to make faster, smarter decisions with predictive insights.</p>
+        <p><strong>Real-Time Data on Demand:</strong> Discover how HCD’s edge computing features provide instant data processing, ideal for industries requiring real-time customer insights and analytics.</p>
+        <p><strong>Hands-On Demos:</strong> Watch HCD in action through live demonstrations showing how it integrates with existing systems to support AI, cloud, and data management efficiently.</p>
+        <p><strong>Network with Experts:</strong> Connect with leaders in data and AI technology, along with peers who are on similar paths toward data innovation.</p>
+
+        <div class="section-title">Why Attend?</div>
+        <p><strong>Stay Ahead of Data Trends:</strong> Equip your business with the latest in data management without unnecessary technical complexity.</p>
+        <p><strong>Prepare for AI Integration:</strong> Explore how HCD can be a stepping stone toward making your business AI-ready.</p>
+        <p><strong>Enhance Responsiveness:</strong> Learn how cloud and edge computing can help your organization respond faster and meet customer needs effectively.</p>
+        
+        <p><strong>Spaces are limited, so register today to secure your spot!</strong></p>
+        <a href="https://southernconvergence.com/register/events/hcd" class="button">Register Now</a>
+        
+        <p style="margin-top: 20px;">We look forward to seeing you there!</p>
+        <p>Best regards,<br>The SCTC Team</p>
+    </div>
+</body>
+</html>
+  `
+}
+
 export const MAIL_TEMPLATES = {
   CONTACT_US_FORM_TEMPLATE,
   EVENT_REGISTRATION_TEMPLATE,
   DEVJAM_QUEUE_MAIL_TEMPLATE,
   HCD_REGISTRATION,
   HCD_INVITATION,
-  HCD_REMINDER
+  HCD_REMINDER,
+  HCD_REINVITE
 };

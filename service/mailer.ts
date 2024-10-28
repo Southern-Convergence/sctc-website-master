@@ -28,8 +28,8 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
       subject = payload.emailContent.subject; 
       break;
     case 'hcd_reminder':
-      rawHtml = MAIL_TEMPLATES.HCD_REMINDER(payload)
-      subject = 'REMINDER'; 
+      rawHtml = MAIL_TEMPLATES.HCD_REINVITE(payload)
+      subject = "Don't Miss Out - Free Event on the Future of Data Management with DataStax and SCTC!"; 
       break;
     default:
       throw new Error('Unknown template type');
