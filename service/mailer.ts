@@ -27,8 +27,12 @@ const generateEmailContent = (payload: any, template: string, sendToAdmin = true
       rawHtml = MAIL_TEMPLATES.HCD_INVITATION(payload)
       subject = payload.emailContent.subject; 
       break;
-    case 'hcd_reminder':
+    case 'hcd_reinvite':
       rawHtml = MAIL_TEMPLATES.HCD_REINVITE(payload)
+      subject = "Don't Miss Out - Free Event on the Future of Data Management with DataStax and SCTC!"; 
+      break;
+      case 'hcd_reminder':
+      rawHtml = MAIL_TEMPLATES.HCD_REMINDER(payload)
       subject = "Don't Miss Out - Free Event on the Future of Data Management with DataStax and SCTC!"; 
       break;
     default:

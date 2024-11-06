@@ -18,6 +18,14 @@
             </v-chip>
           </template>
 
+          <template v-slot:[`item.status`]="{value}">
+            <v-chip color="orange" v-if="value">{{value}}</v-chip>
+          </template>
+
+          <template v-slot:[`item.action`]="{item}">
+            <v-btn size="small" @click="send_confirmation(item)">Send</v-btn>
+          </template>
+
         </v-data-table>
       </v-card>
       <!-- Start: Table for Registered Participants -->
@@ -273,8 +281,15 @@ function inviteParticipants(){
     });
 }
 
-
 function send_reminder(items: any){
+  return sendMail(items, 'hcd_reinvite', false).then(() => {
+    console.log('Succ')
+  }).catch((error: any) => {
+    console.log(error)
+  })
+}
+
+function send_confirmation(items: any){
   return sendMail(items, 'hcd_reminder', false).then(() => {
     console.log('Succ')
   }).catch((error: any) => {
@@ -290,6 +305,8 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
+  { title: 'Status',         key: 'status' },
+  { title: 'Action',        key: 'action' }, 
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 const invited_headers = ref([
@@ -304,7 +321,7 @@ const invited_headers = ref([
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 // Start: Login Form
-const loginFormDialog = ref(true)
+const loginFormDialog = ref(false)
 const loginform = ref({
   username: '',
   password: ''
