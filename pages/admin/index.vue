@@ -8,6 +8,10 @@
           <template v-slot:top>
             <v-toolbar density="compact" color="#ff7b02">
               <v-toolbar-title> List of Registered Participants </v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn variant="elevated" color="green" @click="exportToExcel" class="btn btn-default">
+                Download To Excel
+              </v-btn>
             </v-toolbar>
           </template>
 
@@ -168,6 +172,7 @@
 </template>
 
 <script setup lang="ts">
+import ExcelJS from "exceljs";
 import { useRoute } from 'vue-router';
 import { getParticipants, sendMail, login } from '../../../service/mailer.ts';
 import {eventsData} from '../../data/content/events.content.ts'
@@ -192,6 +197,8 @@ onBeforeMount(async () => {
 
 const loader = ref(true)
 
+
+
 //Start: Load the existing data
 const eventData = ref({});
 const loadEventData = async () => {
@@ -212,7 +219,7 @@ const listOfInvitedParticipants = ref([])
 async function loadInvitedParticipants() {
   return axios.get(`${MAILER_ENDPOINT}/mailer/getInvitedParticipants`)
       .then((response: any) => {
-        console.log(response.data)
+        console.log('asdsa', response.data)
         return  listOfInvitedParticipants.value = response.data
       })
 }
@@ -305,6 +312,7 @@ const item_headers = ref([
   { title: 'Company',       key: 'company' },
   { title: 'Position',      key: 'position' },
   { title: 'Email',         key: 'email' },
+  { title: 'Number',         key: 'number' },
   { title: 'Status',         key: 'status' },
   { title: 'Action',        key: 'action' }, 
 ].map(v => ({ ...v, align: 'center', sortable: false})));
@@ -321,7 +329,7 @@ const invited_headers = ref([
 ].map(v => ({ ...v, align: 'center', sortable: false})));
 
 // Start: Login Form
-const loginFormDialog = ref(false)
+const loginFormDialog = ref(true)
 const loginform = ref({
   username: '',
   password: ''
@@ -360,6 +368,75 @@ async function loginAdmin(){
     });
   })
 }
+
+function exportToExcel() {
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Sheet 1");
+
+  worksheet.columns = [
+    {
+      header: "First Name",
+      key: "firstname",
+      width: 30,
+    },
+    {
+      header: "Last Name",
+      key: "lastname",
+      width: 30,
+    },
+    {
+      header: "Company",
+      key: "company",
+      width: 50,
+    },
+    {
+      header: "Position",
+      key: "position",
+      width: 70,
+    },
+    {
+      header: "Number",
+      key: "number",
+      width: 30,
+    },
+    { 
+      header: "Email", 
+      key: "email", width: 50 
+    },
+    { 
+      header: "Status", 
+      key: "status", 
+      width: 30 },
+  ];
+
+  // Apply styles to the header row only
+  worksheet.getRow(1).font = { name: "Arial Black", bold: true };
+   
+
+  // Assuming `listOfInvitedParticipants.value` is an array of participant objects
+  listOfParticipants.value.forEach((obj: any) => {
+    worksheet.addRow({
+      firstname: obj.firstname,
+      lastname: obj.lastname,
+      company: obj.company,
+      position: obj.position,
+      number: obj.number,
+      email: obj.email,
+      status: obj.status,
+    });
+  });
+
+  workbook.xlsx.writeBuffer().then((buffer) => {
+    const blob = new Blob([buffer], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = `participants.xlsx`;
+    link.click();
+  });
+}
+
 </script>
 <style scoped>
 .container {
