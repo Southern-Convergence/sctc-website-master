@@ -653,7 +653,7 @@ const HCD_REMINDER = (payload: any) => {
             <p>This event will provide valuable insights into the future of AI-driven data management and real-time computing. It’s a unique opportunity to connect with industry experts and witness live demos of cutting-edge technology.</p>
 
             <div class="button-container">
-                <a href="http://localhost:3000/event-confirmation?app_id=${payload._id}" class="button">Confirm Attendance</a>
+                <a href="https://southernconvergence.com/event-confirmation?app_id=${payload._id}" class="button">Confirm Attendance</a>
             </div>
 
             <p>We look forward to seeing you there! If you have any questions, feel free to reach out to us at <a href="mailto:info@southernconvergence.com">info@southernconvergence.com</a>.</p>
